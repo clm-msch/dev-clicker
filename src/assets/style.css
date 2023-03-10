@@ -1,0 +1,24 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@500;800&display=swap");
+
+body {
+	background: linear-gradient(101.23deg, #532ee7 17.61%, #2600bf 99.55%);
+    /* padding: 150px; */
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-size: cover; */
+    font-family: "Urbanist", sans-serif;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+}
