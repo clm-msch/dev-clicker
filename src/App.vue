@@ -1,31 +1,20 @@
 <script setup>
-// import HtmlBonus from "./components/HtmlBonus.vue"
-// import CssBonus from "./components/CssBonus.vue"
+import CodePage from "./components/CodePage"
+import NavBar from "./components/NavBar"
 </script>
 
 <template>
-	<div>
-		<div>
-			<h1>Ton site web</h1>
-		</div>
-		<p>Visteurs: {{ visits }}</p>
-		<!-- <HtmlBonus />
-		<CssBonus /> -->
-	</div>
+	<main>
+
+		<nav>
+			<NavBar />
+		</nav>
+
+        <!-- Menu in code section -->
+        <div>
+            <CodePage />
+        </div>
+        <!-- Menu in code section -->
+        
+	</main>
 </template>
-
-<!-- <script>
-export default {
-	data() {
-		return {
-			visits: 0,
-		}
-	},
-}
-</script> -->
-
-<!-- <style scoped>
-.site:hover {
-	filter: drop-shadow(0 0 2em #646cffaa);
-}
-</style> -->
