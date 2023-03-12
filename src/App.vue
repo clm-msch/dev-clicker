@@ -1,20 +1,22 @@
 <script setup>
-import CodePage from "./components/CodePage"
-import NavBar from "./components/NavBar"
+import CodePage from "./components/CodePage.vue"
+// import NavBar from "./components/NavBar"
 </script>
 
 <template>
 	<main>
-
-		<nav>
+		<!-- <nav>
 			<NavBar />
-		</nav>
+		</nav> -->
 
-        <!-- Menu in code section -->
-        <div>
-            <CodePage />
-        </div>
-        <!-- Menu in code section -->
-        
+		<!-- Menu in code section -->
+		<div>
+			<CodePage />
+		</div>
+		<!-- Menu in code section -->
 	</main>
 </template>
+
+<!-- <script></script>
+
+<style scoped></style> -->
