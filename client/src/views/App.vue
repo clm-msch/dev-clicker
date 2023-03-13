@@ -13,7 +13,7 @@ export default {
 	data() {
 		return {
 			score: 0,
-			level: 1,
+			level: 0,
 		}
 	},
 	methods: {
@@ -34,7 +34,7 @@ export default {
 		},
 		loadGameData() {
 			this.score = this.loadFromLocalStorage("score") || 0
-			this.level = this.loadFromLocalStorage("level") || 1
+			this.level = this.loadFromLocalStorage("level") || 0
 		},
 		resetData() {
 			localStorage.clear()
