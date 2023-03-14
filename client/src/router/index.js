@@ -1,14 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import CodePage from '../views/CodePage.vue'
+import HomePage from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      name: 'home',
+      component: HomePage,
+      // function to redirect to another route with a condition
+      // redirect: () => { 
+      //   const condition = false
+      //   if (condition) {
+      //     return '/about';
+      //   }else{
+      //     return '/';
+      //   }
+      // }
+    },
+    {
+      path: '/code',
       name: 'code',
-      component: CodePage
-      },
+      component: () => import('../views/CodeView.vue')
+    },
     {
       path: '/about',
       name: 'about',
@@ -16,5 +30,4 @@ const router = createRouter({
     }
   ]
 })
-
 export default router
