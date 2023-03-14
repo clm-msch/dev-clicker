@@ -11,6 +11,7 @@ App2.vue
 App3.vue
 
 node_modules
+.DS_Store
 dist
 dist-ssr
 *.local

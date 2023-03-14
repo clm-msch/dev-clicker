@@ -8,7 +8,9 @@
 				<h2>Expérience : {{ exp }}</h2>
 				<h2>10 Expérience par seconde</h2>
 			</div>
-			<button @click="resetAll" style="background-color: brown;">RESET</button>
+			<button @click="resetAll" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+				RESET
+			</button>
 		</section>
 	</div>
 </template>
@@ -25,14 +27,16 @@ export default {
 	methods: {
 		// Buttons mehtods
 		addExp() {
-			this.exp ++
+			this.exp++
 			this.saveToLocalStorage("exp", this.exp)
 		},
 		resetAll() {
-			// this.exp = 0
-			// this.saveToLocalStorage("exp", this.exp)
-			localStorage.clear()
-			console.log("All data deleted from local storage")
+			if (
+				confirm("Voulez-vous vraiment supprimer toutes les données ?")
+			) {
+				localStorage.clear()
+				location.reload()
+			}
 		},
 
 		// Local storage methods
