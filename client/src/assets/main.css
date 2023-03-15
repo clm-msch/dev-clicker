@@ -4,13 +4,57 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@500;800&display=swap");
 
-body {
+/* body {
 	background: linear-gradient(101.23deg, #532ee7 17.61%, #2600bf 99.55%);
-    color: white;
-    padding: 150px;
-    /* background-color: #676eff; */
-    height: 100%;
+    color: white; */
+/* padding: 150px; */
+/* background-color: #676eff; */
+/* height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: "Urbanist", sans-serif;
+} */
+
+/* Style de base pour le corps de la page */
+body {
+	font-family: "Urbanist", sans-serif;
+	background-color: #e9eaff;
+}
+
+/* Style pour le contenu de la navbar */
+nav a {
+	transition: background-color 0.2s ease-in-out;
+	border-radius: 8px;
+    
+}
+
+nav a svg path {
+    fill: #ffffff;
+}
+
+nav a:hover {
+	background-color: #e9eaff;
+	color: #532ee7;
+}
+
+nav a svg path {
+	transition: fill 0.2s ease;
+}
+
+nav a:hover svg path {
+    fill: #532ee7;
+    }
+
+.hover\:text-white:hover,
+.hover\:.text-white:hover svg {
+	color: #fff;
+}
+
+.hover\:bg-gray-700:hover {
+	background-color: #4a5568;
+}
+
+/* Style pour le contenu principal */
+p {
+	line-height: 1.5;
 }
