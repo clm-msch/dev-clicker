@@ -21,11 +21,11 @@
 			<div
 				class="inline-flex flex-col items-center justify-end flex-1 h-full px-9 py-9 bg-white rounded-lg"
 			>
-				<p class="w-40 h-1/2 text-xl text-gray-800">
-					Expérience : {{ exp }}
+				<p class="w-full h-1/2 text-xl text-gray-800">
+					Expérience : <strong>{{ expFormatted }}</strong>
 				</p>
 				<p class="w-full h-1/2 text-xl text-gray-800">
-					{{ expSecond }} Expérience par seconde
+					<strong>{{ expSecond }}</strong> Expérience par seconde
 				</p>
 			</div>
 		</div>
@@ -166,6 +166,15 @@ export default {
 			jsPrice: 100,
 		}
 	},
+	computed: {
+		expFormatted() {
+			return this.exp.toLocaleString(undefined, {
+				minimumFractionDigits: 0,
+				maximumFractionDigits: 4,
+				notation: "compact",
+			})
+		},
+	},
 	methods: {
 		// Buttons mehtods
 		addExp() {
@@ -248,14 +257,3 @@ export default {
 	},
 }
 </script>
-
-<style scoped>
-.tech-button {
-	background-color: rgb(44, 47, 49);
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	flex-direction: column;
-	flex-wrap: wrap;
-}
-</style>
