@@ -1,14 +1,8 @@
 <template>
 	<div class="fixed z-2 top-4 right-4">
-		<div v-if="visible && !step2" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
+		<div v-if="!step2" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
 			<p class="font-semibold mb-2">Tutoriel étape 1/5</p>
 			<p>Pour commencer tu peux développer jusqu'a débloquer le CSS.</p>
-			<button
-				class="mt-4 bg-primary hover:bg-dark_grey text-white py-2 px-4 rounded"
-				@click="dismiss"
-			>
-				Se passer du tutoriel
-			</button>
 		</div>
 	</div>
 
@@ -20,7 +14,7 @@
 	</div>
 
 	<div class="fixed z-2 top-4 right-4">
-		<div v-if="step3" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
+		<div v-if="step3 && !ifMission" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
 			<p class="font-semibold mb-2">Tutoriel étape 3/5</p>
 			<p>Parfait ! Maintenant rendez-vous dans l'onglet "Missions"</p>
 		</div>
@@ -41,9 +35,9 @@ export default {
 	},
 	data() {
 		return {
-			visible: true,
 			step2: false, 
 			step3: false,
+			ifMission: false,
 		}
 	},
 	computed : {
@@ -61,11 +55,20 @@ export default {
 				return false
 			}
 		},
+		ifMission() {
+			const value = localStorage.getItem('firstMission');
+			return value ? JSON.parse(value) : null;
+			this.ifMission = value;
+		},
 	},
 	methods: {
-		dismiss() {
-			this.visible = false
+		loadFromLocalStorage(key) {
+			const value = localStorage.getItem(key)
+			return value ? JSON.parse(value) : null
 		},
+	},
+	mounted() {
+		this.ifMission = this.loadFromLocalStorage('firstMission')
 	},
 }
 </script>
