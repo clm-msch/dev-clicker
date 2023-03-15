@@ -25,11 +25,10 @@ body {
 nav a {
 	transition: background-color 0.2s ease-in-out;
 	border-radius: 8px;
-    
 }
 
 nav a svg path {
-    fill: #ffffff;
+	fill: #ffffff;
 }
 
 nav a:hover {
@@ -37,13 +36,22 @@ nav a:hover {
 	color: #532ee7;
 }
 
+.active a {
+	background-color: #e9eaff;
+	color: #532ee7;
+}
+
+.active a svg path {
+    fill: #532ee7;
+}
+
 nav a svg path {
 	transition: fill 0.2s ease;
 }
 
 nav a:hover svg path {
-    fill: #532ee7;
-    }
+	fill: #532ee7;
+}
 
 .hover\:text-white:hover,
 .hover\:.text-white:hover svg {

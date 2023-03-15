@@ -10,6 +10,7 @@ lerna-debug.log*
 App2.vue
 App3.vue
 
+dist
 node_modules
 .DS_Store
 dist
