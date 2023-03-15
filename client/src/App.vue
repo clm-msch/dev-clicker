@@ -30,9 +30,9 @@ import { RouterLink, RouterView } from "vue-router"
 
 		<!-- Junior -->
 		<nav class="flex-1 h-0 overflow-y-auto">
-			<div class="px-2 space-y-1">
+			<div class="px-2 space-y-1" >
 				<h2 class="font-bold">Junior :</h2>
-				<RouterLink to="/">
+				<RouterLink to="/" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md hover:bg-gradient"
