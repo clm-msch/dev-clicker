@@ -1,10 +1,8 @@
+<script setup>
+	import Popup from '../components/Popup.vue';
+</script>
 <template>
-	
-
-	
-
-
-
+	<Popup :newComer="exp" @closePopup="handleExpPopup" />
 	<div
 		style="
 			display: flex;
@@ -37,84 +35,6 @@
 		</div>
 		<section>
 			<!-- Buy Tech Section -->
-
-			<!-- HTML button -->
-			<div class="relative" style="width: 539px; height: 61px">
-				<div
-					class="inline-flex space-x-2 items-center justify-start px-4 py-1 bg-white rounded-lg"
-					style="width: 539px; height: 61px"
-				>
-					<p class="text-xl font-bold text-gray-800">{{ html }}</p>
-					<div
-						class="flex space-x-1 items-center justify-end w-28 h-full"
-					>
-						<div class="w-14 h-full">
-							<img
-								class="flex-1 h-full rounded-lg"
-								src="../assets/icons/logos/skill-icons_html.svg"
-							/>
-						</div>
-						<p class="text-xl font-bold text-gray-800">HTML</p>
-					</div>
-					<p class="w-1/3 text-xs text-gray-800">
-						Langage de balisage utilisé pour créer des pages Web.
-					</p>
-					<p class="text-xs text-gray-800">
-						Coût en Expérience : <br />{{ htmlPrice }}
-					</p>
-				</div>
-				<div class="w-11 h-16 absolute right-0 top-0">
-					<button
-						@click="addHtml"
-						class="flex items-center justify-center flex-1 h-full px-2 py-4 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-tr-lg rounded-br-lg"
-					>
-						<img
-							class="flex-1 h-full rounded-lg"
-							src="../assets/icons/basics/plus_logo.svg"
-						/>
-					</button>
-				</div>
-			</div>
-
-			<!-- CSS button -->
-
-			<div class="relative" style="width: 539px; height: 61px">
-				<div
-					class="inline-flex space-x-2 items-center justify-start px-4 py-1 bg-white rounded-lg"
-					style="width: 539px; height: 61px"
-				>
-					<p class="text-xl font-bold text-gray-800">{{ html }}</p>
-					<div
-						class="flex space-x-1 items-center justify-end w-28 h-full"
-					>
-						<div class="w-14 h-full">
-							<img
-								class="flex-1 h-full rounded-lg"
-								src="../assets/icons/logos/skill-icons_html.svg"
-							/>
-						</div>
-						<p class="text-xl font-bold text-gray-800">HTML</p>
-					</div>
-					<p class="w-1/3 text-xs text-gray-800">
-						Langage de balisage utilisé pour créer des pages Web.
-					</p>
-					<p class="text-xs text-gray-800">
-						Coût en Expérience : <br />{{ htmlPrice }}
-					</p>
-				</div>
-				<div class="w-11 h-16 absolute right-0 top-0">
-					<button
-						@click="addHtml"
-						class="flex items-center justify-center flex-1 h-full px-2 py-4 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-tr-lg rounded-br-lg"
-					>
-						<img
-							class="flex-1 h-full rounded-lg"
-							src="../assets/icons/basics/plus_logo.svg"
-						/>
-					</button>
-				</div>
-			</div>
-
 			<div>
 				<h2>Front-End</h2>
 				<button
@@ -186,19 +106,20 @@
 							<div
 								class="inline-flex flex-col items-start justify-start"
 							>
-								<p class="text-base text-gray-800">Prix : 1</p>
+								<p class="text-base text-gray-800">Prix: {{ htmlPrice }}</p>
 								<p class="text-base text-gray-800">
-									Quantité : 1
+									Quantité: {{ html }}
 								</p>
 							</div>
-							<div
+							<button
+							@click="addHtml"
 								class="flex items-center justify-center p-1.5 px-7 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-lg"
 							>
 								<img
 									class="flex-1 h-full rounded-lg"
 									src="../assets/icons/basics/plus_logo.svg"
 								/>
-							</div>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -804,6 +725,9 @@
 <script>
 export default {
 	name: "CodePage",
+	components: {
+		Popup,
+	},
 	data() {
 		return {
 			exp: 0,
@@ -829,6 +753,10 @@ export default {
 		},
 	},
 	methods: {
+		handleExpPopup(closePopup) {
+			this.exp += 1
+			this.saveToLocalStorage("exp", this.exp)
+		},
 		// Buttons mehtods
 		addExp() {
 			this.exp += this.html
