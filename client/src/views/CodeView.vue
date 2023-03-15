@@ -1,8 +1,10 @@
 <script setup>
 	import Popup from '../components/Popup.vue';
+	import TutoCode from "../components/TutoCode.vue";
 </script>
 <template>
 	<Popup :newComer="exp" @closePopup="handleExpPopup" />
+	<TutoCode :haveCss="css" :haveJs="js" />
 	<div
 		style="
 			display: flex;
@@ -727,6 +729,7 @@ export default {
 	name: "CodePage",
 	components: {
 		Popup,
+		TutoCode,
 	},
 	data() {
 		return {
