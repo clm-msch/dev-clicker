@@ -1,7 +1,8 @@
 <template>
 	<div>
+        <h1 class="font-bold text-xl">Test de l'achat multiple <i>(dégagez le passage y a rien a voir pour le moment ;D)</i></h1>
 		<button class="bg-green-500" @click="incrementCookies">
-			Cliquez ici pour ajouter un cookie
+			Cliquez ici pour ajouter un exp
 		</button>
 		<p>{{ cookiesFormatted }}</p>
 		<p>{{ cursors }} curseurs</p>

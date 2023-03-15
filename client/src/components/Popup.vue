@@ -27,7 +27,7 @@
 								</h3>
 								<div class="mt-2">
 									<p class="text-sm leading-5 text-gray-500">
-										Ceci est la v1.3 le jeu peu contenir des bugs mais merci beaucoup de participer aux test !
+										Ceci est la v1.3 le jeu peu contenir des bugs et une grande partie des fonctionnalités ne sont pas encore implémenter mais tous de même merci beaucoup de participer aux test !
                                         <br>
                                         <br>
                                         L'objectif de Devclicker est simple, tu va devoir devenir le meilleur développeur au monde et pour ça tu va apprendre puis mettre en pratique tes compétences.
