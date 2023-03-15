@@ -32,7 +32,7 @@ import { RouterLink, RouterView } from "vue-router"
 		<nav class="flex-1 h-0 overflow-y-auto">
 			<div class="px-2 space-y-1">
 				<h2 class="font-bold">Junior :</h2>
-				<RouterLink to="/code">
+				<RouterLink to="/">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md hover:bg-gradient"
@@ -54,7 +54,7 @@ import { RouterLink, RouterView } from "vue-router"
 					</a>
 				</RouterLink>
 
-				<RouterLink to="/">
+				<RouterLink to="/design">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -77,7 +77,7 @@ import { RouterLink, RouterView } from "vue-router"
 					</a>
 				</RouterLink>
 
-				<RouterLink to="/code">
+				<RouterLink to="/missions">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -100,9 +100,9 @@ import { RouterLink, RouterView } from "vue-router"
 				</RouterLink>
 				<!-- Junior -->
 
-                <!-- Senior -->
-                <h2 class="font-bold">Senior :</h2>
-				<RouterLink to="/code">
+				<!-- Senior -->
+				<h2 class="font-bold">Senior :</h2>
+				<RouterLink to="/soon">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -120,10 +120,10 @@ import { RouterLink, RouterView } from "vue-router"
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Missions</h3>
+						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-                <RouterLink to="/code">
+				<RouterLink to="/soon">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -141,10 +141,10 @@ import { RouterLink, RouterView } from "vue-router"
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Missions</h3>
+						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-                <RouterLink to="/code">
+				<RouterLink to="/soon">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -162,14 +162,14 @@ import { RouterLink, RouterView } from "vue-router"
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Missions</h3>
+						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-                <!-- Senior -->
+				<!-- Senior -->
 
-                <!-- Autre -->
-                <h2 class="font-bold">Autre :</h2>
-				<RouterLink to="/code">
+				<!-- Autre -->
+				<h2 class="font-bold">Autre :</h2>
+				<RouterLink to="/soon">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -187,10 +187,10 @@ import { RouterLink, RouterView } from "vue-router"
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Missions</h3>
+						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-                <RouterLink to="/code">
+				<RouterLink to="/soon">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -208,10 +208,10 @@ import { RouterLink, RouterView } from "vue-router"
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Missions</h3>
+						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-                <RouterLink to="/code">
+				<RouterLink to="/soon">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -229,10 +229,10 @@ import { RouterLink, RouterView } from "vue-router"
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Missions</h3>
+						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-                <RouterLink to="/code">
+				<RouterLink to="/soon">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -250,10 +250,10 @@ import { RouterLink, RouterView } from "vue-router"
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Missions</h3>
+						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-                <RouterLink to="/code">
+				<RouterLink to="/reglages">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -267,14 +267,14 @@ import { RouterLink, RouterView } from "vue-router"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<path
-								d="M9.375 9.375C9.375 9.07663 9.49353 8.79048 9.7045 8.5795C9.91548 8.36853 10.2016 8.25 10.5 8.25H13.5C13.7984 8.25 14.0845 8.36853 14.2955 8.5795C14.5065 8.79048 14.625 9.07663 14.625 9.375C14.625 9.67337 14.5065 9.95952 14.2955 10.1705C14.0845 10.3815 13.7984 10.5 13.5 10.5H10.5C10.2016 10.5 9.91548 10.3815 9.7045 10.1705C9.49353 9.95952 9.375 9.67337 9.375 9.375ZM22.125 6.375V18.375C22.125 18.8723 21.9275 19.3492 21.5758 19.7008C21.2242 20.0525 20.7473 20.25 20.25 20.25H3.75C3.25272 20.25 2.77581 20.0525 2.42417 19.7008C2.07254 19.3492 1.875 18.8723 1.875 18.375V6.375C1.875 5.87772 2.07254 5.40081 2.42417 5.04917C2.77581 4.69754 3.25272 4.5 3.75 4.5H7.125V3.75C7.125 3.05381 7.40156 2.38613 7.89384 1.89384C8.38613 1.40156 9.05381 1.125 9.75 1.125H14.25C14.9462 1.125 15.6139 1.40156 16.1062 1.89384C16.5984 2.38613 16.875 3.05381 16.875 3.75V4.5H20.25C20.7473 4.5 21.2242 4.69754 21.5758 5.04917C21.9275 5.40081 22.125 5.87772 22.125 6.375ZM9.375 4.5H14.625V3.75C14.625 3.65054 14.5855 3.55516 14.5152 3.48484C14.4448 3.41451 14.3495 3.375 14.25 3.375H9.75C9.65054 3.375 9.55516 3.41451 9.48483 3.48484C9.41451 3.55516 9.375 3.65054 9.375 3.75V4.5ZM4.125 6.75V10.0528C6.5527 11.3323 9.25575 12.0007 12 12C14.7444 12.0006 17.4475 11.3319 19.875 10.0519V6.75H4.125ZM19.875 18V12.5569C17.3997 13.6732 14.7153 14.2503 12 14.25C9.28463 14.2505 6.60022 13.6733 4.125 12.5569V18H19.875Z"
+								d="M21.6066 6.32808C21.5384 6.15941 21.4302 6.00981 21.2915 5.89211C21.1527 5.77441 20.9875 5.69212 20.8099 5.6523C20.6324 5.61248 20.4479 5.61631 20.2721 5.66347C20.0964 5.71063 19.9347 5.79972 19.801 5.92308L16.1653 9.2812L14.9766 9.0262L14.7188 7.83464L18.0741 4.19902C18.1975 4.06527 18.2865 3.9036 18.3337 3.72787C18.3809 3.55214 18.3847 3.36759 18.3449 3.19005C18.3051 3.01251 18.2228 2.84728 18.1051 2.70852C17.9874 2.56977 17.8378 2.46163 17.6691 2.39339C16.3775 1.87084 14.9611 1.73843 13.595 2.01256C12.229 2.28669 10.9732 2.95532 9.98327 3.93573C8.99329 4.91613 8.31248 6.16528 8.02508 7.5286C7.73768 8.89193 7.85631 10.3096 8.36629 11.6062L2.92223 16.3125C2.9016 16.3303 2.88098 16.349 2.86223 16.3687C2.2378 17.0034 1.88947 17.8591 1.89309 18.7494C1.89672 19.6398 2.25201 20.4926 2.88158 21.1222C3.51115 21.7517 4.36399 22.107 5.25432 22.1106C6.14466 22.1143 7.00036 21.7659 7.63504 21.1415C7.65473 21.1228 7.67348 21.1021 7.69129 21.0815L12.3938 15.6375C13.6911 16.1484 15.1098 16.2675 16.4741 15.98C17.8384 15.6925 19.0884 15.011 20.0692 14.0199C21.05 13.0289 21.7184 11.7719 21.9917 10.4046C22.2649 9.03736 22.1311 7.61998 21.6066 6.32808ZM15 13.875C14.1762 13.875 13.3658 13.6667 12.6441 13.2693C12.4183 13.1449 12.1567 13.1017 11.9029 13.1471C11.6491 13.1925 11.4187 13.3237 11.25 13.5187L6.01973 19.5703C5.80838 19.7816 5.52174 19.9003 5.22285 19.9003C4.92396 19.9003 4.63732 19.7816 4.42598 19.5703C4.21463 19.3589 4.0959 19.0723 4.0959 18.7734C4.0959 18.4745 4.21463 18.1879 4.42598 17.9765L10.4813 12.75C10.6766 12.5811 10.8079 12.3502 10.8531 12.0961C10.8983 11.8419 10.8548 11.5799 10.7297 11.354C10.3204 10.6117 10.1117 9.7754 10.1242 8.92776C10.1368 8.08012 10.3701 7.2504 10.8013 6.5205C11.2325 5.7906 11.8465 5.18575 12.5828 4.76565C13.3192 4.34555 14.1523 4.12472 15 4.12495H15.0835L12.6722 6.73777C12.5501 6.8702 12.4617 7.03 12.4142 7.20375C12.3667 7.37749 12.3616 7.5601 12.3994 7.7362L12.93 10.2065C12.9756 10.4183 13.0813 10.6124 13.2344 10.7656C13.3876 10.9187 13.5817 11.0244 13.7935 11.07L16.2638 11.6006C16.4399 11.6384 16.6225 11.6333 16.7962 11.5858C16.97 11.5383 17.1298 11.4498 17.2622 11.3278L19.875 8.91745V9.00089C19.8733 10.2932 19.3591 11.5321 18.4452 12.4458C17.5313 13.3595 16.2923 13.8735 15 13.875Z"
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Missions</h3>
+						<h3 class="font-bold">Réglages</h3>
 					</a>
 				</RouterLink>
-                <!-- Autre -->
+				<!-- Autre -->
 			</div>
 		</nav>
 	</div>
@@ -284,7 +284,8 @@ import { RouterLink, RouterView } from "vue-router"
 	<!-- Content -->
 	<div class="flex-1 overflow-y-auto ml-64">
 		<div class="px-4 py-6">
-			<h1 class="text-2xl font-semibold">Dashboard</h1>
+			<h1 class="text-2xl font-semibold text-red-500">APPLICATION EN COURS DE TEST</h1>
+            <h2>Beaucoup de fonctionnalités ne sont pas encore fonctionnelles.</h2>
 			<RouterView />
 		</div>
 	</div>
