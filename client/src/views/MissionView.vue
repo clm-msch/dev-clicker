@@ -143,7 +143,7 @@ export default {
 	color: white;
 	padding: 8px;
 	border-radius: 4px;
-	background: linear-gradient(90deg, #4f46e5 0%, #9d25b0 100%);
+	background:#242938;
 }
 
 .job-apply {

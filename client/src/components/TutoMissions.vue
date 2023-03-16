@@ -10,7 +10,7 @@
 	<div class="fixed z-2 top-4 right-4">
 		<div v-if="step5 && !visible" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
 			<p class="font-semibold mb-2">Tutoriel étape 5/5</p>
-			<p>Génial maintenant rempli ta mission pour recevoir la récompense (n'oublie de continuellement développer ton expérience pour finir ta mission le plus vite possible)</p>
+			<p>Génial maintenant rempli ta mission pour recevoir ton salaire et continue de développer tes compétences pour pouvoir postuler a des offres encore plus rémunératrice.</p>
 			<button
 				class="mt-4 bg-primary hover:bg-dark_grey text-white py-2 px-4 rounded"
 				@click="dismiss"

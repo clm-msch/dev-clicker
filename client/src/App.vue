@@ -309,15 +309,10 @@ import { RouterLink, RouterView } from "vue-router"
 	<!-- Content -->
 	<div class="flex-1 overflow-y-auto ml-64">
 		<div class="px-4 py-6">
-			<h1 class="text-2xl font-semibold text-red-500">
-				APPLICATION EN COURS DE TEST
-			</h1>
-			<h2>
-				Beaucoup de fonctionnalités ne sont pas encore fonctionnelles.
-			</h2>
 			<RouterView />
 		</div>
 	</div>
+	
 </template>
 
 <script>
