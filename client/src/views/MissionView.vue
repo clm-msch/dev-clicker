@@ -1,57 +1,114 @@
 <script setup>
-    import TutoMissions from '../components/TutoMissions.vue';
+import TutoMissions from "../components/TutoMissions.vue"
 </script>
 <template>
-    <h1>MISSION</h1>
-    <TutoMissions :haveMission="firstMission" />
+	<h1 class="font-bold">MISSION</h1>
+	<TutoMissions :haveMission="firstMission" />
 
+	<p>Compte en banque {{ money }} €</p>
 
-    <div class="inline-flex flex-col space-y-0.5 items-start justify-start p-2 bg-white rounded-lg" style="width: 422px; height: 187px;">
-    <div class="flex flex-col space-y-1.5 items-start justify-start" style="width: 406px; height: 120px;">
-        <div class="inline-flex space-x-1 items-start justify-start">
-            <p class="text-base font-semibold text-gray-800">Entreprise :</p>
-            <img class="w-20 h-full rounded-lg" src="../assets/icons/entreprise/unito.svg"/>
-        </div>
-        <p class="text-base text-gray-800">Salaire à la livraison : 100 €</p>
-        <p class="text-base text-gray-800" style="width: 406px; height: 40px;">Description : Besoin d’un petit site vitrine pour présenter notre nouveau produit de notre entreprise.</p>
-        <p class="text-base font-semibold text-gray-800">Minimum de compétence :</p>
-    </div>
-    <div class="inline-flex space-x-40 items-end justify-start pt-0.5" style="width: 440px; height: 120px;">
-        <div class="flex space-x-1 items-start justify-start pt-1.5">
-            <div class="flex items-start justify-start p-2.5 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-lg">
-                <p class="text-base font-medium text-purple-100">HTML</p>
-            </div>
-            <div class="flex items-start justify-start p-2.5 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-lg">
-                <p class="text-base font-medium text-purple-100">CSS</p>
-            </div>
-            <div class="flex items-start justify-start p-2.5 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-lg">
-                <p class="text-base font-medium text-purple-100">JavaScript</p>
-            </div>
-        </div>
-        <button @click="applyMission" class="flex items-center justify-center transform rotate-1 w-8 h-8 p-1 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-lg">
-            <img class="flex-1 h-full rounded-lg" src="../assets/icons/basics/plus_logo.svg"/>
-        </button>
-    </div>
-</div>
+	<div class="job-card" v-if="!ifJob1">
+		<div class="inline-flex gap-2">
+			<p class="font-bold">Entreprise :</p>
+			<img src="../assets/icons/entreprise/unito.svg" />
+		</div>
+		<div>
+			<p>
+				<span class="font-bold"> Salaire :</span
+				><span class="text-primary font-bold"> 10 € </span>par
+				avancement
+			</p>
+			<p>
+				<span class="font-bold">Description :</span>Réalisation d'un
+				site vitrine pour présenter
+				<br />
+				nos nouveau produit de grande qualité.
+			</p>
+
+			<p class="font-bold">Compétences requise :</p>
+		</div>
+		<div class="skill-list">
+			<p class="skill-tag">HTML</p>
+			<p class="skill-tag">CSS</p>
+			<p class="skill-tag">JavaScript</p>
+		</div>
+		<button @click="applyMission" class="inline-flex job-apply">
+			<p>Proposer ces services</p>
+			<img src="../assets/icons/basics/plus_logo.svg" alt="" />
+		</button>
+	</div>
+
+	<!-- Job Apply -->
+
+	<div v-if="ifJob1" class="job-card">
+		<div class="inline-flex gap-2">
+			<p class="font-bold">Entreprise :</p>
+			<img src="../assets/icons/entreprise/unito.svg" />
+		</div>
+		<div>
+			<p>
+				<span class="font-bold"> Salaire :</span
+				><span class="text-primary font-bold"> 10 € </span>par
+				avancement
+			</p>
+			<p>
+				<span class="font-bold">Description :</span>Réalisation d'un
+				site vitrine pour présenter
+				<br />
+				nos nouveau produit de grande qualité.
+			</p>
+		</div>
+		<p class="font-bold">Avancement du projet :</p>
+		<div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+			<div
+				ref="progress"
+				class="bar bg-primary text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+				:style="{ width: progressValue + '%' }"
+			>
+				{{ progressValue }}%
+			</div>
+		</div>
+		<button @click="incrementProgress" class="inline-flex job-apply">
+			<p>Développe</p>
+		</button>
+	</div>
 </template>
 
 <script>
 export default {
-    name: 'MissionView',
-    data() {
-        return {
-            firstMission: false,
-        }
-    },
-    components: {
-        TutoMissions,
-    },
-    methods: {
-        applyMission() {
-            this.firstMission = true
-            this.saveToLocalStorage('firstMission', this.firstMission)
-        },
-        saveToLocalStorage(key, value) {
+	name: "MissionView",
+	data() {
+		return {
+			firstMission: false,
+			progressValue: 5,
+			money: 0,
+			ifJs: true,
+			ifCss: true,
+			ifJob1: false,
+		}
+	},
+	components: {
+		TutoMissions,
+	},
+	methods: {
+		incrementProgress() {
+			if (this.progressValue >= 100) {
+				this.progressValue = 0
+				this.money += 10
+			} else {
+				this.progressValue += 5
+			}
+		},
+		applyMission() {
+            if (this.ifJs == true && this.ifCss == true) {
+                this.ifJob1 = true
+                this.firstMission = true
+			this.saveToLocalStorage("firstMission", this.firstMission)
+            }
+
+            
+		},
+		saveToLocalStorage(key, value) {
 			localStorage.setItem(key, JSON.stringify(value))
 			console.log("Data saved in local storage")
 		},
@@ -59,9 +116,48 @@ export default {
 			const value = localStorage.getItem(key)
 			return value ? JSON.parse(value) : null
 		},
-    },
-    mounted() {
-        this.firstMission = this.loadFromLocalStorage('firstMission')
-    },
+	},
+	mounted() {
+		this.firstMission = this.loadFromLocalStorage("firstMission")
+	},
 }
 </script>
+
+<style scoped>
+.job-card {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 8px;
+	padding: 8px;
+	gap: 6px;
+}
+
+.skill-list {
+	display: flex;
+	gap: 12px;
+}
+
+.skill-tag {
+	font-size: medium;
+	color: white;
+	padding: 8px;
+	border-radius: 4px;
+	background: linear-gradient(90deg, #4f46e5 0%, #9d25b0 100%);
+}
+
+.job-apply {
+	justify-content: center;
+	background: #4f46e5;
+	font-size: large;
+	font-weight: bold;
+	color: white;
+	padding: 8px;
+	border-radius: 4px;
+	gap: 4px;
+}
+
+.bar {
+	transition: width 0.1s ease-in-out;
+}
+</style>
