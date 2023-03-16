@@ -1,4 +1,4 @@
-![alt text](https://github.com/clm-msch/dev-clicker-v1/blob/master/src/assets/devclickerLogo.png "Logo Dev Clicker")
+![alt text](https://github.com/clm-msch/dev-clicker/blob/dev/client/public/devclicker.svg "Logo Dev Clicker")
 
 
 
