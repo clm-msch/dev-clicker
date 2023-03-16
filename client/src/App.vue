@@ -54,9 +54,9 @@ import { RouterLink, RouterView } from "vue-router"
 						<h3 class="font-bold">Code</h3>
 					</a>
 				</RouterLink>
-
+                <!-- v-if="haveJs" -->
 				<RouterLink
-					v-if="haveJs"
+                
 					to="/missions"
 					exact-active-class="active"
 				>
@@ -81,13 +81,8 @@ import { RouterLink, RouterView } from "vue-router"
 					</a>
 				</RouterLink>
 
-                <!-- <RouterLink
-					v-else="haveJs"
-					to="/missions"
-					exact-active-class="active"
-				> -->
-					<a
-                    v-else="haveJs"
+					<!-- <a
+                    v-if="!haveJs"
 						href="#" 
 						class="bg-gray-900 text-dark_grey flex items-center px-2 py-2 text-sm font-medium rounded-md"
 					>
@@ -104,10 +99,9 @@ import { RouterLink, RouterView } from "vue-router"
 							/>
 						</svg>
 						<h3 class="font-bold text-dark_grey">Missions</h3>
-					</a>
-				<!-- </RouterLink> -->
+					</a> -->
 
-				<RouterLink to="/design" exact-active-class="active">
+				<!-- <RouterLink to="/design" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -128,7 +122,7 @@ import { RouterLink, RouterView } from "vue-router"
 
 						<h3 class="font-bold">Design</h3>
 					</a>
-				</RouterLink>
+				</RouterLink> -->
 
 				<!-- Junior -->
 				<br />
@@ -331,14 +325,14 @@ import { RouterLink, RouterView } from "vue-router"
         name: "App",
         data() {
             return {
-                haveJs : null,
+                haveJs : false,
             };
         },
         computed : {
             haveJs() {
                 const value = localStorage.getItem('js');
                 return value ? JSON.parse(value) : null;
-                this.haveJs = value;
+                location.reload();
             }
         },
     };

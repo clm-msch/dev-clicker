@@ -823,7 +823,7 @@ export default {
 		loadCodeData() {
 			this.exp = this.loadFromLocalStorage("exp") || 0
 			this.expFormatted = this.loadFromLocalStorage("expFormatted") || 0
-			this.html = this.loadFromLocalStorage("html") || 2
+			this.html = this.loadFromLocalStorage("html") || 1
 			this.htmlPrice = this.loadFromLocalStorage("htmlPrice") || 100
 			this.css = this.loadFromLocalStorage("css") || 0
 			this.cssPrice = this.loadFromLocalStorage("cssPrice") || 100
