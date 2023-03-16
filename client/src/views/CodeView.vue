@@ -1,13 +1,70 @@
 <script setup>
-	import Popup from '../components/Popup.vue';
-	import TutoCode from "../components/TutoCode.vue";
+import Popup from "../components/Popup.vue"
+import TutoCode from "../components/TutoCode.vue"
 </script>
 <template>
 	<Popup :newComer="exp" @closePopup="handleExpPopup" />
 	<TutoCode :haveCss="css" :haveJs="js" />
+
+	<div class="skill-card">
+		<div class="inline-flex gap-4">
+			<img src="logos/skill-icons_html.svg" alt="" />
+			<div>
+				<strong class="text-xl">HTML</strong>
+				<p class="text-sm">ajoute +1 au clic</p>
+			</div>
+		</div>
+		<div>
+			<p>Langage de balisage utilisé pour créer des pages Web.</p>
+			<br>
+		</div>
+		<div class="inline-flex gap-16 ">
+			<div>
+				<p>Coût : {{ htmlPrice }} experience</p>
+				<p>Quantité : {{ html }}</p>
+			</div>
+			<div>
+				<button @click="addHtml" class="bg-primary p-2  pl-6 pr-6 rounded-lg">Aquérir</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="bg-white p-8 border-r-8">
+		<div class="inline-flex gap-4">
+			<img src="logos/skill-icons_html.svg" alt="" />
+			<div>
+				<strong class="text-xl">HTML</strong>
+				<p class="text-sm">ajoute +1 au clic</p>
+			</div>
+		</div>
+		<div>
+			<p>Langage de balisage utilisé pour créer des pages Web.</p>
+		</div>
+		<div class="inline-flex gap-16 ">
+			<div>
+				<p>Coût : {{ htmlPrice }} experience</p>
+				<p>Quantité : {{ html }}</p>
+			</div>
+			<div>
+				<button @click="addHtml">Aquérir</button>
+			</div>
+		</div>
+	</div> -->
+
+	
+
+	<!-- reset button -->
+	<button
+		@click="resetAll"
+		class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+	>
+		RESET
+	</button>
+	<!-- reset button -->
+
+	<!-- dev button -->
 	<div
 		style="
-			display: flex;
 			justify-content: center;
 			flex-direction: column;
 			flex-wrap: wrap;
@@ -15,6 +72,10 @@
 	>
 		<button
 			@click="addExp"
+			:class="{
+				animate__animated: isAnimated,
+				animate__headShake: isAnimated,
+			}"
 			class="inline-flex space-x-3 items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-indigo-600"
 		>
 			<p class="text-3xl font-bold text-gray-800">Développe</p>
@@ -35,34 +96,10 @@
 				</p>
 			</div>
 		</div>
-		<section>
-			<!-- Buy Tech Section -->
-			<div>
-				<h2>Front-End</h2>
-				<button
-					@click="addCss"
-					class="bg-green-500 font-bold py-2 px-4 rounded"
-				>
-					{{ css }} / CSS ({{ cssPrice }} Expérience)
-				</button>
-				<button
-					@click="addJS"
-					class="bg-green-500 font-bold py-2 px-4 rounded"
-				>
-					{{ js }} / JavaScript ({{ jsPrice }} Expérience)
-				</button>
-			</div>
-			<!-- Buy Tech Section -->
-			<button
-				@click="resetAll"
-				class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-			>
-				RESET
-			</button>
-		</section>
 	</div>
+	<!-- dev button -->
 
-	<!-- new button -->
+	<!-- skill button -->
 	<div
 		class="inline-flex space-x-8 items-start justify-start"
 		style="width: 1330px; height: 600px"
@@ -108,13 +145,15 @@
 							<div
 								class="inline-flex flex-col items-start justify-start"
 							>
-								<p class="text-base text-gray-800">Prix: {{ htmlPrice }}</p>
+								<p class="text-base text-gray-800">
+									Prix: {{ htmlPrice }}
+								</p>
 								<p class="text-base text-gray-800">
 									Quantité: {{ html }}
 								</p>
 							</div>
 							<button
-							@click="addHtml"
+								@click="addHtml"
 								class="flex items-center justify-center p-1.5 px-7 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-lg"
 							>
 								<img
@@ -144,7 +183,7 @@
 								JavaScript
 							</p>
 							<p class="text-xs text-gray-800">
-								ajoute +1 au clic
+								ajoute +10 au clic
 							</p>
 						</div>
 					</div>
@@ -161,19 +200,22 @@
 							<div
 								class="inline-flex flex-col items-start justify-start"
 							>
-								<p class="text-base text-gray-800">Prix : 1</p>
 								<p class="text-base text-gray-800">
-									Quantité : 1
+									Prix : {{ jsPrice }}
+								</p>
+								<p class="text-base text-gray-800">
+									Quantité : {{ js }}
 								</p>
 							</div>
-							<div
+							<button
+								@click="addJS"
 								class="flex items-center justify-center p-1.5 px-7 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-lg"
 							>
 								<img
 									class="flex-1 h-full rounded-lg"
 									src="../assets/icons/basics/plus_logo.svg"
 								/>
-							</div>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -215,7 +257,7 @@
 							>
 								<p class="text-base text-gray-800">Prix : 1</p>
 								<p class="text-base text-gray-800">
-									Quantité : 1
+									Quantité :
 								</p>
 							</div>
 							<div
@@ -250,7 +292,7 @@
 						>
 							<p class="text-xl font-bold text-gray-800">CSS</p>
 							<p class="text-xs text-gray-800">
-								ajoute +1 au clic
+								ajoute +1 par seconde
 							</p>
 						</div>
 					</div>
@@ -267,19 +309,22 @@
 							<div
 								class="inline-flex flex-col items-start justify-start"
 							>
-								<p class="text-base text-gray-800">Prix : 1</p>
 								<p class="text-base text-gray-800">
-									Quantité : 1
+									Prix : {{ cssPrice }}
+								</p>
+								<p class="text-base text-gray-800">
+									Quantité : {{ css }}
 								</p>
 							</div>
-							<div
+							<button
+								@click="addCss"
 								class="flex items-center justify-center p-1.5 px-7 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-lg"
 							>
 								<img
 									class="flex-1 h-full rounded-lg"
 									src="../assets/icons/basics/plus_logo.svg"
 								/>
-							</div>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -721,7 +766,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- new button -->
+	<!-- skill button -->
 </template>
 
 <script>
@@ -735,6 +780,8 @@ export default {
 		return {
 			exp: 0,
 			expSecond: 0,
+
+			isAnimated: false,
 			// Buy tech
 			html: 1,
 			htmlPrice: 100,
@@ -764,6 +811,11 @@ export default {
 		addExp() {
 			this.exp += this.html
 			this.exp += this.js
+
+			this.isAnimated = true
+			setTimeout(() => {
+				this.isAnimated = false
+			}, 500)
 			this.saveToLocalStorage("exp", this.exp)
 			this.saveToLocalStorage("html", this.html)
 		},
@@ -843,3 +895,14 @@ export default {
 	},
 }
 </script>
+
+<style scoped>
+.skill-card {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	padding: 8px;
+	border-radius: 8px;
+	background-color: white;
+}
+</style>
