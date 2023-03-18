@@ -19,11 +19,17 @@ body {
 }
 button {
 	/* cursor: url("custom_hand.svg") 'x:0' 'y:0', pointer; */
-	cursor: url("custom_cursor_white.svg"), auto;
+	/* cursor: url("custom_cursor_white.svg"), auto; */
+	cursor: url("custom_hand_white.svg"), auto;
 }
 
 a {
-	cursor: url("custom_cursor.svg"), auto;
+	/* cursor: url("custom_cursor.svg"), auto; */
+	cursor: url("custom_hand.svg"), auto;
+}
+
+.button-dev {
+	cursor: url("custom_hand.svg"), auto;
 }
 
 /* button {

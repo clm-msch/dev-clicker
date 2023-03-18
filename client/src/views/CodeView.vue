@@ -6,6 +6,150 @@ import TutoCode from "../components/TutoCode.vue"
 	<Popup :newComer="exp" @closePopup="handleExpPopup" />
 	<TutoCode :haveCss="css" :haveJs="js" />
 
+	<div
+		style="
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			background-color: white;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			border-radius: 8px;
+			display: inline-flex;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: flex-start;
+		"
+	>
+		<div
+			style="
+				width: 291px;
+				display: inline-flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+			"
+		>
+			<div style="width: 64px; height: 64px">
+				<img
+					style="width: 64px; height: 64px; border-radius: 8px"
+					src="https://via.placeholder.com/64x64"
+				/>
+			</div>
+			<div style="width: 8px" />
+			<div
+				style="
+					display: inline-flex;
+					flex-direction: column;
+					align-items: flex-start;
+					justify-content: flex-start;
+				"
+			>
+				<p
+					style="
+						font-size: 20px;
+						font-weight: 700;
+						line-height: 100%;
+						color: rgba(36, 41, 56, 1);
+					"
+				>
+					HTML
+				</p>
+				<p
+					style="
+						font-size: 12px;
+						line-height: 100%;
+						color: rgba(36, 41, 56, 1);
+					"
+				>
+					ajoute +1 au clic
+				</p>
+			</div>
+		</div>
+		<div style="height: 8px" />
+		<div
+			style="
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+			"
+		>
+			<p
+				style="
+					width: 240px;
+					height: 36px;
+					font-size: 10px;
+					line-height: 100%;
+					color: rgba(36, 41, 56, 1);
+				"
+			>
+				Langage de balisage utilisé pour créer des pages Web. Lorem
+				ipsum dolor sit amet consectetur adipisicing elit. Quas, vel
+				sequi quo beatae libero doloribus iste non ipsam itaque facere
+				veniam modi eveniet labore quos.
+			</p>
+			<div style="height: 16px" />
+			<div
+				style="
+					display: inline-flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: flex-start;
+				"
+			>
+				<div
+					style="
+						display: inline-flex;
+						flex-direction: column;
+						align-items: flex-start;
+						justify-content: flex-start;
+					"
+				>
+					<p
+						style="
+							font-size: 15px;
+							line-height: 100%;
+							color: rgba(36, 41, 56, 1);
+						"
+					>
+						Prix : 1
+					</p>
+					<p
+						style="
+							font-size: 15px;
+							line-height: 100%;
+							color: rgba(36, 41, 56, 1);
+						"
+					>
+						Quantité : 0000000 k
+					</p>
+				</div>
+				<div style="width: 124px" />
+				<div
+					style="
+						padding: 6px;
+						background-image: linear-gradient(
+							101deg,
+							rgba(83, 46.11, 230.56, 1),
+							rgba(38.25, 0, 191.25, 1)
+						);
+						border-radius: 8px;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: center;
+					"
+				>
+					<img
+						style="width: 26px; height: 26px; border-radius: 8px"
+						src="https://via.placeholder.com/26x26"
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="skill-card">
 		<div class="inline-flex gap-4">
 			<img src="logos/skill-icons_html.svg" alt="" />
@@ -16,15 +160,20 @@ import TutoCode from "../components/TutoCode.vue"
 		</div>
 		<div>
 			<p>Langage de balisage utilisé pour créer des pages Web.</p>
-			<br>
+			<br />
 		</div>
-		<div class="inline-flex gap-16 ">
+		<div class="inline-flex gap-16">
 			<div>
 				<p>Coût : {{ htmlPrice }} experience</p>
-				<p>Quantité : {{ html }}</p>
+				<p>Quantité : 233333333222222222222222222</p>
 			</div>
 			<div>
-				<button @click="addHtml" class="bg-primary p-2  pl-6 pr-6 rounded-lg">Aquérir</button>
+				<button
+					@click="addHtml"
+					class="bg-primary p-2 pl-6 pr-6 rounded-lg"
+				>
+					Aquérir
+				</button>
 			</div>
 		</div>
 	</div>
@@ -51,24 +200,19 @@ import TutoCode from "../components/TutoCode.vue"
 		</div>
 	</div> -->
 
-	
-
 	<!-- reset button -->
+	<h2>⚠️Tu peux tous recommencer si tu veux⚠️</h2>
 	<button
 		@click="resetAll"
 		class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 	>
-		RESET
+		🗑️ Resart
 	</button>
 	<!-- reset button -->
 
 	<!-- dev button -->
 	<div
-		style="
-			justify-content: center;
-			flex-direction: column;
-			flex-wrap: wrap;
-		"
+		style="justify-content: center; flex-direction: column; flex-wrap: wrap"
 	>
 		<button
 			@click="addExp"
@@ -76,7 +220,7 @@ import TutoCode from "../components/TutoCode.vue"
 				animate__animated: isAnimated,
 				animate__headShake: isAnimated,
 			}"
-			class="inline-flex space-x-3 items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-indigo-600"
+			class="inline-flex space-x-3 items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-indigo-600 button-dev"
 		>
 			<p class="text-3xl font-bold text-gray-800">Développe</p>
 			<img

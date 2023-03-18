@@ -27,10 +27,10 @@
 								</h3>
 								<div class="mt-2">
 									<p class="text-sm leading-5 text-gray-500">
-										Ceci est la v1.3 le jeu peu contenir des bugs et une grande partie des fonctionnalités ne sont pas encore implémenter mais tous de même merci beaucoup de participer aux test !
+										Ceci est la v1.3 le jeu peu contenir des bugs et une grande partie des fonctionnalités ne sont pas encore implémenter mais tous de même merci beaucoup de participer aux tests !
                                         <br>
                                         <br>
-                                        L'objectif de Devclicker est simple, tu va devoir devenir le meilleur développeur au monde et pour ça tu va apprendre puis mettre en pratique tes compétences.
+                                        Les choix de technologie dans le jeu sont pour le moment restreint mais elles seront élargit dans les prochaines versions.
 									</p>
 								</div>
 							</div>
@@ -82,8 +82,7 @@
 								</h3>
 								<div class="mt-2">
 									<p class="text-sm leading-5 text-gray-500">
-										Tu va commencer par apprendre à développer et monter en expérience pour pouvoir débloquer tes première missions.
-                                        Alors clique comme un dingue sur le bouton "Développer"
+										Ne t'en fait pas tu va sera guider pour le début tu aurais une petite fenetre en haut a droite. Bon développement !
 									</p>
 								</div>
 							</div>
