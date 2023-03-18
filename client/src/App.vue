@@ -300,6 +300,9 @@ import { RouterLink, RouterView } from "vue-router"
 						<h3 class="font-bold">Réglages</h3>
 					</a>
 				</RouterLink>
+
+
+				
 			</div>
 		</nav>
 	</div>

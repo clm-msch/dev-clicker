@@ -1,43 +1,5 @@
-<script setup>
-import Popup from "../components/Popup.vue"
-import TutoCode from "../components/TutoCode.vue"
-import BackSkill from "../components/BackSkill.vue"
-</script>
 <template>
-	<Popup :newComer="exp" @closePopup="handleExpPopup" />
-	<TutoCode :haveCss="css" :haveJs="js" />
-	<h1 class="text-xl">Bienvenue dans l'onglet code ici tu va pouvoir <br>	développer pour aquérir un maximum d'expérience : </h1>
-	<br>
-	<!-- dev button -->
-	<div class="inline-flex gap-8 justify-center align-middle">
-		<button
-			@click="addExp"
-			:class="{
-				animate__animated: isAnimated,
-				animate__headShake: isAnimated,
-			}"
-			class="inline-flex space-x-3 items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-indigo-600 button-dev"
-		>
-			<p class="text-3xl font-bold text-gray-800">Développe</p>
-			<img
-				class="w-1/5 h-10 rounded-lg"
-				src="../assets/icons/basics/brain_logo.svg"
-			/>
-		</button>
-
-
-		<div class="row-flex bg-white justify-center dev-button ">
-			<p class="text-xl">
-				Expérience : <strong>{{ expFormatted }}</strong>
-			</p>
-			<p class="text-xl">
-				<strong>{{ expSecond }}</strong> Expérience par seconde
-			</p>
-		</div>
-	</div>
-	<!-- dev button -->
-	<!-- Skill Card -->
-	<div class="inline-flex gap-4 pt-4 flex-wrap justify-start">
+	<!-- <div class="inline-flex gap-4 pt-4 flex-wrap justify-center">
 		<div class="skill-card">
 			<div class="inline-flex gap-4">
 				<img src="logos/skill-icons_html.svg" alt="" />
@@ -224,65 +186,35 @@ import BackSkill from "../components/BackSkill.vue"
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Skill Card -->
-	<br>
-	<br>
-	<!-- reset button -->
-	<h2>Tu peux tous recommencer si tu veux :</h2>
-	<button
-		@click="resetAll"
-		class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-	>
-		🗑️ Resart
-	</button>
-	<!-- reset button -->
+	</div> -->
 </template>
 
 <script>
 export default {
-	name: "CodePage",
-	components: {
-		Popup,
-		TutoCode,
-		BackSkill,
-	},
 	data() {
 		return {
-			exp: 0,
-			expSecond: 0,
-
-			isAnimated: false,
-			// Buy tech
+			exp: null,
 			html: 1,
 			css: 0,
 			js: 0,
 			tailwind: 0,
 			vuejs: 0,
 			vite: 0,
-			htmlPrice: 100,
-			cssPrice: 200,
+			htmlPrice: 10,
+			cssPrice: 100,
 			jsPrice: 1000,
 			tailwindPrice: 3000,
 			vuejsPrice: 10000,
 			vitePrice: 100000,
 		}
 	},
+	props: {
+		exp: {
+			type: String,
+			required: true,
+		},
+	},
 	computed: {
-		expFormatted() {
-			return this.exp.toLocaleString(undefined, {
-				minimumFractionDigits: 0,
-				maximumFractionDigits: 4,
-				notation: "compact",
-			})
-		},
-		expSecondFormatted() {
-			return this.expSecond.toLocaleString(undefined, {
-				minimumFractionDigits: 0,
-				maximumFractionDigits: 4,
-				notation: "compact",
-			})
-		},
 		htmlFormatted() {
 			return this.htmlPrice.toLocaleString(undefined, {
 				minimumFractionDigits: 0,
@@ -326,116 +258,10 @@ export default {
 			})
 		},
 	},
-	methods: {
-		handleExpPopup(closePopup) {
-			this.exp += 1
-			// this.saveToLocalStorage("exp", this.exp)
-		},
-		// Buttons mehtods
-		addExp() {
-			this.exp += this.html
-			this.exp += this.js
-
-			this.isAnimated = true
-			setTimeout(() => {
-				this.isAnimated = false
-			}, 500)
-		},
-		addHtml() {
-			if (this.exp >= this.htmlPrice) {
-				this.exp -= this.htmlPrice
-				this.html += 1
-				this.htmlPrice += 100
-			}
-		},
-		addCss() {
-			if (this.exp >= this.cssPrice) {
-				this.exp -= this.cssPrice
-				this.css += 1
-				this.cssPrice += 100
-				this.expSecond += this.css
-				this.saveToLocalStorage("exp", this.exp)
-				this.saveToLocalStorage("css", this.css)
-				this.saveToLocalStorage("cssPrice", this.cssPrice)
-				this.expSecondFormatted("expSecond", this.expSecond)
-			}
-		},
-		addJs() {
-			if (this.exp >= this.jsPrice) {
-				this.exp -= this.jsPrice
-				this.js += 10
-				this.jsPrice *= 2
-				this.saveToLocalStorage("exp", this.exp)
-				this.saveToLocalStorage("js", this.js)
-				this.saveToLocalStorage("jsPrice", this.jsPrice)
-				location.reload()
-			}
-		},
-
-		resetAll() {
-			if (
-				confirm("Voulez-vous vraiment supprimer toutes les données ?")
-			) {
-				this.css = 0
-				this.exp = 0
-				this.expSecond = 0
-				this.html = 1
-				localStorage.clear()
-				location.reload()
-			}
-		},
-
-		// Local storage methods
-		saveToLocalStorage(key, value) {
-			localStorage.setItem(key, JSON.stringify(value))
-			console.log("Data saved in local storage")
-		},
-		loadFromLocalStorage(key) {
-			const value = localStorage.getItem(key)
-			return value ? JSON.parse(value) : null
-		},
-		loadCodeData() {
-			this.exp = this.loadFromLocalStorage("exp") || 0
-			this.expSecond = this.loadFromLocalStorage("expSecond") || 0
-			this.html = this.loadFromLocalStorage("html") || 1
-			this.htmlPrice = this.loadFromLocalStorage("htmlPrice") || 100
-			this.css = this.loadFromLocalStorage("css") || 0
-			this.js = this.loadFromLocalStorage("js") || 0
-		},
-	},
-	created() {
-		setInterval(() => {
-			this.exp += this.css
-			this.saveToLocalStorage("css", this.css)
-			this.saveToLocalStorage("exp", this.exp)
-			this.saveToLocalStorage("expFormatted", this.expFormatted)
-			this.saveToLocalStorage("expSecond", this.expSecond)
-			this.saveToLocalStorage("expSecondFormatted", this.expSecondFormatted)
-			this.saveToLocalStorage("html", this.html)
-			this.saveToLocalStorage("htmlPrice", this.htmlPrice)
-			this.saveToLocalStorage("htmlFormatted", this.htmlFormatted)
-			this.saveToLocalStorage("css", this.css)
-			this.saveToLocalStorage("cssPrice", this.cssPrice)
-			this.saveToLocalStorage("cssFormatted", this.cssFormatted)
-			this.saveToLocalStorage("js", this.js)
-			this.saveToLocalStorage("jsPrice", this.jsPrice)
-			this.saveToLocalStorage("jsFormatted", this.jsFormatted)
-		}, 1000)
-	},
-	mounted() {
-		this.loadCodeData()
-	},
 }
 </script>
 
 <style scoped>
-.dev-button {
-	padding: 25px;
-	padding-left: 68px;
-	padding-right: 68px;
-	border-radius: 8px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 .skill-card {
 	background-color: white;
 	padding: 8px;
