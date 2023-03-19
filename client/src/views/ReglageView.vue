@@ -18,6 +18,9 @@ export default {
 		resetData() {
 			localStorage.clear()
 			window.location.reload()
+
+
+
 		},
 	},
 }

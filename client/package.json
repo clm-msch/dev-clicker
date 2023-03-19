@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "firebase": "^9.18.0",
     "jsdom": "^21.1.1",
     "pinia": "^2.0.33",
     "vue": "^3.2.45",
