@@ -1,5 +1,24 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router"
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { ref } from "vue"
+const userId = ref("")
+const userMail = ref("")
+const signInWhithGoogle = () => {
+	const provider = new GoogleAuthProvider()
+	signInWithPopup(getAuth(), provider)
+		.then((result) => {
+			console.log("Inscription réussie !")
+			console.log(result.user)
+			console.log(result.user.uid)
+			userId.value = result.user.uid
+			userMail.value = result.user.email
+		})
+		.catch((error) => {
+			console.log(error.code)
+			alert(error.message)
+		})
+}
 </script>
 
 <template>
@@ -54,12 +73,8 @@ import { RouterLink, RouterView } from "vue-router"
 						<h3 class="font-bold">Code</h3>
 					</a>
 				</RouterLink>
-                <!-- v-if="haveJs" -->
-				<RouterLink
-                
-					to="/missions"
-					exact-active-class="active"
-				>
+				<!-- v-if="haveJs" -->
+				<RouterLink to="/missions" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -81,7 +96,7 @@ import { RouterLink, RouterView } from "vue-router"
 					</a>
 				</RouterLink>
 
-					<!-- <a
+				<!-- <a
                     v-if="!haveJs"
 						href="#" 
 						class="bg-gray-900 text-dark_grey flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -301,8 +316,11 @@ import { RouterLink, RouterView } from "vue-router"
 					</a>
 				</RouterLink>
 
-
-				
+				<p>
+					<button @click="signInWhithGoogle">
+						Inscription avec Google
+					</button>
+				</p>
 			</div>
 		</nav>
 	</div>
@@ -315,24 +333,22 @@ import { RouterLink, RouterView } from "vue-router"
 			<RouterView />
 		</div>
 	</div>
-	
 </template>
 
 <script>
-    export default {
-        name: "App",
-        data() {
-            return {
-                haveJs : false,
-            };
-        },
-        computed : {
-            haveJs() {
-                const value = localStorage.getItem('js');
-                return value ? JSON.parse(value) : null;
-                location.reload();
-            }
-        },
-    };
+export default {
+	name: "App",
+	data() {
+		return {
+			haveJs: false,
+		}
+	},
+	computed: {
+		haveJs() {
+			const value = localStorage.getItem("js")
+			return value ? JSON.parse(value) : null
+			window.location.reload()
+		},
+	},
+}
 </script>
-

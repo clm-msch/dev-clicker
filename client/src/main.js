@@ -8,6 +8,10 @@ import './assets/main.css'
 import { createPinia } from 'pinia'
 import { useStore } from './stores/store.js'
 
+import { initializeApp } from "firebase/app";
+import firebaseConfig from './firebaseConfig'
+
+initializeApp(firebaseConfig)
 const app = createApp(App)
 
 app.use(createPinia())
