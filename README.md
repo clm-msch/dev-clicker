@@ -11,5 +11,10 @@ How to launch the projet :
 
 ```bash
 npm install
+```
+
+add a firebase config file in the client folder with the name firebaseConfig.js with your firebase config.
+
+```bash
 npm run dev
 ```
