@@ -18,13 +18,13 @@
                 <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 "></div>
                 <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">26 Mars 2023</time>
                 <h3 class="text-lg font-semibold text-gray-900 ">Money Update v1.4</h3>
-                <p class="text-base font-normal text-gray-500 ">Ajout de la fonctionnalité du portefeuille et de l'investissement. Page des stats et des succès.</p>
+                <p class="text-base font-normal text-gray-500 ">Ajout de la fonctionnalité du portefeuille et de l'investissement. Possibilité de se connecter/s'inscire avec Google Auth et début d'un back avec avec Firestore</p>
             </li>
             <li class="ml-4">
                 <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 "></div>
                 <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Début Avril 2023</time>
                 <h3 class="text-lg font-semibold text-gray-900 ">Business Update 1.5</h3>
-                <p class="text-base font-normal text-gray-500 ">Ajout de tout le volet entreprise/start-up. Mise en place de plus de choix de technologie.</p>
+                <p class="text-base font-normal text-gray-500 ">Ajout de tout le volet entreprise/start-up. Mise en place de plus de choix de technologie. Page des stats et des succès.</p>
             </li>
             <br>
             <li class="ml-4">

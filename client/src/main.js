@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from './App4.vue'
 import router from './router'
 
 import 'animate.css'

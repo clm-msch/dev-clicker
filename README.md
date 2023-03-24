@@ -6,8 +6,7 @@
 
 ### 🚧 Under construction, does not work completely 🚧
 
-
-How to launch the projet : 
+How to launch the projet :
 
 ```bash
 npm install

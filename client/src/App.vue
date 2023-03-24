@@ -1,24 +1,24 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router"
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
-import { ref } from "vue"
-const userId = ref("")
-const userMail = ref("")
-const signInWhithGoogle = () => {
-	const provider = new GoogleAuthProvider()
-	signInWithPopup(getAuth(), provider)
-		.then((result) => {
-			console.log("Inscription réussie !")
-			console.log(result.user)
-			console.log(result.user.uid)
-			userId.value = result.user.uid
-			userMail.value = result.user.email
-		})
-		.catch((error) => {
-			console.log(error.code)
-			alert(error.message)
-		})
-}
+// import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+// import { ref } from "vue"
+// const userId = ref("")
+// const userMail = ref("")
+// const signInWhithGoogle = () => {
+// 	const provider = new GoogleAuthProvider()
+// 	signInWithPopup(getAuth(), provider)
+// 		.then((result) => {
+// 			console.log("Inscription réussie !")
+// 			console.log(result.user)
+// 			console.log(result.user.uid)
+// 			userId.value = result.user.uid
+// 			userMail.value = result.user.email
+// 		})
+// 		.catch((error) => {
+// 			console.log(error.code)
+// 			alert(error.message)
+// 		})
+// }
 </script>
 
 <template>
@@ -315,12 +315,6 @@ const signInWhithGoogle = () => {
 						<h3 class="font-bold">Réglages</h3>
 					</a>
 				</RouterLink>
-
-				<p>
-					<button @click="signInWhithGoogle">
-						Inscription avec Google
-					</button>
-				</p>
 			</div>
 		</nav>
 	</div>
