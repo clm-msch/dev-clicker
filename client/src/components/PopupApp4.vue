@@ -47,7 +47,7 @@
 							class="flex w-full rounded-md shadow-sm sm:w-auto"
 						>
 							<button
-              @click="signInWhithGoogle"
+								@click="signInWhithGoogle"
 								type="button"
 								class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-primary text-base leading-6 font-medium text-white shadow-sm hover:bg-dark_grey transition ease-in-out duration-150 sm:text-sm sm:leading-5"
 							>
@@ -59,7 +59,9 @@
 			</div>
 		</div>
 	</div>
-
+	connection info :
+	{{ userData.userId }}
+	{{ userData.userMail }}
 	<!-- <div>
 		<div v-if="showPopup1 && popup1" class="fixed z-10 inset-0 overflow-y-auto"> -->
 	<!-- <div v-if="expData.count == 0" class="fixed z-10 inset-0 overflow-y-auto"></div>
@@ -170,14 +172,20 @@
 			</div>
 		</div> -->
 </template>
-<script setup>
-import { inject, ref, provide, reactive } from "vue"
+<!-- <script setup>
+import { inject, ref, provide, reactive, watch, onMounted } from "vue"
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 const expData = inject("expData")
 
+const userData = reactive({
+	userId: "",
+	userMail: "",
+	isLogged: false,
+})
+provide("userData", userData)
 
-const userId = ref("")
-const userMail = ref("")
+// const userId = ref("")
+// const userEmail = ref("")
 
 // Connexion avec Google
 const signInWhithGoogle = () => {
@@ -185,15 +193,79 @@ const signInWhithGoogle = () => {
 	signInWithPopup(getAuth(), provider)
 		.then((result) => {
 			console.log("Inscription réussie !")
-			console.log(result.user)
-			console.log(result.user.uid)
-			userId.value = result.user.uid
-			userMail.value = result.user.email
-      expData.count = 1
+			// console.log(result.user)
+			// console.log(result.user.uid)
+			// userId.value = result.user.uid
+			// userMail.value = result.user.email
+			userData.userId = result.user.uid
+			userData.userMail = result.user.email
+			userData.isLogged = true
+			expData.count = 1
+		})
+		.catch((error) => {
+			console.log(error.code)
+		})
 
+	watch(userData, () => {
+		localStorage.setItem("userData", JSON.stringify(userData))
+	})
+	onMounted(() => {
+		const userDataStorage = localStorage.getItem("userData")
+		if (userDataStorage) {
+			Object.assign(userData, JSON.parse(userDataStorage))
+		}
+		localStorage.setItem("userData", JSON.stringify(userData))
+	})
+}
+</script> -->
+
+<script setup>
+import { inject, ref, provide, reactive, watch, onMounted } from "vue"
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+
+const expData = inject("expData")
+
+const userData = reactive({
+	userId: "",
+	userMail: "",
+	isLogged: false,
+})
+provide("userData", userData)
+
+// Récupérer les données utilisateur depuis le local storage
+const getUserDataFromLocalStorage = () => {
+  const userDataStorage = localStorage.getItem("userData")
+  if (userDataStorage) {
+    const storedUserData = JSON.parse(userDataStorage)
+    userData.userId = storedUserData.userId
+    userData.userMail = storedUserData.userMail
+    userData.isLogged = storedUserData.isLogged
+  }
+}
+
+// Connexion avec Google
+const signInWhithGoogle = () => {
+	const provider = new GoogleAuthProvider()
+	signInWithPopup(getAuth(), provider)
+		.then((result) => {
+			console.log("Inscription réussie !")
+			userData.userId = result.user.uid
+			userData.userMail = result.user.email
+			userData.isLogged = true
+			expData.count = 1
 		})
 		.catch((error) => {
 			console.log(error.code)
 		})
 }
+
+// Sauvegarder les données utilisateur dans le local storage lorsqu'elles changent
+watch(userData, () => {
+	localStorage.setItem("userData", JSON.stringify(userData))
+})
+
+// Récupérer les données utilisateur depuis le local storage lors de la montée de composant
+onMounted(() => {
+	getUserDataFromLocalStorage()
+})
 </script>

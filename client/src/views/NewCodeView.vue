@@ -274,7 +274,7 @@
 <script setup>
 import Test1Comp from "../components/Test1App4.vue";
 import Popup from "../components/PopupApp4.vue"
-import { reactive, ref, watch, onMounted, provide } from "vue"
+import { reactive, watch, onMounted, provide } from "vue"
     const expData = reactive({
         count: 0,
         amount: 1,
@@ -287,6 +287,7 @@ import { reactive, ref, watch, onMounted, provide } from "vue"
         vitePrice: 100000,
     })
     provide("expData", expData)
+
 
     const addExp = (amount) => {
         console.log(amount)
@@ -348,8 +349,7 @@ import { reactive, ref, watch, onMounted, provide } from "vue"
         if (expDataStorage) {
             Object.assign(expData, JSON.parse(expDataStorage))
         }
-        localStorage.setItem("expData", JSON.stringify(expData))*
-        // i want to css add an amount per second
+        localStorage.setItem("expData", JSON.stringify(expData))
         setInterval(() => {
             expData.count += expData.amountSec
         }, 1000)
