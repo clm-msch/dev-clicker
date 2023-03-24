@@ -31,9 +31,14 @@ const router = createRouter({
     },
     {
       path: '/reglages',
-      name: 'réglages',
-      component: () => import('../views/ReglageView.vue')
+      name: 'reglages',
+      component: () => import('../views/NewCodeView.vue')
     },
+    // {
+    //   path: '/reglages',
+    //   name: 'réglages',
+    //   component: () => import('../views/ReglageView.vue')
+    // },
   ]
 })
 export default router
