@@ -10,6 +10,10 @@
 	<div class="inline-flex gap-8 justify-center align-middle">
 		<button
     @click="addExp(expData.amount)"
+		:class="{
+			animate__animated: expData.isAnimated,
+				animate__headShake: expData.isAnimated,
+			}"	
 			class="inline-flex space-x-3 items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-indigo-600 button-dev"
 		>
 			<p class="text-3xl font-bold text-gray-800">Développe</p>
@@ -234,7 +238,7 @@
 					
 				<div>
 					<strong class="text-xl">Vite.js</strong>
-					<p class="text-sm">ajoute +5000 par seconde</p>
+					<p class="text-sm">ajoute +5000 par clic</p>
 				</div>
 			</div>
 			<div>
@@ -276,7 +280,7 @@ import Test1Comp from "../components/Test1App4.vue";
 import Popup from "../components/PopupApp4.vue"
 import { reactive, watch, onMounted, provide } from "vue"
     const expData = reactive({
-        count: 0,
+        count: -1,
         amount: 1,
         amountSec: 0,
         htmlPrice: 10,
@@ -285,13 +289,19 @@ import { reactive, watch, onMounted, provide } from "vue"
         tailwindPrice: 5000,
         vuePrice: 10000,
         vitePrice: 100000,
+				isAnimated: false
     })
     provide("expData", expData)
 
+		// const isAnimated = false
 
     const addExp = (amount) => {
         console.log(amount)
         expData.count += amount
+				expData.isAnimated = true
+			setTimeout(() => {
+			expData.isAnimated = false
+			}, 500)
     }
     const resetLocal = () => {
         localStorage.clear()
