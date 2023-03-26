@@ -15,9 +15,9 @@ import TutoCode from "../components/TutoCode.vue"
 		<button
 			@click="addExp"
 			:class="{
-				animate__animated: isAnimated,
+			animate__animated: isAnimated,
 				animate__headShake: isAnimated,
-			}"
+			}"	
 			class="inline-flex space-x-3 items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-indigo-600 button-dev"
 		>
 			<p class="text-3xl font-bold text-gray-800">Développe</p>
