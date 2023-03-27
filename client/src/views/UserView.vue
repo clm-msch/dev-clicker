@@ -1,10 +1,20 @@
 <template>
     <button @click="signInWhithGoogle">Connexion avec google</button>
+		
+		<h3><strong>{{ data.money }}</strong></h3>
+		<button @click="data.decreaseMoney(5)"> - </button>
+		<button @click="data.increaseMoney(5)"> + </button>
 </template>
 
 <script setup>
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
-import { ref, onMounted } from "vue"
+import { ref } from "vue"
+
+
+import { useDataStore } from '..//stores/data'
+const data = useDataStore()
+
+
 const userId = ref("")
 const userMail = ref("")
 
@@ -22,6 +32,7 @@ const signInWhithGoogle = () => {
 			console.log(error.code)
 		})
 }
+
 </script>
 
 <style scoped>
