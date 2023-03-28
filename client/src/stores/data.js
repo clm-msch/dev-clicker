@@ -5,7 +5,7 @@ export const useDataStore = defineStore({
     state: () => ({
         // General data
         exp: -1,
-        money: 0,
+        money: 100000,
         // Mission data
             progressValue1: 0,
             progressValue2: 0,
@@ -18,8 +18,18 @@ export const useDataStore = defineStore({
             ifJob2: false,
             ifJob3: false,
             ifJob4: false,
-        // Company data
+        // Invest data
+            UTOstock: 0,
+            UTOprice: 20,
+            MRSstock: 0,
+            MRSprice: 40,
+            CRAstock: 0,
+            CRAprice: 60,
+            DWRKstock: 0,
+            DWRKprice: 25,
         companyName : "Entreprise"
+
+        
     }),
     actions: {
         increaseMoney(amount) {
@@ -102,6 +112,75 @@ export const useDataStore = defineStore({
                     }
                 }, 1000)
             }
+        },
+
+        // Invest actions
+        buyUTO() {
+            if (this.money >= this.UTOprice) {
+                this.money -= this.UTOprice
+                this.UTOstock += 1
+            }
+        },
+        buyMRS() {
+            if (this.money >= this.MRSprice) {
+                this.money -= this.MRSprice
+                this.MRSstock += 1
+            }
+        },
+        buyCRA() {
+            if (this.money >= this.CRAprice) {
+                this.money -= this.CRAprice
+                this.CRAstock += 1
+            }
+        },
+        buyDWRK() {
+            if (this.money >= this.DWRKprice) {
+                this.money -= this.DWRKprice
+                this.DWRKstock += 1
+            }
+        },
+        sellAllStock() {
+            this.money += this.UTOstock * this.UTOprice
+            this.money += this.MRSstock * this.MRSprice
+            this.money += this.CRAstock * this.CRAprice
+            this.money += this.DWRKstock * this.DWRKprice
+            this.UTOstock = 0
+            this.MRSstock = 0
+            this.CRAstock = 0
+            this.DWRKstock = 0
+        },
+        sellUTO() {
+            this.money += this.UTOstock * this.UTOprice
+            this.UTOstock = 0
+        },
+        sellMRS() {
+            this.money += this.MRSstock * this.MRSprice
+            this.MRSstock = 0
+        },
+        sellCRA() {
+            this.money += this.CRAstock * this.CRAprice
+            this.CRAstock = 0
+        },
+        sellDWRK() {
+            this.money += this.DWRKstock * this.DWRKprice
+            this.DWRKstock = 0
+        }
+    },
+    getters: {
+        totalStock() {
+            return this.UTOstock + this.MRSstock + this.CRAstock + this.DWRKstock
+        },
+        totalCRA() {
+            return this.CRAstock * this.CRAprice
+        },
+        totalMRS() {
+            return this.MRSstock * this.MRSprice
+        },
+        totalUTO() {
+            return this.UTOstock * this.UTOprice
+        },
+        totalDWRK() {
+            return this.DWRKstock * this.DWRKprice
         },
     },
     persist: true,

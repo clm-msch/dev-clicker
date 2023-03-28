@@ -257,16 +257,15 @@ const data = useDataStore()
 					</a>
 				</RouterLink>
 			</div>
-			<br />
-			<div class="bg-white p-4">				
-				<p class="text-primary font-bold">
-					Expérience : {{ data.exp }} exp
-				</p>
-				<p class="text-primary font-bold">
-					Argent : {{ data.money }} €
-				</p>
-			</div>
 		</nav>
+		<div class="bg-white p-4 m-3 rounded-md">				
+			<p class="text-primary font-bold">
+				Expérience : {{ data.exp }} exp
+			</p>
+			<p class="text-primary font-bold">
+				Argent : {{ data.money }} €
+			</p>
+		</div>
 	</div>
 
 	<!-- SideBar -->
