@@ -16,7 +16,7 @@
             </li>
             <li class="mb-10 ml-4">
                 <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 "></div>
-                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">26 Mars 2023</time>
+                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">31 Mars 2023</time>
                 <h3 class="text-lg font-semibold text-gray-900 ">Money Update v1.4</h3>
                 <p class="text-base font-normal text-gray-500 ">Ajout de la fonctionnalité du portefeuille et de l'investissement. Possibilité de se connecter/s'inscire avec Google Auth et début d'un back avec avec Firestore</p>
             </li>

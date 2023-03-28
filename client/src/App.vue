@@ -45,7 +45,7 @@ import { RouterLink, RouterView } from "vue-router"
 					/>
 				</svg>
 			</span>
-			<p>v1.3</p>
+			<p>v1.4</p>
 		</div>
 
 		<!-- Junior -->
@@ -231,7 +231,7 @@ import { RouterLink, RouterView } from "vue-router"
 						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-				<RouterLink to="/soon">
+				<RouterLink to="/achivements">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -249,7 +249,7 @@ import { RouterLink, RouterView } from "vue-router"
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Coming Soon</h3>
+						<h3 class="font-bold">Récompense</h3>
 					</a>
 				</RouterLink>
 				<RouterLink to="/user" exact-active-class="active">

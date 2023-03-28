@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: '/missions',
       name: 'missions',
-      component: () => import('../views/MissionView.vue')
+      component: () => import('../views/MissionView-copy.vue')
     },
     {
       path: '/soon',
