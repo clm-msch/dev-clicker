@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import CodeView from '../views/CodeView.vue'
+import CodeView from '../views/NewCodeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +20,11 @@ const router = createRouter({
       component: () => import('../views/MissionView-copy.vue')
     },
     {
+      path: '/invest',
+      name: 'invest',
+      component: () => import('../views/InvestView.vue')
+    },
+    {
       path: '/soon',
       name: 'soon',
       component: () => import('../views/SoonView.vue')
@@ -37,7 +42,7 @@ const router = createRouter({
     {
       path: '/reglages',
       name: 'reglages',
-      component: () => import('../views/NewCodeView.vue')
+      component: () => import('../views/InvestView.vue')
     },
     // {
     //   path: '/reglages',

@@ -40,8 +40,12 @@ a {
 body {
 	font-family: "Urbanist", sans-serif;
 	background-color: #e9eaff;
+
 }
 
+canvas {
+	cursor: url("custom_cursor.svg"), auto;
+}
 /* Style pour le contenu de la navbar */
 nav a {
 	transition: background-color 0.2s ease-in-out;
@@ -90,4 +94,18 @@ a:hover .noneSvg path {
 /* Style pour le contenu principal */
 p {
 	line-height: 1.5;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #532ee7;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e2e2e2;
+  border-radius: 6px;
 }

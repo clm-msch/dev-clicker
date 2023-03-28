@@ -4,33 +4,101 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        exp: 0,
-        money: 5,
+        exp: -1,
+        money: 0,
         // Mission data
-        progressValue: 0,
-        autoJob: false,
+            progressValue1: 0,
+            progressValue2: 0,
+            progressValue3: 0,
+            autoJob1: false,
+            autoJob2: false,
+            autoJob3: false,
+            autoJob4: false,
+            ifJob1: false,
+            ifJob2: false,
+            ifJob3: false,
+            ifJob4: false,
+        // Company data
+        companyName : "Entreprise"
     }),
     actions: {
         increaseMoney(amount) {
             this.money += amount
         },
 
-        increaseJobProgress(amount, reward) {
-            this.autoJob = true
-            console.log(this.autoJob)
-            if (this.progressValue >= 100) {
-                this.progressValue = 0
+        // Job actions
+        increaseJobProgress1(amount, reward) {
+            this.autoJob1 = true
+            if (this.progressValue1 >= 100) {
+                this.progressValue1 = 0
                 this.money += reward
             } else {
-                this.progressValue += amount
+                this.progressValue1 += amount
             }
-            if (this.autoJob == true && !this.jobInterval) { 
-                this.jobInterval = setInterval(() => {
-                    if (this.progressValue >= 100) {
-                        this.progressValue = 0
+            if (this.autoJob1 == true && !this.jobInterval1) { 
+                this.jobInterval1 = setInterval(() => {
+                    if (this.progressValue1 >= 100) {
+                        this.progressValue1 = 0
                         this.money += reward
                     } else {
-                        this.progressValue += amount
+                        this.progressValue1 += amount
+                    }
+                }, 1000)
+            }
+        },
+        increaseJobProgress2(amount, reward) {
+            this.autoJob2 = true
+            if (this.progressValue2 >= 100) {
+                this.progressValue2 = 0
+                this.money += reward
+            } else {
+                this.progressValue2 += amount
+            }
+            if (this.autoJob2 == true && !this.jobInterval2) { 
+                this.jobInterval2 = setInterval(() => {
+                    if (this.progressValue2 >= 100) {
+                        this.progressValue2 = 0
+                        this.money += reward
+                    } else {
+                        this.progressValue2 += amount
+                    }
+                }, 1000)
+            }
+        },
+        increaseJobProgress3(amount, reward) {
+            this.autoJob3 = true
+            if (this.progressValue3 >= 100) {
+                this.progressValue3 = 0
+                this.money += reward
+            } else {
+                this.progressValue3 += amount
+            }
+            if (this.autoJob3 == true && !this.jobInterval3) { 
+                this.jobInterval3 = setInterval(() => {
+                    if (this.progressValue3 >= 100) {
+                        this.progressValue3 = 0
+                        this.money += reward
+                    } else {
+                        this.progressValue3 += amount
+                    }
+                }, 1000)
+            }
+        },
+        increaseJobProgress4(amount, reward) {
+            this.autoJob4 = true
+            if (this.progressValue4 >= 100) {
+                this.progressValue4 = 0
+                this.money += reward
+            } else {
+                this.progressValue4 += amount
+            }
+            if (this.autoJob4 == true && !this.jobInterval4) { 
+                this.jobInterval4 = setInterval(() => {
+                    if (this.progressValue3 >= 100) {
+                        this.progressValue3 = 0
+                        this.money += reward
+                    } else {
+                        this.progressValue4 += amount
                     }
                 }, 1000)
             }
