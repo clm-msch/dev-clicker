@@ -1,12 +1,14 @@
 <script setup>
 import TutoMissions from "../components/TutoMissions.vue"
+import { useDataStore } from '..//stores/data'
+const data = useDataStore()
 </script>
 <template>
 	<h1 class="font-bold text-3xl">MISSIONS :</h1>
 	<TutoMissions :haveMission="firstMission" />
 
 	<h1 class="text-xl">
-		Compte en banque : <strong>{{ money }} €</strong>
+		Compte en banque : <strong>{{ data.money }} €</strong>
 	</h1>
 	<br />
 
@@ -211,7 +213,6 @@ import TutoMissions from "../components/TutoMissions.vue"
 		<!-- 3 job card -->
 	</div>
 </template>
-
 <script>
 export default {
 	name: "MissionView",
@@ -221,7 +222,7 @@ export default {
 			progressValue: 5,
 			progressValue2: 5,
 			progressValue3: 5,
-			money: 0,
+			// money: 0,
 			ifJs: true,
 			ifCss: true,
 			ifTailwind: true,
@@ -239,7 +240,7 @@ export default {
 		incrementProgress1() {
 			if (this.progressValue >= 100) {
 				this.progressValue = 0
-				this.money += 10
+				this.data.money += 10
 			} else {
 				this.progressValue += 5
 			}
@@ -247,7 +248,7 @@ export default {
 		incrementProgress2() {
 			if (this.progressValue2 >= 100) {
 				this.progressValue2 = 0
-				this.money += 100
+				this.data.money += 100
 			} else {
 				this.progressValue2 += 5
 			}
@@ -255,7 +256,8 @@ export default {
 		incrementProgress3() {
 			if (this.progressValue3 >= 100) {
 				this.progressValue3 = 0
-				this.money += 200
+				// this.data.money += 200
+				this.data.increaseMoney(200)
 			} else {
 				this.progressValue3 += 5
 			}
@@ -273,28 +275,28 @@ export default {
 		applyMission3() {
 			this.ifJob3 = true
 		},
-		saveToLocalStorage(key, value) {
-			localStorage.setItem(key, JSON.stringify(value))
-			console.log("Data saved in local storage")
-		},
-		loadFromLocalStorage(key) {
-			const value = localStorage.getItem(key)
-			return value ? JSON.parse(value) : null
-		},
+		// saveToLocalStorage(key, value) {
+		// 	localStorage.setItem(key, JSON.stringify(value))
+		// 	console.log("Data saved in local storage")
+		// },
+		// loadFromLocalStorage(key) {
+		// 	const value = localStorage.getItem(key)
+		// 	return value ? JSON.parse(value) : null
+		// },
 	},
 	created() {
 		setInterval(() => {
 			this.incrementProgress1()
 			this.incrementProgress2()
 			this.incrementProgress3()
-			this.saveToLocalStorage("money", this.money)
+			// this.saveToLocalStorage("money", this.money)
 		}, 1000)
 	},
-	mounted() {
-		this.firstMission = this.loadFromLocalStorage("firstMission")
-		this.money = this.loadFromLocalStorage("money") || 0
+	// mounted() {
+	// 	this.firstMission = this.loadFromLocalStorage("firstMission")
+	// 	this.money = this.loadFromLocalStorage("money") || 0
 
-	},
+	// },
 }
 </script>
 

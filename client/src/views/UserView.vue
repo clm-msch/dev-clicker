@@ -2,7 +2,6 @@
     <button @click="signInWhithGoogle">Connexion avec google</button>
 		
 		<h3><strong>{{ data.money }}</strong></h3>
-		<button @click="data.decreaseMoney(5)"> - </button>
 		<button @click="data.increaseMoney(5)"> + </button>
 </template>
 
