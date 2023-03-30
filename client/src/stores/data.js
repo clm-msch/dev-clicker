@@ -4,7 +4,7 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        exp: 0,
+        exp: -1,
         money: 0,
         // Code data
         isAnimated: false,
@@ -42,6 +42,9 @@ export const useDataStore = defineStore({
         htmlAchivement2: false,
         htmlAchivement3: false,
         htmlAchivement4: false,
+        htmlAchivement5: false,
+        htmlAchivement6: false,
+        htmlAchivement7: false,
 
     }),
     actions: {
@@ -207,18 +210,18 @@ export const useDataStore = defineStore({
             if (this.htmlPrice == 60) {
                 this.htmlAchivement1 = true
                 this.amount += 10
-            } if (this.htmlPrice == 310) {
+            } if (this.cssPrice == 1100) {
                 this.htmlAchivement2 = true
                 this.amount += 15
-            } if (this.htmlPrice == 510) {
+            } if (this.jsPrice == 6000) {
                 this.htmlAchivement3 = true
                 this.amount += 20
-            } if (this.htmlPrice == 1010) {
+            } if (this.tailwindPrice == 35000) {
                 this.htmlAchivement4 = true
                 this.amount += 25
             }
 
-            if (this.htmlAchivement1 == true || this.htmlAchivement2 == true) {
+            if (this.htmlAchivement1 == true || this.htmlAchivement2 == true || this.htmlAchivement3 == true || this.htmlAchivement4 == true) {
                 setTimeout(() => {
                     this.htmlAchivement1 = false
                     this.htmlAchivement2 = false

@@ -1,9 +1,9 @@
 <template>
 	<!-- <Popup :newComer="exp" @closePopup="handleExpPopup" /> -->
-	<!-- <Popup /> -->
+	<Popup />
 	<Achivement />
 	<h1 class="font-bold text-3xl">CODE</h1>
-	<h1 class="text-xl">
+	<h1 class="text-xl" v-if="data.jsPrice >= 2000">
 		Bienvenue dans l'onglet code ici tu va pouvoir <br />
 		développer pour aquérir un maximum d'expérience :
 	</h1>
@@ -191,7 +191,7 @@
 			</div>
 		</div>
 
-		<div class="skill-card">
+		<div class="skill-card" v-if="data.jsPrice >= 2000">
 			<div class="inline-flex gap-4">
 				<svg
 					width="53"
@@ -254,7 +254,7 @@
 			</div>
 		</div>
 
-		<div class="skill-card">
+		<div class="skill-card" v-if="data.jsPrice >= 2000" >
 			<div class="inline-flex gap-4">
 				<svg
 					width="53"
@@ -311,7 +311,7 @@
 			</div>
 		</div>
 
-		<div class="skill-card">
+		<div class="skill-card" v-if="data.jsPrice >= 2000">
 			<div class="inline-flex gap-4">
 				<svg
 					width="53"
@@ -401,7 +401,7 @@
 
 <script setup>
 import Achivement from "../components/Achivement.vue"
-// import Popup from "../components/PopupApp4.vue"
+import Popup from "../components/PopupApp4.vue"
 import { reactive, watch, onMounted, provide } from "vue"
 import { useDataStore } from "../stores/data"
 const data = useDataStore()
@@ -437,6 +437,7 @@ const addCss = () => {
 		data.exp -= data.cssPrice
 		data.cssPrice += 100
 		data.amountSec += 1
+		data.htmlAchivement()
 	}
 }
 const addJs = () => {
@@ -444,6 +445,7 @@ const addJs = () => {
 		data.exp -= data.jsPrice
 		data.jsPrice += 1000
 		data.amount += 10
+		data.htmlAchivement()
 	}
 }
 const addTailwind = () => {

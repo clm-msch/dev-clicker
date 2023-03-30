@@ -7,7 +7,7 @@ const data = useDataStore()
 <template>
 	<!-- Sidebar -->
 	<div
-		class="bg-gray-900 text-gray-100 fixed flex flex-col flex-shrink-0 h-full w-64"
+		class="bg-gray-900 text-gray-100 fixed flex flex-col flex-shrink-0 h-full w-64 animate__animated animate__fadeInLeft" v-if="data.jsPrice >= 2000"
 	>
 		<div class="flex-shrink-0 p-4 flex items-center justify-center">
 			<span class="text-2xl font-semibold"
@@ -83,7 +83,7 @@ const data = useDataStore()
 				<br />
 				<!-- Senior -->
 				<h2 class="font-bold">Senior :</h2>
-				<RouterLink to="/invest" exact-active-class="active">
+				<RouterLink to="/invest" exact-active-class="active" v-if="data.ifJob2 == true">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -172,7 +172,7 @@ const data = useDataStore()
 						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-				<RouterLink to="/achivements" exact-active-class="active">
+				<RouterLink to="/achivements" exact-active-class="active" v-if="htmlAchivement1 == true">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
