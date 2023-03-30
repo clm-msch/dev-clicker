@@ -83,7 +83,7 @@ const data = useDataStore()
 				<br />
 				<!-- Senior -->
 				<h2 class="font-bold">Senior :</h2>
-				<RouterLink to="/invest">
+				<RouterLink to="/invest" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -104,7 +104,7 @@ const data = useDataStore()
 						<h3 class="font-bold">Invesstisement</h3>
 					</a>
 				</RouterLink>
-				<RouterLink to="/soon">
+				<RouterLink to="/soon" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -122,10 +122,10 @@ const data = useDataStore()
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Cybersécurité</h3>
+						<h3 class="font-bold">Comming Soon</h3>
 					</a>
 				</RouterLink>
-				<RouterLink to="/soon">
+				<RouterLink to="/soon" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -144,14 +144,14 @@ const data = useDataStore()
 							/>
 						</svg>
 						<!-- Nom dynamique en fonction du choix du joueur -->
-						<h3 class="font-bold">{{ data.companyName }}</h3>
+						<h3 class="font-bold">Comming Soon</h3>
 					</a>
 				</RouterLink>
 				<!-- Senior -->
 				<br />
 				<!-- Autre -->
 				<h2 class="font-bold">Autre :</h2>
-				<RouterLink to="/soon">
+				<RouterLink to="/soon" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -172,7 +172,7 @@ const data = useDataStore()
 						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-				<RouterLink to="/achivements">
+				<RouterLink to="/achivements" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -214,7 +214,7 @@ const data = useDataStore()
 						<h3 class="font-bold">Utilisateur</h3>
 					</a>
 				</RouterLink>
-				<RouterLink to="/soon">
+				<RouterLink to="/soon" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -257,16 +257,15 @@ const data = useDataStore()
 					</a>
 				</RouterLink>
 			</div>
-			<br />
-			<div class="bg-white p-4">				
-				<p class="text-primary font-bold">
-					Expérience : {{ data.exp }} exp
-				</p>
-				<p class="text-primary font-bold">
-					Argent : {{ data.money }} €
-				</p>
-			</div>
 		</nav>
+		<div class="bg-white p-4 m-3 rounded-md">				
+			<p class="text-primary font-bold">
+				Expérience : {{ data.expFormat }} exp
+			</p>
+			<p class="text-primary font-bold">
+				Argent : {{ data.moneyFormat }} €
+			</p>
+		</div>
 	</div>
 
 	<!-- SideBar -->

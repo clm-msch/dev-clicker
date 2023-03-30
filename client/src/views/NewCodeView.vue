@@ -1,6 +1,8 @@
 <template>
 	<!-- <Popup :newComer="exp" @closePopup="handleExpPopup" /> -->
 	<!-- <Popup /> -->
+	<Achivement />
+	<h1 class="font-bold text-3xl">CODE</h1>
 	<h1 class="text-xl">
 		Bienvenue dans l'onglet code ici tu va pouvoir <br />
 		développer pour aquérir un maximum d'expérience :
@@ -8,11 +10,12 @@
 	<br />
 	<!-- dev button -->
 	<div class="inline-flex gap-8 justify-center align-middle">
+		<!-- @click="addExp(expData.amount)" -->
 		<button
-			@click="addExp(expData.amount)"
+			@click="data.increaseExp"
 			:class="{
-				animate__animated: expData.isAnimated,
-				animate__headShake: expData.isAnimated,
+				animate__animated: data.isAnimated,
+				animate__headShake: data.isAnimated,
 			}"
 			class="inline-flex space-x-3 items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-indigo-600 button-dev"
 		>
@@ -24,11 +27,11 @@
 		</button>
 		<div class="row-flex bg-white justify-center dev-button">
 			<p class="text-xl">
-				Expérience : <strong>{{ data.exp }} exp</strong>
+				Expérience : <strong>{{ data.expFormat }} exp</strong>
 			</p>
 			<p class="text-xl">
-				<strong>{{ expData.amountSec }}</strong> par seconde et
-				<strong>{{ expData.amount }}</strong> par clic
+				<strong>{{ data.amountSecFormat }}</strong> par seconde et
+				<strong>{{ data.amountFormat }}</strong> par clic
 			</p>
 		</div>
 	</div>
@@ -71,7 +74,7 @@
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ expData.htmlPrice }} exp</p>
+					<p>Coût : {{ data.htmlPriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 1</i>
 					</p>
@@ -123,7 +126,7 @@
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ expData.cssPrice }} exp</p>
+					<p>Coût : {{ data.cssPriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 1</i>
 					</p>
@@ -172,7 +175,7 @@
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ expData.jsPrice }} exp</p>
+					<p>Coût : {{ data.jsPriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 1</i>
 					</p>
@@ -235,7 +238,7 @@
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ expData.tailwindPrice }} exp</p>
+					<p>Coût : {{ data.tailwindPriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 2</i>
 					</p>
@@ -280,7 +283,7 @@
 
 				<div>
 					<strong class="text-xl">Vue.js</strong>
-					<p class="text-sm">ajoute +1000 par clic</p>
+					<p class="text-sm">ajoute +1 k par clic</p>
 				</div>
 			</div>
 			<div>
@@ -292,7 +295,7 @@
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ expData.vuePrice }} exp</p>
+					<p>Coût : {{ data.vuePriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 2</i>
 					</p>
@@ -358,7 +361,7 @@
 
 				<div>
 					<strong class="text-xl">Vite.js</strong>
-					<p class="text-sm">ajoute +5000 par clic</p>
+					<p class="text-sm">ajoute +5 k par clic</p>
 				</div>
 			</div>
 			<div>
@@ -370,7 +373,7 @@
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ expData.vitePrice }} exp</p>
+					<p>Coût : {{ data.vitePriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 3</i>
 					</p>
@@ -394,107 +397,89 @@
 	>
 		🗑️ Resart
 	</button>
-	<Test1Comp />
 </template>
 
 <script setup>
-import Test1Comp from "../components/Test1App4.vue"
-import Popup from "../components/PopupApp4.vue"
+import Achivement from "../components/Achivement.vue"
+// import Popup from "../components/PopupApp4.vue"
 import { reactive, watch, onMounted, provide } from "vue"
 import { useDataStore } from "../stores/data"
 const data = useDataStore()
 const expData = reactive({
-	count: -1,
-	amount: 1,
-	amountSec: 0,
-	htmlPrice: 10,
-	cssPrice: 100,
-	jsPrice: 1000,
-	tailwindPrice: 5000,
-	vuePrice: 10000,
-	vitePrice: 100000,
-	isAnimated: false,
+	count: -10,
+	// amount: 1,
+	// amountSec: 0,
+	// htmlPrice: 10,
+	// cssPrice: 100,
+	// jsPrice: 1000,
+	// tailwindPrice: 5000,
+	// vuePrice: 10000,
+	// vitePrice: 100000,
+	// isAnimated: false,
 })
 provide("expData", expData)
 
-// const isAnimated = false
-
-// const addExp = (amount) => {
-//     console.log(amount)
-//     expData.count += amount
-// 		expData.isAnimated = true
-// 	setTimeout(() => {
-// 	expData.isAnimated = false
-// 	}, 500)
-// }
-const addExp = (amount) => {
-	console.log(amount)
-	data.exp += amount
-	expData.isAnimated = true
-	setTimeout(() => {
-		expData.isAnimated = false
-	}, 500)
-}
 const resetLocal = () => {
 	localStorage.clear()
 	window.location.reload()
 }
 
 const addHtml = () => {
-	if (data.exp >= expData.htmlPrice) {
-		data.exp -= expData.htmlPrice
-		expData.htmlPrice += 10
-		expData.amount += 1
-	}
+	if (data.exp >= data.htmlPrice) {
+		data.exp -= data.htmlPrice
+		data.htmlPrice += 10
+		data.amount += 1
+		data.htmlAchivement()
+	} 
 }
 const addCss = () => {
-	if (data.exp >= expData.cssPrice) {
-		data.exp -= expData.cssPrice
-		expData.cssPrice += 100
-		expData.amountSec += 1
+	if (data.exp >= data.cssPrice) {
+		data.exp -= data.cssPrice
+		data.cssPrice += 100
+		data.amountSec += 1
 	}
 }
 const addJs = () => {
-	if (expData.count >= expData.jsPrice) {
-		expData.count -= expData.jsPrice
-		expData.jsPrice += 1000
-		expData.amount += 10
+	if (data.exp >= data.jsPrice) {
+		data.exp -= data.jsPrice
+		data.jsPrice += 1000
+		data.amount += 10
 	}
 }
 const addTailwind = () => {
-	if (expData.count >= expData.tailwindPrice) {
-		expData.count -= expData.tailwindPrice
-		expData.tailwindPrice += 5000
-		expData.amountSec += 100
+	if (data.exp >= data.tailwindPrice) {
+		data.exp -= data.tailwindPrice
+		data.tailwindPrice += 5000
+		data.amountSec += 100
 	}
 }
 const addVue = () => {
-	if (expData.count >= expData.vuePrice) {
-		expData.count -= expData.vuePrice
-		expData.vuePrice += 5000
-		expData.amount += 1000
+	if (data.exp >= data.vuePrice) {
+		data.exp -= data.vuePrice
+		data.vuePrice += 5000
+		data.amount += 1000
 	}
 }
 const addVite = () => {
-	if (expData.count >= expData.vitePrice) {
-		expData.count -= expData.vitePrice
-		expData.vitePrice += 50000
-		expData.amount += 5000
+	if (data.exp >= data.vitePrice) {
+		data.exp -= data.vitePrice
+		data.vitePrice += 50000
+		data.amount += 5000
 	}
 }
 // I want to watch the change of all expData to store in local storage
 watch(expData, () => {
 	localStorage.setItem("expData", JSON.stringify(expData))
+	
 })
+
 onMounted(() => {
 	const expDataStorage = localStorage.getItem("expData")
 	if (expDataStorage) {
 		Object.assign(expData, JSON.parse(expDataStorage))
 	}
 	localStorage.setItem("expData", JSON.stringify(expData))
-	setInterval(() => {
-		data.exp += expData.amountSec
-	}, 1000)
+	data.increaseExpSec
 })
 </script>
 
