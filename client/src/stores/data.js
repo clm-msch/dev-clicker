@@ -5,33 +5,51 @@ export const useDataStore = defineStore({
     state: () => ({
         // General data
         exp: -1,
-        money: 100000,
+        money: 0,
+        // Code data
+        isAnimated: false,
+        amount: 1,
+        amountSec: 0,
+        htmlPrice: 10,
+        cssPrice: 100,
+        jsPrice: 1000,
+        tailwindPrice: 5000,
+        vuePrice: 10000,
+        vitePrice: 100000,
         // Mission data
-            progressValue1: 0,
-            progressValue2: 0,
-            progressValue3: 0,
-            autoJob1: false,
-            autoJob2: false,
-            autoJob3: false,
-            autoJob4: false,
-            ifJob1: false,
-            ifJob2: false,
-            ifJob3: false,
-            ifJob4: false,
+        progressValue1: 0,
+        progressValue2: 0,
+        progressValue3: 0,
+        autoJob1: false,
+        autoJob2: false,
+        autoJob3: false,
+        autoJob4: false,
+        ifJob1: false,
+        ifJob2: false,
+        ifJob3: false,
+        ifJob4: false,
         // Invest data
-            UTOstock: 0,
-            UTOprice: 20,
-            MRSstock: 0,
-            MRSprice: 40,
-            CRAstock: 0,
-            CRAprice: 60,
-            DWRKstock: 0,
-            DWRKprice: 25,
-        companyName : "Entreprise"
+        UTOstock: 0,
+        UTOprice: 20,
+        MRSstock: 0,
+        MRSprice: 40,
+        CRAstock: 0,
+        CRAprice: 60,
+        DWRKstock: 0,
+        DWRKprice: 25,
+        companyName: "Entreprise"
 
-        
+
     }),
     actions: {
+        increaseExp() {
+            this.isAnimated = true
+            this.exp += this.amount
+            setTimeout(() => {
+                this.isAnimated = false
+            }, 500)
+        },
+
         increaseMoney(amount) {
             this.money += amount
         },
@@ -45,7 +63,7 @@ export const useDataStore = defineStore({
             } else {
                 this.progressValue1 += amount
             }
-            if (this.autoJob1 == true && !this.jobInterval1) { 
+            if (this.autoJob1 == true && !this.jobInterval1) {
                 this.jobInterval1 = setInterval(() => {
                     if (this.progressValue1 >= 100) {
                         this.progressValue1 = 0
@@ -64,7 +82,7 @@ export const useDataStore = defineStore({
             } else {
                 this.progressValue2 += amount
             }
-            if (this.autoJob2 == true && !this.jobInterval2) { 
+            if (this.autoJob2 == true && !this.jobInterval2) {
                 this.jobInterval2 = setInterval(() => {
                     if (this.progressValue2 >= 100) {
                         this.progressValue2 = 0
@@ -83,7 +101,7 @@ export const useDataStore = defineStore({
             } else {
                 this.progressValue3 += amount
             }
-            if (this.autoJob3 == true && !this.jobInterval3) { 
+            if (this.autoJob3 == true && !this.jobInterval3) {
                 this.jobInterval3 = setInterval(() => {
                     if (this.progressValue3 >= 100) {
                         this.progressValue3 = 0
@@ -102,7 +120,7 @@ export const useDataStore = defineStore({
             } else {
                 this.progressValue4 += amount
             }
-            if (this.autoJob4 == true && !this.jobInterval4) { 
+            if (this.autoJob4 == true && !this.jobInterval4) {
                 this.jobInterval4 = setInterval(() => {
                     if (this.progressValue3 >= 100) {
                         this.progressValue3 = 0
@@ -181,6 +199,21 @@ export const useDataStore = defineStore({
         },
         totalDWRK() {
             return this.DWRKstock * this.DWRKprice
+        },
+        expFormat() {
+            return this.exp.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        increaseExpSec() {
+            setInterval(() => {
+                this.exp += this.amountSec
+            }, 1000)
         },
     },
     persist: true,
