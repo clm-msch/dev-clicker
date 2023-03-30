@@ -4,7 +4,7 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        exp: -1,
+        exp: 0 ,
         money: 0,
         // Code data
         isAnimated: false,
@@ -55,6 +55,21 @@ export const useDataStore = defineStore({
         },
 
         // Job actions
+        activeJob1() {
+            if (this.jsPrice >= 2000) {
+                this.ifJob1 = true
+            }
+        },
+        activeJob2() {
+            if (this.vuePrice >= 20000) {
+                this.ifJob2 = true
+            }
+        },
+        activeJob3() {
+            if (this.vitePrice >= 200000) {
+                this.ifJob3 = true
+            }
+        },
         increaseJobProgress1(amount, reward) {
             this.autoJob1 = true
             if (this.progressValue1 >= 100) {
@@ -185,6 +200,111 @@ export const useDataStore = defineStore({
         }
     },
     getters: {
+        expFormat() {
+            return this.exp.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        amountFormat() {
+            return this.amount.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        amountSecFormat() {
+            return this.amountSec.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        moneyFormat() {
+            return this.money.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        htmlPriceFormat() {
+            return this.htmlPrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        cssPriceFormat() {
+            return this.cssPrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        jsPriceFormat() {
+            return this.jsPrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        tailwindPriceFormat() {
+            return this.tailwindPrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        vuePriceFormat() {
+            return this.vuePrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        vitePriceFormat() {
+            return this.vitePrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        increaseExpSec() {
+            setInterval(() => {
+                this.exp += this.amountSec
+            }, 1000)
+        },
         totalStock() {
             return this.UTOstock + this.MRSstock + this.CRAstock + this.DWRKstock
         },
@@ -200,21 +320,7 @@ export const useDataStore = defineStore({
         totalDWRK() {
             return this.DWRKstock * this.DWRKprice
         },
-        expFormat() {
-            return this.exp.toLocaleString(
-                undefined,
-                {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 4,
-                    notation: "compact"
-                }
-            )
-        },
-        increaseExpSec() {
-            setInterval(() => {
-                this.exp += this.amountSec
-            }, 1000)
-        },
+
     },
     persist: true,
 });
