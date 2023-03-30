@@ -1,6 +1,7 @@
 <template>
 	<!-- <Popup :newComer="exp" @closePopup="handleExpPopup" /> -->
 	<!-- <Popup /> -->
+	<Achivement />
 	<h1 class="font-bold text-3xl">CODE</h1>
 	<h1 class="text-xl">
 		Bienvenue dans l'onglet code ici tu va pouvoir <br />
@@ -399,7 +400,7 @@
 </template>
 
 <script setup>
-
+import Achivement from "../components/Achivement.vue"
 // import Popup from "../components/PopupApp4.vue"
 import { reactive, watch, onMounted, provide } from "vue"
 import { useDataStore } from "../stores/data"
@@ -428,7 +429,8 @@ const addHtml = () => {
 		data.exp -= data.htmlPrice
 		data.htmlPrice += 10
 		data.amount += 1
-	}
+		data.htmlAchivement()
+	} 
 }
 const addCss = () => {
 	if (data.exp >= data.cssPrice) {

@@ -4,7 +4,7 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        exp: 0 ,
+        exp: 0,
         money: 0,
         // Code data
         isAnimated: false,
@@ -37,8 +37,11 @@ export const useDataStore = defineStore({
         CRAprice: 60,
         DWRKstock: 0,
         DWRKprice: 25,
-        companyName: "Entreprise"
-
+        // Achivement data
+        htmlAchivement1: false,
+        htmlAchivement2: false,
+        htmlAchivement3: false,
+        htmlAchivement4: false,
 
     }),
     actions: {
@@ -61,12 +64,12 @@ export const useDataStore = defineStore({
             }
         },
         activeJob2() {
-            if (this.vuePrice >= 20000) {
+            if (this.vuePrice >= 15000) {
                 this.ifJob2 = true
             }
         },
         activeJob3() {
-            if (this.vitePrice >= 200000) {
+            if (this.vitePrice >= 150000) {
                 this.ifJob3 = true
             }
         },
@@ -197,7 +200,33 @@ export const useDataStore = defineStore({
         sellDWRK() {
             this.money += this.DWRKstock * this.DWRKprice
             this.DWRKstock = 0
-        }
+        },
+
+        // Achivement actions
+        htmlAchivement() {
+            if (this.htmlPrice == 60) {
+                this.htmlAchivement1 = true
+                this.amount += 10
+            } if (this.htmlPrice == 310) {
+                this.htmlAchivement2 = true
+                this.amount += 15
+            } if (this.htmlPrice == 510) {
+                this.htmlAchivement3 = true
+                this.amount += 20
+            } if (this.htmlPrice == 1010) {
+                this.htmlAchivement4 = true
+                this.amount += 25
+            }
+
+            if (this.htmlAchivement1 == true || this.htmlAchivement2 == true) {
+                setTimeout(() => {
+                    this.htmlAchivement1 = false
+                    this.htmlAchivement2 = false
+                    this.htmlAchivement3 = false
+                    this.htmlAchivement4 = false
+                }, 15000)
+            }
+        },
     },
     getters: {
         expFormat() {

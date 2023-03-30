@@ -122,7 +122,7 @@ const data = useDataStore()
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Cybersécurité</h3>
+						<h3 class="font-bold">Comming Soon</h3>
 					</a>
 				</RouterLink>
 				<RouterLink to="/soon" exact-active-class="active">
@@ -144,7 +144,7 @@ const data = useDataStore()
 							/>
 						</svg>
 						<!-- Nom dynamique en fonction du choix du joueur -->
-						<h3 class="font-bold">{{ data.companyName }}</h3>
+						<h3 class="font-bold">Comming Soon</h3>
 					</a>
 				</RouterLink>
 				<!-- Senior -->
