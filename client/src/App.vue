@@ -7,7 +7,7 @@ const data = useDataStore()
 <template>
 	<!-- Sidebar -->
 	<div
-		class="bg-gray-900 text-gray-100 fixed flex flex-col flex-shrink-0 h-full w-64"
+		class="bg-gray-900 text-gray-100 fixed flex flex-col flex-shrink-0 h-full w-64 animate__animated animate__fadeInLeft" v-if="data.jsPrice >= 2000"
 	>
 		<div class="flex-shrink-0 p-4 flex items-center justify-center">
 			<span class="text-2xl font-semibold"
@@ -190,7 +190,7 @@ const data = useDataStore()
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Récompense</h3>
+						<h3 class="font-bold">Trophées</h3>
 					</a>
 				</RouterLink>
 				<RouterLink to="/user" exact-active-class="active">

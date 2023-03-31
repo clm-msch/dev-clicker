@@ -1,9 +1,10 @@
 <script setup>
-// import TutoMissions from "../components/TutoMissions.vue"
+import TutoMissions from "../components/TutoMissions.vue"
 import { useDataStore } from "..//stores/data"
 const data = useDataStore()
 </script>
 <template>
+	<TutoMissions />
 	<h1 class="font-bold text-3xl">MISSIONS</h1>
 	<br>
 	<br>

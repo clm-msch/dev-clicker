@@ -1,26 +1,29 @@
 <template>
-	<div class="fixed z-2 top-4 right-4">
-		<div v-if="step4 && !step5" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
+	<div class="fixed z-2 top-4 right-4 animate__animated animate__fadeInRight">
+		<div v-if="data.ifJob1 == false" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
 			<p class="font-semibold mb-2">Tutoriel étape 4/5</p>
-			<p>Oh on dirait qu'il y a une mission faite sur mesure pour toi, propose tes services.</p>
+			<p>Oh on dirait qu'il y a une mission faite sur mesure pour toi, propose donc tes services.</p>
 
 		</div>
 	</div>
 
-	<div class="fixed z-2 top-4 right-4">
-		<div v-if="step5 && !visible" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
+	<div class="fixed z-2 top-4 right-4 animate__animated animate__fadeInRight">
+		<div v-if="data.ifJob1 == true && data.closedTuto == false" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
 			<p class="font-semibold mb-2">Tutoriel étape 5/5</p>
 			<p>Génial maintenant rempli ta mission pour recevoir ton salaire et continue de développer tes compétences pour pouvoir postuler a des offres encore plus rémunératrice.</p>
 			<button
 				class="mt-4 bg-primary hover:bg-dark_grey text-white py-2 px-4 rounded"
-				@click="dismiss"
+				@click="data.closeTuto()"
 			>
 				Se lancer seul
 			</button>
 		</div>
 	</div>
 </template>
-
+<script setup>
+import { useDataStore } from "..//stores/data"
+const data = useDataStore()
+</script>
 <script>
 export default {
 	props: {
@@ -47,7 +50,6 @@ export default {
 	},
 	methods: {
 		dismiss() {
-			this.step5 = false
 			this.visible = true
 			this.saveToLocalStorage("step5", this.step5)
 			this.saveToLocalStorage("visible", this.visible)
