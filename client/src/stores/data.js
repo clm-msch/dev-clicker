@@ -4,8 +4,9 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        exp: -1,
+        exp: -2,
         money: 0,
+        closedTuto: false,
         // Code data
         isAnimated: false,
         amount: 1,
@@ -14,7 +15,7 @@ export const useDataStore = defineStore({
         cssPrice: 100,
         jsPrice: 1000,
         tailwindPrice: 5000,
-        vuePrice: 10000,
+        vuePrice: 50000,
         vitePrice: 100000,
         // Mission data
         progressValue1: 0,
@@ -45,6 +46,13 @@ export const useDataStore = defineStore({
         htmlAchivement5: false,
         htmlAchivement6: false,
         htmlAchivement7: false,
+        htmlAchivementActive1: false,
+        htmlAchivementActive2: false,
+        htmlAchivementActive3: false,
+        htmlAchivementActive4: false,
+        htmlAchivementActive5: false,
+        htmlAchivementActive6: false,
+        htmlAchivementActive7: false,
 
     }),
     actions: {
@@ -60,6 +68,10 @@ export const useDataStore = defineStore({
             this.money += amount
         },
 
+        closeTuto() {
+            this.closedTuto = true
+        },
+
         // Job actions
         activeJob1() {
             if (this.jsPrice >= 2000) {
@@ -67,7 +79,7 @@ export const useDataStore = defineStore({
             }
         },
         activeJob2() {
-            if (this.vuePrice >= 15000) {
+            if (this.vuePrice >= 55000) {
                 this.ifJob2 = true
             }
         },
@@ -210,27 +222,88 @@ export const useDataStore = defineStore({
             if (this.htmlPrice == 60) {
                 this.htmlAchivement1 = true
                 this.amount += 10
-            } if (this.cssPrice == 1100) {
-                this.htmlAchivement2 = true
-                this.amount += 15
-            } if (this.jsPrice == 6000) {
-                this.htmlAchivement3 = true
-                this.amount += 20
-            } if (this.tailwindPrice == 35000) {
-                this.htmlAchivement4 = true
-                this.amount += 25
+                this.htmlAchivementActive1 = true
             }
-
-            if (this.htmlAchivement1 == true || this.htmlAchivement2 == true || this.htmlAchivement3 == true || this.htmlAchivement4 == true) {
+            if (this.htmlAchivement1 == true) {
                 setTimeout(() => {
                     this.htmlAchivement1 = false
-                    this.htmlAchivement2 = false
-                    this.htmlAchivement3 = false
-                    this.htmlAchivement4 = false
-                }, 15000)
+                }, 5000)
             }
         },
+        cssAchivement() {
+            if (this.cssPrice == 1100) {
+                this.htmlAchivement2 = true
+                this.amountSec += 15
+                this.htmlAchivementActive2 = true
+                console.log('css achivement')
+            }
+            if (this.htmlAchivement2 == true) {
+                setTimeout(() => {
+                    this.htmlAchivement2 = false
+                }, 5000)
+            }
     },
+        jsAchivement() {
+            if (this.jsPrice == 11000) {
+                this.htmlAchivement3 = true
+                this.amount += 20
+                this.htmlAchivementActive3 = true
+            }
+            if (this.htmlAchivement3 == true) {
+                setTimeout(() => {
+                    this.htmlAchivement3 = false
+                }, 5000)
+            }
+    },
+        tailwindAchivement() {
+            if (this.tailwindPrice == 30000) {
+                this.htmlAchivement4 = true
+                this.htmlAchivementActive4 = true
+                this.amountSec += 500
+            }
+            if (this.htmlAchivement4 == true) {
+                setTimeout(() => {
+                    this.htmlAchivement4 = false
+                }, 5000)
+            }
+    },
+        vueAchivement() {
+            if (this.vuePrice == 105000) {
+                this.htmlAchivement5 = true
+                this.htmlAchivementActive5 = true
+                this.amount += 3000
+            }
+            if (this.htmlAchivement5 == true) {
+                setTimeout(() => {
+                    this.htmlAchivement5 = false
+                }, 5000)
+            }
+    },
+        viteAchivement() {
+            if (this.vitePrice == 600000) {
+                this.htmlAchivement6 = true
+                this.htmlAchivementActive6 = true
+                this.amount += 10000
+            }
+            if (this.htmlAchivement6 == true) {
+                setTimeout(() => {
+                    this.htmlAchivement6 = false
+                }, 5000)
+            }   
+    },
+        totalAchivement() {
+            if (this.htmlAchivement6 == true) {
+                this.htmlAchivement7 = true
+                this.htmlAchivementActive7 = true
+                this.amount += 100000
+            }
+            if (this.htmlAchivement7 == true) {
+                setTimeout(() => {
+                    this.htmlAchivement7 = false
+                }, 5000)
+            } 
+        },
+},
     getters: {
         expFormat() {
             return this.exp.toLocaleString(

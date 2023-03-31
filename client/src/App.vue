@@ -83,7 +83,7 @@ const data = useDataStore()
 				<br />
 				<!-- Senior -->
 				<h2 class="font-bold">Senior :</h2>
-				<RouterLink to="/invest" exact-active-class="active" v-if="data.ifJob2 == true">
+				<RouterLink to="/invest" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -172,7 +172,7 @@ const data = useDataStore()
 						<h3 class="font-bold">Coming Soon</h3>
 					</a>
 				</RouterLink>
-				<RouterLink to="/achivements" exact-active-class="active" v-if="htmlAchivement1 == true">
+				<RouterLink to="/achivements" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -190,7 +190,7 @@ const data = useDataStore()
 								fill="#A29FB0"
 							/>
 						</svg>
-						<h3 class="font-bold">Récompense</h3>
+						<h3 class="font-bold">Trophées</h3>
 					</a>
 				</RouterLink>
 				<RouterLink to="/user" exact-active-class="active">

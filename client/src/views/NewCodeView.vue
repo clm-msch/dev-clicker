@@ -2,6 +2,7 @@
 	<!-- <Popup :newComer="exp" @closePopup="handleExpPopup" /> -->
 	<Popup />
 	<Achivement />
+	<TutoCode />
 	<h1 class="font-bold text-3xl">CODE</h1>
 	<h1 class="text-xl" v-if="data.jsPrice >= 2000">
 		Bienvenue dans l'onglet code ici tu va pouvoir <br />
@@ -402,6 +403,7 @@
 <script setup>
 import Achivement from "../components/Achivement.vue"
 import Popup from "../components/PopupApp4.vue"
+import TutoCode from "../components/TutoCodeApp4.vue"
 import { reactive, watch, onMounted, provide } from "vue"
 import { useDataStore } from "../stores/data"
 const data = useDataStore()
@@ -430,6 +432,7 @@ const addHtml = () => {
 		data.htmlPrice += 10
 		data.amount += 1
 		data.htmlAchivement()
+		data.totalAchivement()
 	} 
 }
 const addCss = () => {
@@ -437,7 +440,8 @@ const addCss = () => {
 		data.exp -= data.cssPrice
 		data.cssPrice += 100
 		data.amountSec += 1
-		data.htmlAchivement()
+		data.cssAchivement()
+		data.totalAchivement()
 	}
 }
 const addJs = () => {
@@ -445,7 +449,8 @@ const addJs = () => {
 		data.exp -= data.jsPrice
 		data.jsPrice += 1000
 		data.amount += 10
-		data.htmlAchivement()
+		data.jsAchivement()
+		data.totalAchivement()
 	}
 }
 const addTailwind = () => {
@@ -453,6 +458,8 @@ const addTailwind = () => {
 		data.exp -= data.tailwindPrice
 		data.tailwindPrice += 5000
 		data.amountSec += 100
+		data.tailwindAchivement()
+		data.totalAchivement()
 	}
 }
 const addVue = () => {
@@ -460,6 +467,8 @@ const addVue = () => {
 		data.exp -= data.vuePrice
 		data.vuePrice += 5000
 		data.amount += 1000
+		data.vueAchivement()
+		data.totalAchivement()
 	}
 }
 const addVite = () => {
@@ -467,6 +476,9 @@ const addVite = () => {
 		data.exp -= data.vitePrice
 		data.vitePrice += 50000
 		data.amount += 5000
+		data.viteAchivement()
+		data.totalAchivement()
+
 	}
 }
 // I want to watch the change of all expData to store in local storage
