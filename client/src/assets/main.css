@@ -20,7 +20,11 @@ body {
 button {
 	/* cursor: url("custom_hand.svg") 'x:0' 'y:0', pointer; */
 	/* cursor: url("custom_cursor_white.svg"), auto; */
-	cursor: url("custom_hand_white.svg"), auto;
+	cursor: url("custom_hand.svg"), auto;
+}
+
+.sidebar {
+	cursor: url("custom_cursor_white.svg"), auto;
 }
 
 a {
@@ -40,7 +44,6 @@ a {
 body {
 	font-family: "Urbanist", sans-serif;
 	background-color: #e9eaff;
-
 }
 
 canvas {
@@ -97,15 +100,15 @@ p {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+	width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #532ee7;
-  border-radius: 6px;
+	background-color: #532ee7;
+	border-radius: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #e2e2e2;
-  border-radius: 6px;
+	background-color: #e2e2e2;
+	border-radius: 6px;
 }
