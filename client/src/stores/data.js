@@ -38,6 +38,11 @@ export const useDataStore = defineStore({
         CRAprice: 60,
         DWRKstock: 0,
         DWRKprice: 25,
+        // Amazitruc data
+        switch : 0,
+        head : 0,
+        pc : 0,
+        car : 0,
         // Achivement data
         htmlAchivement1: false,
         htmlAchivement2: false,
@@ -215,6 +220,31 @@ export const useDataStore = defineStore({
         sellDWRK() {
             this.money += this.DWRKstock * this.DWRKprice
             this.DWRKstock = 0
+        },
+        // Amazitruc
+        buySwitch() {
+            if (this.money >= 300) {
+                this.money -= 300
+                this.switch += 1
+            }
+        },
+        buyHead() {
+            if (this.money >= 150) {
+                this.money -= 150
+                this.head += 1
+            }
+        },
+        buyPc() {
+            if (this.money >= 5000) {
+                this.money -= 5000
+                this.pc += 1
+            }
+        },
+        buyCar() {
+            if (this.money >= 350000) {
+                this.money -= 350000
+                this.car += 1
+            }
         },
 
         // Achivement actions
