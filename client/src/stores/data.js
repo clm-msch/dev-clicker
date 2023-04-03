@@ -4,19 +4,31 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        exp: -2,
+        // exp: -2,
+        exp: 100000000,
         money: 0,
         closedTuto: false,
         // Code data
-        isAnimated: false,
+        isAnimated: true,
         amount: 1,
         amountSec: 0,
-        htmlPrice: 10,
-        cssPrice: 100,
-        jsPrice: 1000,
-        tailwindPrice: 5000,
-        vuePrice: 50000,
-        vitePrice: 100000,
+        whatStack: 'Front-end',
+        ifBack: false,
+        ifFront: true,
+            // front
+            htmlPrice: 10,
+            cssPrice: 100,
+            jsPrice: 1000,
+            tailwindPrice: 5000,
+            vuePrice: 50000,
+            vitePrice: 100000,
+            // back
+            nodePrice: 1000000,
+            expressPrice: 5000000,
+            prismaPrice: 10000000,
+            mongoPrice: 50000000,
+            dockerPrice: 100000000,
+            vercelPrice: 500000000,
         // Mission data
         progressValue1: 0,
         progressValue2: 0,
@@ -71,6 +83,18 @@ export const useDataStore = defineStore({
 
         increaseMoney(amount) {
             this.money += amount
+        },
+
+        changeStack(){
+            if(this.whatStack == 'Front-end'){
+                this.whatStack = 'Back-end'
+                this.ifBack = true
+                this.ifFront = false
+            } else {
+                this.whatStack = 'Front-end'
+                this.ifBack = false
+                this.ifFront = true
+            }
         },
 
         closeTuto() {
