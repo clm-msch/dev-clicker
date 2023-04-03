@@ -7,7 +7,7 @@ const data = useDataStore()
 <template>
 	<!-- Sidebar -->
 	<div
-		class="bg-gray-900 text-gray-100 fixed flex flex-col flex-shrink-0 h-full w-64 animate__animated animate__fadeInLeft"
+		class="bg-gray-900 text-gray-100 fixed flex flex-col flex-shrink-0 h-full w-64 animate__animated animate__fadeInLeft sidebar"
 		v-if="data.jsPrice >= 2000"
 	>
 		<div class="flex-shrink-0 p-4 flex items-center justify-center">
