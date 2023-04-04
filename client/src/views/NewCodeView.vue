@@ -1,8 +1,8 @@
 <template>
 	<!-- <Popup :newComer="exp" @closePopup="handleExpPopup" /> -->
-	<!-- <Popup />
+	<Popup />
 	<Achivement />
-	<TutoCode /> -->
+	<TutoCode />
 	<h1 class="font-bold text-3xl">CODE</h1>
 	<h1 class="text-xl" v-if="data.jsPrice >= 2000">
 		Bienvenue dans l'onglet code ici tu va pouvoir <br />
@@ -35,22 +35,39 @@
 				<strong>{{ data.amountFormat }}</strong> par clic
 			</p>
 		</div>
-	</div>	
-	
-	<br>
-	<br>
-<!-- Toogle -->
-	<label v-if="data.jsPrice >= 2000" class="relative inline-flex items-center cursor-pointer">
-		<input @click="data.changeStack()" type="checkbox" value="" class="sr-only peer">
-		
-		<div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
-		<span class="ml-3 text-md font-medium text-gray-900 dark:text-dark_grey "> {{ data.whatStack }}</span>
+	</div>
+
+	<br />
+	<br />
+	<!-- Toogle -->
+	<label
+		v-if="data.jsPrice >= 2000"
+		class="relative inline-flex items-center cursor-pointer"
+	>
+		<input
+			@click="data.changeStack()"
+			type="checkbox"
+			value=""
+			class="sr-only peer"
+		/>
+
+		<div
+			class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"
+		></div>
+		<span
+			class="ml-3 text-md font-medium text-gray-900 dark:text-dark_grey"
+		>
+			{{ data.whatStack }}</span
+		>
 	</label>
 	<!-- Toogle -->
-	<div v-if="data.ifFront" class="inline-flex gap-4 pt-4 flex-wrap justify-start animate__animated animate__backInLeft">
+	<div
+		v-if="data.ifFront"
+		class="inline-flex gap-4 pt-4 flex-wrap justify-start animate__animated animate__backInLeft"
+	>
 		<div class="skill-card">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_html.svg" alt="">
+				<img src="../assets/icons/logos/skill-icons_html.svg" alt="" />
 				<div>
 					<strong class="text-xl">HTML</strong>
 					<p class="text-sm">ajoute +1 au clic</p>
@@ -84,7 +101,7 @@
 
 		<div class="skill-card">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_css.svg" alt="">
+				<img src="../assets/icons/logos/skill-icons_css.svg" alt="" />
 				<div>
 					<strong class="text-xl">CSS</strong>
 					<p class="text-sm">ajoute +1 par seconde</p>
@@ -117,7 +134,10 @@
 
 		<div class="skill-card">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_javascript.svg" alt="">
+				<img
+					src="../assets/icons/logos/skill-icons_javascript.svg"
+					alt=""
+				/>
 				<div>
 					<strong class="text-xl">Javascript</strong>
 					<p class="text-sm">ajoute +10 par clic</p>
@@ -150,7 +170,10 @@
 
 		<div class="skill-card" v-if="data.jsPrice >= 2000">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_tailwindcss.svg" alt="">
+				<img
+					src="../assets/icons/logos/skill-icons_tailwindcss.svg"
+					alt=""
+				/>
 				<div>
 					<strong class="text-xl">TailWind</strong>
 					<p class="text-sm">ajoute +100 par seconde</p>
@@ -181,9 +204,9 @@
 			</div>
 		</div>
 
-		<div class="skill-card" v-if="data.jsPrice >= 2000" >
+		<div class="skill-card" v-if="data.jsPrice >= 2000">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_vuejs.svg" alt="">
+				<img src="../assets/icons/logos/skill-icons_vuejs.svg" alt="" />
 				<div>
 					<strong class="text-xl">Vue.js</strong>
 					<p class="text-sm">ajoute +1 k par clic</p>
@@ -216,7 +239,7 @@
 
 		<div class="skill-card" v-if="data.jsPrice >= 2000">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_vite.svg" alt="">
+				<img src="../assets/icons/logos/skill-icons_vite.svg" alt="" />
 
 				<div>
 					<strong class="text-xl">Vite.js</strong>
@@ -249,37 +272,39 @@
 		</div>
 	</div>
 
-
-
-
-
-
 	<!-- Back -->
-	<div v-if="data.ifBack" class="inline-flex gap-4 pt-4 flex-wrap justify-start animate__animated animate__backInRight">
+	<div
+		v-if="data.ifBack"
+		class="inline-flex gap-4 pt-4 flex-wrap justify-start animate__animated animate__backInRight"
+	>
 		<div class="skill-card">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_nodejs.svg" alt="">
+				<img
+					src="../assets/icons/logos/skill-icons_nodejs.svg"
+					alt=""
+				/>
 				<div>
 					<strong class="text-xl">Node.js</strong>
-					<p class="text-sm">ajoute +1 au clic</p>
+					<p class="text-sm">ajoute +10 k au clic</p>
 				</div>
 			</div>
 			<div>
 				<p class="font-extralight text-sm">
-					Environnement d'exécution JavaScript côté serveur, qui permet d'exécuter du code JavaScript en dehors du navigateur.
-
+					Environnement d'exécution JavaScript côté serveur, qui
+					permet d'exécuter du code JavaScript en dehors du
+					navigateur.
 				</p>
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ data.htmlPriceFormat }} exp</p>
+					<p>Coût : {{ data.nodePriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 1</i>
 					</p>
 				</div>
 				<div class="inline-flex">
 					<button
-						@click="addHtml"
+						@click="addNode"
 						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
 					>
 						Aquérir
@@ -290,7 +315,10 @@
 
 		<div class="skill-card">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_expressjs.svg" alt="">
+				<img
+					src="../assets/icons/logos/skill-icons_expressjs.svg"
+					alt=""
+				/>
 				<div>
 					<strong class="text-xl">Express.js</strong>
 					<p class="text-sm">ajoute +1 par seconde</p>
@@ -298,20 +326,21 @@
 			</div>
 			<div>
 				<p class="font-extralight text-sm">
-					Framework web pour Node.js, qui facilite la création d'API RESTful et de serveurs web.
+					Framework web pour Node.js, qui facilite la création d'API
+					RESTful et de serveurs web.
 				</p>
 				<br />
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ data.cssPriceFormat }} exp</p>
+					<p>Coût : {{ data.expressPriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 1</i>
 					</p>
 				</div>
 				<div class="inline-flex">
 					<button
-						@click="addCss"
+						@click="addExpress"
 						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
 					>
 						Aquérir
@@ -322,7 +351,10 @@
 
 		<div class="skill-card">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_prisma.svg" alt="">
+				<img
+					src="../assets/icons/logos/skill-icons_prisma.svg"
+					alt=""
+				/>
 				<div>
 					<strong class="text-xl">Prisma</strong>
 					<p class="text-sm">ajoute +10 par clic</p>
@@ -330,20 +362,22 @@
 			</div>
 			<div>
 				<p class="font-extralight text-sm">
-					Outil de gestion de base de données, qui permet de simplifier les interactions avec les bases de données en utilisant un ORM
+					Outil de gestion de base de données, qui permet de
+					simplifier les interactions avec les bases de données en
+					utilisant un ORM
 				</p>
 				<br />
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ data.jsPriceFormat }} exp</p>
+					<p>Coût : {{ data.prismaPriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 1</i>
 					</p>
 				</div>
 				<div class="inline-flex">
 					<button
-						@click="addJs"
+						@click="addPrisma"
 						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
 					>
 						Aquérir
@@ -354,7 +388,10 @@
 
 		<div class="skill-card" v-if="data.jsPrice >= 2000">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_mongodb.svg" alt="">
+				<img
+					src="../assets/icons/logos/skill-icons_mongodb.svg"
+					alt=""
+				/>
 				<div>
 					<strong class="text-xl">MongoDB</strong>
 					<p class="text-sm">ajoute +100 par seconde</p>
@@ -362,52 +399,21 @@
 			</div>
 			<div>
 				<p class="font-extralight text-sm">
-					Système de gestion de base de données NoSQL, qui stocke les données sous forme de documents JSON flexibles.
+					Système de gestion de base de données NoSQL, qui stocke les
+					données sous forme de documents JSON flexibles.
 				</p>
 				<br />
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ data.tailwindPriceFormat }} exp</p>
+					<p>Coût : {{ data.mongoPriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 2</i>
 					</p>
 				</div>
 				<div class="inline-flex">
 					<button
-						@click="addTailwind"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
-					>
-						Aquérir
-					</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="skill-card" v-if="data.jsPrice >= 2000" >
-			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_docker.svg" alt="">
-				<div>
-					<strong class="text-xl">Docker</strong>
-					<p class="text-sm">ajoute +1 k par clic</p>
-				</div>
-			</div>
-			<div>
-				<p class="font-extralight text-sm">
-					Une technologie qui permet d'isoler et de transporter des applications dans des conteneurs légers et portables.
-				</p>
-				<br />
-			</div>
-			<div class="inline-flex gap-36">
-				<div class="row-flex">
-					<p>Coût : {{ data.vuePriceFormat }} exp</p>
-					<p class="text-sm">
-						<i> Requis pour mission de Niveau 2</i>
-					</p>
-				</div>
-				<div class="inline-flex">
-					<button
-						@click="addVue"
+						@click="addMongo"
 						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
 					>
 						Aquérir
@@ -418,7 +424,46 @@
 
 		<div class="skill-card" v-if="data.jsPrice >= 2000">
 			<div class="inline-flex gap-4">
-				<img src="../assets/icons/logos/skill-icons_vercel.svg" alt="">
+				<img
+					src="../assets/icons/logos/skill-icons_docker.svg"
+					alt=""
+				/>
+				<div>
+					<strong class="text-xl">Docker</strong>
+					<p class="text-sm">ajoute +1 k par clic</p>
+				</div>
+			</div>
+			<div>
+				<p class="font-extralight text-sm">
+					Une technologie qui permet d'isoler et de transporter des
+					applications dans des conteneurs légers et portables.
+				</p>
+				<br />
+			</div>
+			<div class="inline-flex gap-36">
+				<div class="row-flex">
+					<p>Coût : {{ data.dockerPriceFormat }} exp</p>
+					<p class="text-sm">
+						<i> Requis pour mission de Niveau 2</i>
+					</p>
+				</div>
+				<div class="inline-flex">
+					<button
+						@click="addDocker"
+						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+					>
+						Aquérir
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="skill-card" v-if="data.jsPrice >= 2000">
+			<div class="inline-flex gap-4">
+				<img
+					src="../assets/icons/logos/skill-icons_vercel.svg"
+					alt=""
+				/>
 
 				<div>
 					<strong class="text-xl">Vercel</strong>
@@ -427,19 +472,21 @@
 			</div>
 			<div>
 				<p class="font-extralight text-sm">
-					Une plateforme cloud qui permet de déployer et de gérer des applications Web statiques et dynamiques, ainsi que des fonctions serverless.
+					Une plateforme cloud qui permet de déployer et de gérer des
+					applications Web statiques et dynamiques, ainsi que des
+					fonctions serverless.
 				</p>
 			</div>
 			<div class="inline-flex gap-36">
 				<div class="row-flex">
-					<p>Coût : {{ data.vitePriceFormat }} exp</p>
+					<p>Coût : {{ data.vercelPriceFormat }} exp</p>
 					<p class="text-sm">
 						<i> Requis pour mission de Niveau 3</i>
 					</p>
 				</div>
 				<div class="inline-flex">
 					<button
-						@click="addVite"
+						@click="addVercel"
 						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
 					>
 						Aquérir
@@ -451,7 +498,6 @@
 	<br />
 
 	<br />
-	
 
 	<button
 		@click="resetLocal"
@@ -494,7 +540,7 @@ const addHtml = () => {
 		data.amount += 1
 		data.htmlAchivement()
 		data.totalAchivement()
-	} 
+	}
 }
 const addCss = () => {
 	if (data.exp >= data.cssPrice) {
@@ -539,13 +585,53 @@ const addVite = () => {
 		data.amount += 5000
 		data.viteAchivement()
 		data.totalAchivement()
-
+	}
+}
+const addNode = () => {
+	if (data.exp >= data.nodePrice) {
+		data.exp -= data.nodePrice
+		data.nodePrice += 500000
+		data.amount += 50000
+	}
+}
+const addExpress = () => {
+	if (data.exp >= data.expressPrice) {
+		data.exp -= data.expressPrice
+		data.expressPrice += 5000000
+		data.amount += 500000
+	}
+}
+const addPrisma = () => {
+	if (data.exp >= data.prismaPrice) {
+		data.exp -= data.prismaPrice
+		data.prismaPrice += 50000000
+		data.amount += 5000000
+	}
+}
+const addMongo = () => {
+	if (data.exp >= data.mongoPrice) {
+		data.exp -= data.mongoPrice
+		data.mongoPrice += 500000000
+		data.amount += 50000000
+	}
+}
+const addDocker = () => {
+	if (data.exp >= data.dockerPrice) {
+		data.exp -= data.dockerPrice
+		data.dockerPrice += 5000000000
+		data.amount += 500000000
+	}
+}
+const addVercel = () => {
+	if (data.exp >= data.vercelPrice) {
+		data.exp -= data.vercelPrice
+		data.vercelPrice += 50000000000
+		data.amount += 5000000000
 	}
 }
 // I want to watch the change of all expData to store in local storage
 watch(expData, () => {
 	localStorage.setItem("expData", JSON.stringify(expData))
-	
 })
 
 onMounted(() => {
