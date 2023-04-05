@@ -4,19 +4,31 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        exp: -2,
+        // exp: -2,
+        exp: 100000000,
         money: 0,
         closedTuto: false,
         // Code data
-        isAnimated: false,
+        isAnimated: true,
         amount: 1,
         amountSec: 0,
-        htmlPrice: 10,
-        cssPrice: 100,
-        jsPrice: 1000,
-        tailwindPrice: 5000,
-        vuePrice: 50000,
-        vitePrice: 100000,
+        whatStack: 'Front-end',
+        ifBack: false,
+        ifFront: true,
+            // front
+            htmlPrice: 10,
+            cssPrice: 100,
+            jsPrice: 1000,
+            tailwindPrice: 5000,
+            vuePrice: 50000,
+            vitePrice: 100000,
+            // back
+            nodePrice: 1000000,
+            expressPrice: 5000000,
+            prismaPrice: 10000000,
+            mongoPrice: 50000000,
+            dockerPrice: 100000000,
+            vercelPrice: 500000000,
         // Mission data
         progressValue1: 0,
         progressValue2: 0,
@@ -59,6 +71,36 @@ export const useDataStore = defineStore({
         htmlAchivementActive6: false,
         htmlAchivementActive7: false,
 
+        nodeAchivement1: false,
+        nodeAchivement2: false,
+        nodeAchivement3: false,
+        nodeAchivement4: false,
+        nodeAchivement5: false,
+        nodeAchivement6: false,
+        nodeAchivement7: false,
+        nodeAchivementActive1: false,
+        nodeAchivementActive2: false,
+        nodeAchivementActive3: false,
+        nodeAchivementActive4: false,
+        nodeAchivementActive5: false,
+        nodeAchivementActive6: false,
+        nodeAchivementActive7: false,
+
+        clickAchivement1: false,
+        clickAchivement2: false,
+        clickAchivement3: false,
+        clickAchivement4: false,
+        clickAchivement5: false,
+        clickAchivement6: false,
+        clickAchivement7: false,
+        clickAchivementActive1: false,
+        clickAchivementActive2: false,
+        clickAchivementActive3: false,
+        clickAchivementActive4: false,
+        clickAchivementActive5: false,
+        clickAchivementActive6: false,
+        clickAchivementActive7: false,
+
     }),
     actions: {
         increaseExp() {
@@ -71,6 +113,18 @@ export const useDataStore = defineStore({
 
         increaseMoney(amount) {
             this.money += amount
+        },
+
+        changeStack(){
+            if(this.whatStack == 'Front-end'){
+                this.whatStack = 'Back-end'
+                this.ifBack = true
+                this.ifFront = false
+            } else {
+                this.whatStack = 'Front-end'
+                this.ifBack = false
+                this.ifFront = true
+            }
         },
 
         closeTuto() {
@@ -435,6 +489,67 @@ export const useDataStore = defineStore({
                 }
             )
         },
+        nodePriceFormat() {
+            return this.nodePrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        expressPriceFormat() {
+            return this.expressPrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        prismaPriceFormat() {
+            return this.prismaPrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        mongoPriceFormat() {
+            return this.mongoPrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        dockerPriceFormat() {
+            return this.dockerPrice.toLocaleString(
+                undefined,
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+        vercelPriceFormat() {
+            return this.vercelPrice.toLocaleString(
+                undefined, 
+                {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                    notation: "compact"
+                }
+            )
+        },
+
         increaseExpSec() {
             setInterval(() => {
                 this.exp += this.amountSec
