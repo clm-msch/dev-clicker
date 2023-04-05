@@ -48,7 +48,7 @@ button {
 }
 </style> -->
 
-<template>
+<!-- <template>
   <div>
     <h1>Simulation de fluctuations de chiffres</h1>
     <p>
@@ -160,4 +160,66 @@ td {
 th {
 	background-color: #f2f2f2;
 }
-</style>
+</style> -->
+
+
+<template>
+  <div>
+    <label for="numberInput">Entrez un chiffre:</label>
+    <input id="numberInput" v-model="newNumber" type="number">
+    <button @click="addNumber">€ Ajouter</button>
+    <p>Somme fluctuée: {{ fluctuatedSum }} €</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      newNumber: 0,
+      sum: 0,
+      fluctuatedSum: 0,
+      intervalId: null
+    }
+  },
+  methods: {
+    addNumber() {
+      // Ajoute le nouveau nombre à la somme
+      this.sum += parseInt(this.newNumber)
+
+      // Lance la boucle de fluctuation si elle n'est pas déjà lancée
+      if (!this.intervalId) {
+        this.startFluctuationLoop()
+      }
+
+      // Réinitialise l'entrée utilisateur
+      this.newNumber = 0
+    },
+    startFluctuationLoop() {
+      // Calcule la magnitude de la fluctuation en fonction de la somme actuelle
+      const magnitude = Math.floor(this.sum / 10)
+
+      // Lance la boucle avec une vitesse de 5 secondes
+      this.intervalId = setInterval(() => {
+        // Fluctue la somme aléatoirement en utilisant la magnitude calculée
+        const fluctuation = Math.floor(Math.random() * (magnitude + 1) * 2) - magnitude
+        this.fluctuatedSum = this.sum + fluctuation
+
+        // Arrête la boucle si la somme atteint 0
+        if (this.fluctuatedSum <= 0) {
+          this.stopFluctuationLoop()
+        }
+      }, 1000)
+    },
+    stopFluctuationLoop() {
+      if (this.intervalId) {
+        // Arrête la boucle si elle est lancée
+        clearInterval(this.intervalId)
+        this.intervalId = null
+      }
+    }
+  }
+}
+</script>
+
+

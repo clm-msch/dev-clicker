@@ -6,8 +6,9 @@ export const useDataStore = defineStore({
         // General data
         // exp: -2,
         exp: 100000000,
-        money: 0,
+        money: 10000,
         closedTuto: false,
+        companyName : null,
         // Code data
         isAnimated: true,
         amount: 1,
@@ -43,7 +44,7 @@ export const useDataStore = defineStore({
         ifJob4: false,
         // Invest data
         UTOstock: 0,
-        UTOprice: 20,
+        UTOprice: 10,
         MRSstock: 0,
         MRSprice: 40,
         CRAstock: 0,
@@ -113,6 +114,9 @@ export const useDataStore = defineStore({
 
         increaseMoney(amount) {
             this.money += amount
+        },
+        affectCompanyName(name) {
+            this.companyName = name
         },
 
         changeStack(){
