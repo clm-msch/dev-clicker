@@ -4,9 +4,9 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        exp: -2,
-        // exp: 100000000,
-        money: 0,
+        // exp: -2,
+        exp: 10000000,
+        money: 50000,
         closedTuto: false,
         // Code data
         isAnimated: true,
@@ -52,7 +52,7 @@ export const useDataStore = defineStore({
         DWRKprice: 25,
         // Company data
         companyName: null,
-        ifCompagny: false,
+        ifCompany: false,
         ifCampanyName: false,
         ifProject1: false,
         ifProject2: false,
@@ -60,6 +60,16 @@ export const useDataStore = defineStore({
         autoProject2: false,
         progressValueProject1: 0,
         progressValueProject2: 0,
+
+        devFrontJunior: 0,
+        devFrontSenior: 0,
+        devBackJunior: 0,
+        devBackSenior: 0,
+        devFullJunior: 0,
+        devFullSenior: 0,
+
+        server1: 0,
+        server2: 0,
 
         // Amazitruc data
         switch: 0,
@@ -235,10 +245,16 @@ export const useDataStore = defineStore({
         },
         // Project actions
         activeProject1() {
-            this.ifProject1 = true
+            if (this.devFrontJunior >= 2 && this.devBackJunior >= 1 && this.devFullJunior >= 1 && this.server1 >= 1) {
+
+                this.ifProject1 = true
+            }
         },
         activeProject2() {
-            this.ifProject2 = true
+            if (this.devFrontJunior >= 6 && this.devBackJunior >= 3 && this.devFullJunior >= 2 && this.server2 >= 1) {
+
+                this.ifProject2 = true
+            }
         },
         increaseProjectProgress1(amount, reward) {
             this.autoProject1 = true
@@ -277,6 +293,40 @@ export const useDataStore = defineStore({
                         this.progressValueProject2 += amount
                     }
                 }, 1000)
+            }
+        },
+
+        //Recrut actions
+        recrutDevFrontJun() {
+            if (this.money >= 500) {
+                this.money -= 500
+                this.devFrontJunior += 1
+            }
+        },
+        recrutDevBackJun() {
+            if (this.money >= 1000) {
+                this.money -= 1000
+                this.devBackJunior += 1
+            }
+        },
+        recrutDevFullJun() {
+            if (this.money >= 1500) {
+                this.money -= 1500
+                this.devFullJunior += 1
+            }
+        },
+
+        // Server actions
+        buyServer1() {
+            if (this.money >= 500) {
+                this.money -= 500
+                this.server1 += 1
+            }
+        },
+        buyServer2() {
+            if (this.money >= 1500) {
+                this.money -= 1500
+                this.server2 += 1
             }
         },
 
@@ -436,7 +486,7 @@ export const useDataStore = defineStore({
                 this.htmlAchivement7 = true
                 this.htmlAchivementActive7 = true
                 this.amount += 100000
-                
+
             }
             if (this.htmlAchivement7 == true) {
                 setTimeout(() => {
@@ -445,7 +495,7 @@ export const useDataStore = defineStore({
             }
         },
         affectIfCompany() {
-            if (this.exp >= 10 ) {
+            if (this.exp >= 1000000) {
                 this.ifCompany = true
             }
         },
