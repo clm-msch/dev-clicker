@@ -4,11 +4,10 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        // exp: -2,
-        exp: 100000000,
-        money: 10000,
+        exp: -2,
+        // exp: 10000000,
+        money: 0,
         closedTuto: false,
-        companyName : null,
         // Code data
         isAnimated: true,
         amount: 1,
@@ -16,20 +15,20 @@ export const useDataStore = defineStore({
         whatStack: 'Front-end',
         ifBack: false,
         ifFront: true,
-            // front
-            htmlPrice: 10,
-            cssPrice: 100,
-            jsPrice: 1000,
-            tailwindPrice: 5000,
-            vuePrice: 50000,
-            vitePrice: 100000,
-            // back
-            nodePrice: 1000000,
-            expressPrice: 5000000,
-            prismaPrice: 10000000,
-            mongoPrice: 50000000,
-            dockerPrice: 100000000,
-            vercelPrice: 500000000,
+        // front
+        htmlPrice: 10,
+        cssPrice: 100,
+        jsPrice: 1000,
+        tailwindPrice: 5000,
+        vuePrice: 50000,
+        vitePrice: 100000,
+        // back
+        nodePrice: 1000000,
+        expressPrice: 5000000,
+        prismaPrice: 10000000,
+        mongoPrice: 50000000,
+        dockerPrice: 500000000,
+        vercelPrice: 1000000000,
         // Mission data
         progressValue1: 0,
         progressValue2: 0,
@@ -43,19 +42,63 @@ export const useDataStore = defineStore({
         ifJob3: false,
         ifJob4: false,
         // Invest data
+        totalStock: 0,
+        totalValueStock: 0,
+
         UTOstock: 0,
-        UTOprice: 10,
+        UTOprice: 100,
         MRSstock: 0,
-        MRSprice: 40,
+        MRSprice: 400,
         CRAstock: 0,
-        CRAprice: 60,
+        CRAprice: 600,
         DWRKstock: 0,
-        DWRKprice: 25,
+        DWRKprice: 2500,
+
+        newNumberUTO: 0,
+        sumUTO: 0,
+        fluctuatedSumUTO: 0,
+        intervalIdUTO: null,
+
+        newNumberMRS: 0,
+        sumMRS: 0,
+        fluctuatedSumMRS: 0,
+        intervalIdMRS: null,
+
+        newNumberCRA: 0,
+        sumCRA: 0,
+        fluctuatedSumCRA: 0,
+        intervalIdCRA: null,
+
+        newNumberDWRK: 0,
+        sumDWRK: 0,
+        fluctuatedSumDWRK: 0,
+        intervalIdDWRK: null,
+        // Company data
+        companyName: null,
+        ifCompany: false,
+        ifCampanyName: false,
+        ifProject1: false,
+        ifProject2: false,
+        autoProject1: false,
+        autoProject2: false,
+        progressValueProject1: 0,
+        progressValueProject2: 0,
+
+        devFrontJunior: 0,
+        devFrontSenior: 0,
+        devBackJunior: 0,
+        devBackSenior: 0,
+        devFullJunior: 0,
+        devFullSenior: 0,
+
+        server1: 0,
+        server2: 0,
+
         // Amazitruc data
-        switch : 0,
-        head : 0,
-        pc : 0,
-        car : 0,
+        switch: 0,
+        head: 0,
+        pc: 0,
+        car: 0,
         // Achivement data
         htmlAchivement1: false,
         htmlAchivement2: false,
@@ -111,16 +154,14 @@ export const useDataStore = defineStore({
                 this.isAnimated = false
             }, 500)
         },
-
         increaseMoney(amount) {
             this.money += amount
         },
         affectCompanyName(name) {
             this.companyName = name
         },
-
-        changeStack(){
-            if(this.whatStack == 'Front-end'){
+        changeStack() {
+            if (this.whatStack == 'Front-end') {
                 this.whatStack = 'Back-end'
                 this.ifBack = true
                 this.ifFront = false
@@ -130,11 +171,9 @@ export const useDataStore = defineStore({
                 this.ifFront = true
             }
         },
-
         closeTuto() {
             this.closedTuto = true
         },
-
         // Job actions
         activeJob1() {
             if (this.jsPrice >= 2000) {
@@ -225,6 +264,92 @@ export const useDataStore = defineStore({
                         this.progressValue4 += amount
                     }
                 }, 1000)
+            }
+        },
+        // Project actions
+        activeProject1() {
+            if (this.devFrontJunior >= 2 && this.devBackJunior >= 1 && this.devFullJunior >= 1 && this.server1 >= 1) {
+
+                this.ifProject1 = true
+            }
+        },
+        activeProject2() {
+            if (this.devFrontJunior >= 6 && this.devBackJunior >= 3 && this.devFullJunior >= 2 && this.server2 >= 1) {
+
+                this.ifProject2 = true
+            }
+        },
+        increaseProjectProgress1(amount, reward) {
+            this.autoProject1 = true
+            if (this.progressValueProject1 >= 100) {
+                this.progressValueProject1 = 0
+                this.money += reward
+            } else {
+                this.progressValueProject1 += amount
+            }
+            if (this.autoProject1 == true && !this.jobProjectInterval1) {
+                this.jobProjectInterval1 = setInterval(() => {
+                    if (this.progressValueProject1 >= 100) {
+                        this.progressValueProject1 = 0
+                        this.money += reward
+                    } else {
+                        this.progressValueProject1 += amount
+                    }
+                }, 1000)
+            }
+        },
+        increaseProjectProgress2(amount, reward) {
+            this.autoProject2 = true
+            if (this.progressValueProject2 >= 100) {
+                this.progressValueProject2 = 0
+                this.money += reward
+            }
+            else {
+                this.progressValueProject2 += amount
+            }
+            if (this.autoProject2 == true && !this.jobProjectInterval2) {
+                this.jobProjectInterval2 = setInterval(() => {
+                    if (this.progressValueProject2 >= 100) {
+                        this.progressValueProject2 = 0
+                        this.money += reward
+                    } else {
+                        this.progressValueProject2 += amount
+                    }
+                }, 1000)
+            }
+        },
+
+        //Recrut actions
+        recrutDevFrontJun() {
+            if (this.money >= 500) {
+                this.money -= 500
+                this.devFrontJunior += 1
+            }
+        },
+        recrutDevBackJun() {
+            if (this.money >= 1000) {
+                this.money -= 1000
+                this.devBackJunior += 1
+            }
+        },
+        recrutDevFullJun() {
+            if (this.money >= 1500) {
+                this.money -= 1500
+                this.devFullJunior += 1
+            }
+        },
+
+        // Server actions
+        buyServer1() {
+            if (this.money >= 500) {
+                this.money -= 500
+                this.server1 += 1
+            }
+        },
+        buyServer2() {
+            if (this.money >= 1500) {
+                this.money -= 1500
+                this.server2 += 1
             }
         },
 
@@ -330,7 +455,7 @@ export const useDataStore = defineStore({
                     this.htmlAchivement2 = false
                 }, 5000)
             }
-    },
+        },
         jsAchivement() {
             if (this.jsPrice == 11000) {
                 this.htmlAchivement3 = true
@@ -342,7 +467,7 @@ export const useDataStore = defineStore({
                     this.htmlAchivement3 = false
                 }, 5000)
             }
-    },
+        },
         tailwindAchivement() {
             if (this.tailwindPrice == 30000) {
                 this.htmlAchivement4 = true
@@ -354,7 +479,7 @@ export const useDataStore = defineStore({
                     this.htmlAchivement4 = false
                 }, 5000)
             }
-    },
+        },
         vueAchivement() {
             if (this.vuePrice == 105000) {
                 this.htmlAchivement5 = true
@@ -366,7 +491,7 @@ export const useDataStore = defineStore({
                     this.htmlAchivement5 = false
                 }, 5000)
             }
-    },
+        },
         viteAchivement() {
             if (this.vitePrice == 600000) {
                 this.htmlAchivement6 = true
@@ -377,21 +502,27 @@ export const useDataStore = defineStore({
                 setTimeout(() => {
                     this.htmlAchivement6 = false
                 }, 5000)
-            }   
-    },
+            }
+        },
         totalAchivement() {
             if (this.htmlAchivement6 == true) {
                 this.htmlAchivement7 = true
                 this.htmlAchivementActive7 = true
                 this.amount += 100000
+
             }
             if (this.htmlAchivement7 == true) {
                 setTimeout(() => {
                     this.htmlAchivement7 = false
                 }, 5000)
-            } 
+            }
         },
-},
+        affectIfCompany() {
+            if (this.exp >= 1000000) {
+                this.ifCompany = true
+            }
+        },
+    },
     getters: {
         expFormat() {
             return this.exp.toLocaleString(
@@ -545,7 +676,7 @@ export const useDataStore = defineStore({
         },
         vercelPriceFormat() {
             return this.vercelPrice.toLocaleString(
-                undefined, 
+                undefined,
                 {
                     minimumFractionDigits: 0,
                     maximumFractionDigits: 4,
@@ -561,6 +692,9 @@ export const useDataStore = defineStore({
         },
         totalStock() {
             return this.UTOstock + this.MRSstock + this.CRAstock + this.DWRKstock
+        },
+        totalValueStock() {
+            return this.fluctuatedSumUTO + this.fluctuatedSumMRS + this.fluctuatedSumCRA + this.fluctuatedSumDWRK
         },
         totalCRA() {
             return this.CRAstock * this.CRAprice

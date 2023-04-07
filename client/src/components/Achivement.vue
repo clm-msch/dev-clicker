@@ -1,6 +1,6 @@
 <template>
 	<!-- html achivement 1 -->
-	<div v-if="data.htmlAchivement1" class="fixed z-2 bottom-4 right-4 animate__animated animate__tada">
+	<div v-if="data.htmlAchivement1" class="fixed z-20 bottom-4 right-4 animate__animated animate__tada">
 		<div
 			class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg drop-shadow-lg"
 		>
@@ -25,7 +25,7 @@
 	</div>
 
   	<!-- html achivement 2 -->
-	<div v-if="data.htmlAchivement2" class="fixed z-2 bottom-4 right-4 animate__animated animate__tada">
+	<div v-if="data.htmlAchivement2" lass="fixed z-20 bottom-4 right-4 animate__animated animate__tada">
 		<div
 			class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg drop-shadow-lg"
 		>
@@ -50,7 +50,7 @@
 	</div>
 
     	<!-- html achivement 3 -->
-	<div v-if="data.htmlAchivement3" class="fixed z-2 bottom-4 right-4 animate__animated animate__tada">
+	<div v-if="data.htmlAchivement3" class="fixed z-20 bottom-4 right-4 animate__animated animate__tada">
 		<div
 			class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg drop-shadow-lg"
 		>
@@ -75,7 +75,7 @@
 	</div>
 
     	<!-- html achivement 4 -->
-	<div v-if="data.htmlAchivement4" class="fixed z-2 bottom-4 right-4 animate__animated animate__tada">
+	<div v-if="data.htmlAchivement4" class="fixed z-20 bottom-4 right-4 animate__animated animate__tada">
 		<div
 			class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg drop-shadow-lg"
 		>
@@ -100,7 +100,7 @@
 	</div>
 
       	<!-- html achivement 5 -->
-	<div v-if="data.htmlAchivement5" class="fixed z-2 bottom-4 right-4 animate__animated animate__tada">
+	<div v-if="data.htmlAchivement5" class="fixed z-20 bottom-4 right-4 animate__animated animate__tada">
 		<div
 			class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg drop-shadow-lg"
 		>
@@ -125,7 +125,7 @@
 	</div>
 
         	<!-- html achivement 6 -->
-	<div v-if="data.htmlAchivement6" class="fixed z-2 bottom-4 right-4 animate__animated animate__tada">
+	<div v-if="data.htmlAchivement6" class="fixed z-20 bottom-4 right-4 animate__animated animate__tada">
 		<div
 			class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg drop-shadow-lg"
 		>
@@ -150,7 +150,7 @@
 	</div>
 
           	<!-- html achivement 7 -->
-	<div v-if="data.htmlAchivement7" class="fixed z-2 bottom-28 right-4 animate__animated animate__tada">
+	<div v-if="data.htmlAchivement7" class="fixed z-20 bottom-28 right-4 animate__animated animate__tada">
 		<div
 			class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg drop-shadow-lg" 
 		>
@@ -176,7 +176,6 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUpdated, watch } from "vue"
 import { useDataStore } from "../stores/data"
 const data = useDataStore()
 

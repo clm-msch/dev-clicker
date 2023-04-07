@@ -1,7 +1,7 @@
 <template>
 	<!-- <Popup :newComer="exp" @closePopup="handleExpPopup" /> -->
-	<Popup />
-	<Achivement />
+		<Achivement />
+		<Popup />
 	<TutoCode />
 	<h1 class="font-bold text-3xl">CODE</h1>
 	<h1 class="text-xl" v-if="data.jsPrice >= 2000">
@@ -13,6 +13,7 @@
 	<div class="inline-flex gap-8 justify-center align-middle">
 		<!-- @click="addExp(expData.amount)" -->
 		<button
+		  @keydown.enter.prevent
 			@click="data.increaseExp"
 			:class="{
 				animate__animated: data.isAnimated,
@@ -321,7 +322,7 @@
 				/>
 				<div>
 					<strong class="text-xl">Express.js</strong>
-					<p class="text-sm">ajoute +1 par seconde</p>
+					<p class="text-sm">ajoute +50 k au clic</p>
 				</div>
 			</div>
 			<div>
@@ -357,7 +358,7 @@
 				/>
 				<div>
 					<strong class="text-xl">Prisma</strong>
-					<p class="text-sm">ajoute +10 par clic</p>
+					<p class="text-sm">ajoute +50 k par seconde</p>
 				</div>
 			</div>
 			<div>
@@ -394,7 +395,7 @@
 				/>
 				<div>
 					<strong class="text-xl">MongoDB</strong>
-					<p class="text-sm">ajoute +100 par seconde</p>
+					<p class="text-sm">ajoute +150 k par clic</p>
 				</div>
 			</div>
 			<div>
@@ -430,7 +431,7 @@
 				/>
 				<div>
 					<strong class="text-xl">Docker</strong>
-					<p class="text-sm">ajoute +1 k par clic</p>
+					<p class="text-sm">ajoute +100 k par seconde</p>
 				</div>
 			</div>
 			<div>
@@ -467,7 +468,7 @@
 
 				<div>
 					<strong class="text-xl">Vercel</strong>
-					<p class="text-sm">ajoute +5 k par clic</p>
+					<p class="text-sm">ajoute +500 k par clic</p>
 				</div>
 			</div>
 			<div>
@@ -591,42 +592,42 @@ const addNode = () => {
 	if (data.exp >= data.nodePrice) {
 		data.exp -= data.nodePrice
 		data.nodePrice += 500000
-		data.amount += 50000
+		data.amount += 10000
 	}
 }
 const addExpress = () => {
 	if (data.exp >= data.expressPrice) {
 		data.exp -= data.expressPrice
 		data.expressPrice += 5000000
-		data.amount += 500000
+		data.amount += 50000
 	}
 }
 const addPrisma = () => {
 	if (data.exp >= data.prismaPrice) {
 		data.exp -= data.prismaPrice
 		data.prismaPrice += 50000000
-		data.amount += 5000000
+		data.amountSec += 50000
 	}
 }
 const addMongo = () => {
 	if (data.exp >= data.mongoPrice) {
 		data.exp -= data.mongoPrice
 		data.mongoPrice += 500000000
-		data.amount += 50000000
+		data.amount += 150000
 	}
 }
 const addDocker = () => {
 	if (data.exp >= data.dockerPrice) {
 		data.exp -= data.dockerPrice
 		data.dockerPrice += 5000000000
-		data.amount += 500000000
+		data.amountSec += 100000
 	}
 }
 const addVercel = () => {
 	if (data.exp >= data.vercelPrice) {
 		data.exp -= data.vercelPrice
 		data.vercelPrice += 50000000000
-		data.amount += 5000000000
+		data.amount += 500000
 	}
 }
 // I want to watch the change of all expData to store in local storage

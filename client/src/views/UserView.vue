@@ -48,7 +48,7 @@ button {
 }
 </style> -->
 
-<!-- <template>
+<template>
   <div>
     <h1>Simulation de fluctuations de chiffres</h1>
     <p>
@@ -160,66 +160,211 @@ td {
 th {
 	background-color: #f2f2f2;
 }
-</style> -->
+</style>
 
-
-<template>
-  <div>
-    <label for="numberInput">Entrez un chiffre:</label>
-    <input id="numberInput" v-model="newNumber" type="number">
-    <button @click="addNumber">€ Ajouter</button>
-    <p>Somme fluctuée: {{ fluctuatedSum }} €</p>
-  </div>
+<!-- <template>
+	<div>
+		<h1>Simulation de fluctuations de chiffres</h1>
+		<button class="bg-primary text-white p-2 rounded" @click="buyAction10">Acheter des actions pour 10 €</button>
+		<p>Somme fluctuée: {{ fluctuatedSum1 }} €</p>
+    <button class="bg-primary text-white p-2 rounded" @click="buyAction100">Acheter des actions pour 100 €</button>
+		<button class="bg-primary text-white p-2 rounded" @click="sellAction1">Vendre des actions</button>
+		<p>Tes gains {{ gains }} €</p>
+	</div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      newNumber: 0,
-      sum: 0,
-      fluctuatedSum: 0,
-      intervalId: null
-    }
-  },
-  methods: {
-    addNumber() {
-      // Ajoute le nouveau nombre à la somme
-      this.sum += parseInt(this.newNumber)
+	data() {
+		return {
+			newNumber1: 0,
+			gains: 1000,
+			sum1: 0,
+			fluctuatedSum1: 0,
+			intervalId1: null,
+		}
+	},
+	methods: {
+		buyAction10() {
+			if (this.gains < 10) {
+				alert("Vous n'avez pas assez d'argent")
+				return
+			} else {
+				this.gains -= 10
+				this.newNumber1 = 10
+				this.addNumber1()
+			}
+		},
+    buyAction100() {
+			if (this.gains < 100) {
+				alert("Vous n'avez pas assez d'argent")
+				return
+			} else {
+				this.gains -= 100
+				this.newNumber1 = 100
+				this.addNumber1()
+			}
+		},
+		sellAction1() {
+			this.gains += this.fluctuatedSum1
+      this.sum1 = 0
+      this.newNumber1 = 0
+			this.fluctuatedSum1 = 0
+      clearInterval(this.intervalId1)
+			this.intervalId1 = null
+		},
+		addNumber1() {
+			// Ajoute le nouveau nombre à la somme
+			this.sum1 += parseInt(this.newNumber1)
 
-      // Lance la boucle de fluctuation si elle n'est pas déjà lancée
-      if (!this.intervalId) {
-        this.startFluctuationLoop()
-      }
+			// Lance la boucle de fluctuation si elle n'est pas déjà lancée
+			if (!this.intervalId1) {
+				this.startFluctuationLoop1()
+			}
 
-      // Réinitialise l'entrée utilisateur
-      this.newNumber = 0
-    },
-    startFluctuationLoop() {
-      // Calcule la magnitude de la fluctuation en fonction de la somme actuelle
-      const magnitude = Math.floor(this.sum / 10)
+			// Réinitialise l'entrée utilisateur
+			this.newNumber1 = 0
+		},
+		startFluctuationLoop1() {
+			// Calcule la magnitude de la fluctuation en fonction de la somme actuelle
+			const magnitude1 = Math.floor(this.sum1 / 2)
 
-      // Lance la boucle avec une vitesse de 5 secondes
-      this.intervalId = setInterval(() => {
-        // Fluctue la somme aléatoirement en utilisant la magnitude calculée
-        const fluctuation = Math.floor(Math.random() * (magnitude + 1) * 2) - magnitude
-        this.fluctuatedSum = this.sum + fluctuation
+			// Lance la boucle avec une vitesse de 5 secondes
+			this.intervalId1 = setInterval(() => {
+				// Fluctue la somme aléatoirement en utilisant la magnitude calculée
+				const fluctuation1 =
+					Math.floor(Math.random() * (magnitude1 + 2) * 6) - magnitude1
+				this.fluctuatedSum1 = this.sum1 + fluctuation1
 
-        // Arrête la boucle si la somme atteint 0
-        if (this.fluctuatedSum <= 0) {
-          this.stopFluctuationLoop()
-        }
-      }, 1000)
-    },
-    stopFluctuationLoop() {
-      if (this.intervalId) {
-        // Arrête la boucle si elle est lancée
-        clearInterval(this.intervalId)
-        this.intervalId = null
-      }
-    }
-  }
+				// Arrête la boucle si la somme atteint 0
+				if (this.fluctuatedSum1 <= 0) {
+					this.stopFluctuationLoop1()
+				}
+			}, 1000)
+		},
+		stopFluctuationLoop1() {
+			if (this.intervalId1) {
+				// Arrête la boucle si elle est lancée
+				clearInterval(this.intervalId1)
+				this.intervalId1 = null
+			}
+		},
+	},
 }
+</script> -->
+
+<!-- <template>
+	<v-chart
+		class="chart"
+		:option="option"
+		autoresize
+		style="width: 500px; height: 400px"
+	/>
+	<button @click="addMRS">Ajout de MRS</button>
+	<button @click="addUTO">Ajout de UTO</button>
+	<button @click="addCRA">Ajout de CRA</button>
+	<button @click="addDWRK">Ajout de DWRK</button>
+</template>
+
+<script setup>
+import { useDataStore } from "../stores/data"
+import { use } from "echarts/core"
+import { CanvasRenderer } from "echarts/renderers"
+import { PieChart } from "echarts/charts"
+import {
+	TitleComponent,
+	TooltipComponent,
+	LegendComponent,
+} from "echarts/components"
+import VChart, { THEME_KEY } from "vue-echarts"
+import { ref, provide } from "vue"
+const data = useDataStore()
+use([
+	CanvasRenderer,
+	PieChart,
+	TitleComponent,
+	TooltipComponent,
+	LegendComponent,
+])
+
+const addMRS = () => {
+	option.value.series[0].data[0].value += 1
+	data.MRSstock += 1
+}
+const addUTO = () => {
+	option.value.series[0].data[1].value += 1
+	data.UTOstock += 1
+}
+const addCRA = () => {
+	option.value.series[0].data[2].value += 1
+	data.CRAstock += 1
+}
+const addDWRK = () => {
+	option.value.series[0].data[3].value += 1
+	data.DWRKstock += 1
+}
+provide(THEME_KEY, "light")
+
+const option = ref({
+	title: {
+		text: "Répartition des actions",
+		left: "center",
+	},
+	tooltip: {
+		trigger: "item",
+		formatter: "{b}: {c} ({d}%)",
+	},
+	legend: {
+		orient: "vertical",
+		left: "right",
+		data: ["MRS", "UTO", "CRA", "DWRK"],
+	},
+	series: [
+		{
+			name: "Traffic Sources",
+			type: "pie",
+			radius: "55%",
+			radius: ["40%", "70%"],
+			avoidLabelOverlap: false,
+			label: {
+				show: false,
+			},
+			labelLine: {
+				show: false,
+			},
+			data: [
+				{
+					value: data.MRSstock,
+					name: "MRS",
+					itemStyle: { color: "#F8687C" },
+				},
+				{
+					value: data.UTOstock,
+					name: "UTO",
+					itemStyle: { color: "#68F5AA" },
+				},
+				{
+					value: data.CRAstock,
+					name: "CRA",
+					itemStyle: { color: "#FFF482" },
+				},
+				{
+					value: data.DWRKstock,
+					name: "DWRK",
+					itemStyle: { color: "#9E89F3" },
+				},
+			],
+
+			itemStyle: {
+				borderRadius: 10,
+			},
+		},
+	],
+})
 </script>
 
-
+<style scoped>
+.chart {
+	height: 100vh;
+}
+</style> -->

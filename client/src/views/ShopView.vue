@@ -4,7 +4,7 @@
 	</div>
   <div class="flex gap-4 shadow-lg flex-wrap">
     <div class="bg-white p-4 w-64">
-      <img src="../assets/img/shop/switch.jpg" class="rounded" />
+      <img src="../assets/img/shop/switch.webp" class="rounded" />
       <div class="flex justify-between">
         <div class="flex flex-col">
           <h1 class="text-2xl font-bold">Console de jeu</h1>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="bg-white p-4 w-64">
-      <img src="../assets/img/shop/headphone.jpg" class="w-fit rounded" />
+      <img src="../assets/img/shop/headphone.webp" class="w-fit rounded" />
       <div class="flex justify-between">
         <div class="flex flex-col">
           <h1 class="text-2xl font-bold">Casque audio</h1>
@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="bg-white p-4 w-64">
-      <img src="../assets/img/shop/pc.jpg" class="w-fit rounded" />
+      <img src="../assets/img/shop/pc.webp" class="w-fit rounded" />
       <div class="flex justify-between">
         <div class="flex flex-col">
           <h1 class="text-2xl font-bold">PC Gaming</h1>
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="bg-white p-4 w-64">
-      <img src="../assets/img/shop/cars.jpg" class="w-fit rounded" />
+      <img src="../assets/img/shop/cars.webp" class="w-fit rounded" />
       <div class="flex justify-between">
         <div class="flex flex-col">
           <h1 class="text-2xl font-bold">Voiture de luxe</h1>
