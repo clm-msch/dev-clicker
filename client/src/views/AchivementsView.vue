@@ -345,7 +345,7 @@
 					/>
 				</div>
 				<p class="text-gray-800">
-					<span class="font-bold text-white">Vite fait</span>
+					<span class="font-bold text-white">En route !</span>
 					<br /><span class="text-sm text-white"
 						>Acquiert 10 CSS</span
 					>

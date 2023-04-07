@@ -4,9 +4,9 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        // exp: -2,
-        exp: 10000000,
-        money: 50000,
+        exp: -2,
+        // exp: 10000000,
+        money: 0,
         closedTuto: false,
         // Code data
         isAnimated: true,
@@ -27,8 +27,8 @@ export const useDataStore = defineStore({
         expressPrice: 5000000,
         prismaPrice: 10000000,
         mongoPrice: 50000000,
-        dockerPrice: 100000000,
-        vercelPrice: 500000000,
+        dockerPrice: 500000000,
+        vercelPrice: 1000000000,
         // Mission data
         progressValue1: 0,
         progressValue2: 0,
@@ -42,14 +42,37 @@ export const useDataStore = defineStore({
         ifJob3: false,
         ifJob4: false,
         // Invest data
+        totalStock: 0,
+        totalValueStock: 0,
+
         UTOstock: 0,
-        UTOprice: 10,
+        UTOprice: 100,
         MRSstock: 0,
-        MRSprice: 40,
+        MRSprice: 400,
         CRAstock: 0,
-        CRAprice: 60,
+        CRAprice: 600,
         DWRKstock: 0,
-        DWRKprice: 25,
+        DWRKprice: 2500,
+
+        newNumberUTO: 0,
+        sumUTO: 0,
+        fluctuatedSumUTO: 0,
+        intervalIdUTO: null,
+
+        newNumberMRS: 0,
+        sumMRS: 0,
+        fluctuatedSumMRS: 0,
+        intervalIdMRS: null,
+
+        newNumberCRA: 0,
+        sumCRA: 0,
+        fluctuatedSumCRA: 0,
+        intervalIdCRA: null,
+
+        newNumberDWRK: 0,
+        sumDWRK: 0,
+        fluctuatedSumDWRK: 0,
+        intervalIdDWRK: null,
         // Company data
         companyName: null,
         ifCompany: false,
@@ -669,6 +692,9 @@ export const useDataStore = defineStore({
         },
         totalStock() {
             return this.UTOstock + this.MRSstock + this.CRAstock + this.DWRKstock
+        },
+        totalValueStock() {
+            return this.fluctuatedSumUTO + this.fluctuatedSumMRS + this.fluctuatedSumCRA + this.fluctuatedSumDWRK
         },
         totalCRA() {
             return this.CRAstock * this.CRAprice

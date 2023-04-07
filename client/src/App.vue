@@ -104,7 +104,8 @@ const data = useDataStore()
 						</svg>
 						<h3 class="font-bold">Invesstisement</h3>
 					</a>
-				</RouterLink>				<RouterLink to="/company" exact-active-class="active">
+				</RouterLink>
+				<RouterLink to="/company" exact-active-class="active">
 					<a
 						href="#"
 						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -123,8 +124,10 @@ const data = useDataStore()
 							/>
 						</svg>
 						<!-- Nom dynamique en fonction du choix du joueur -->
-						<h3 class="font-bold" v-if="data.companyName"> {{ data.companyName }} </h3>
-						<h3 class="font-bold" v-else> Entreprise </h3>
+						<h3 class="font-bold" v-if="data.companyName">
+							{{ data.companyName }}
+						</h3>
+						<h3 class="font-bold" v-else>Entreprise</h3>
 					</a>
 				</RouterLink>
 				<RouterLink to="/soon" exact-active-class="active">
@@ -153,27 +156,6 @@ const data = useDataStore()
 				<br />
 				<!-- Autre -->
 				<h2 class="font-bold">Autre :</h2>
-				<RouterLink to="/soon" exact-active-class="active">
-					<a
-						href="#"
-						class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-					>
-						<svg
-							class="mr-3 h-6 w-6"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M21 18.375H20.625V3.75C20.625 3.45163 20.5065 3.16548 20.2955 2.9545C20.0845 2.74353 19.7984 2.625 19.5 2.625H14.25C13.9516 2.625 13.6655 2.74353 13.4545 2.9545C13.2435 3.16548 13.125 3.45163 13.125 3.75V7.125H9C8.70163 7.125 8.41548 7.24353 8.2045 7.4545C7.99353 7.66548 7.875 7.95163 7.875 8.25V11.625H4.5C4.20163 11.625 3.91548 11.7435 3.7045 11.9545C3.49353 12.1655 3.375 12.4516 3.375 12.75V18.375H3C2.70163 18.375 2.41548 18.4935 2.2045 18.7045C1.99353 18.9155 1.875 19.2016 1.875 19.5C1.875 19.7984 1.99353 20.0845 2.2045 20.2955C2.41548 20.5065 2.70163 20.625 3 20.625H21C21.2984 20.625 21.5845 20.5065 21.7955 20.2955C22.0065 20.0845 22.125 19.7984 22.125 19.5C22.125 19.2016 22.0065 18.9155 21.7955 18.7045C21.5845 18.4935 21.2984 18.375 21 18.375ZM15.375 4.875H18.375V18.375H15.375V4.875ZM10.125 9.375H13.125V18.375H10.125V9.375ZM5.625 13.875H7.875V18.375H5.625V13.875Z"
-								fill="#A29FB0"
-							/>
-						</svg>
-						<h3 class="font-bold">Coming Soon</h3>
-					</a>
-				</RouterLink>
 				<RouterLink to="/achivements" exact-active-class="active">
 					<a
 						href="#"
@@ -240,12 +222,8 @@ const data = useDataStore()
 			</div>
 		</nav>
 		<div class="bg-white p-4 m-3 rounded-md">
-			<p class="text-primary font-bold">
-				Expérience : {{ data.expFormat }} exp
-			</p>
-			<p class="text-primary font-bold">
-				Argent : {{ data.moneyFormat }} €
-			</p>
+			<p class="text-primary font-semibold">{{ data.expFormat }} exp</p>
+			<p class="text-primary font-semibold">{{ data.moneyFormat }} €</p>
 		</div>
 	</div>
 
