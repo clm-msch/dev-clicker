@@ -4,9 +4,9 @@ export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
         // General data
-        exp: -2,
-        // exp: 10000000,
-        money: 0,
+        // exp: -2,
+        exp: 10000000,
+        money: 100000,
         closedTuto: false,
         // Code data
         isAnimated: true,

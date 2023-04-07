@@ -38,14 +38,14 @@
 			</div>
 			<br />
 			<div class="bg-white p-4 rounded-lg drop-shadow-lg">
-				<h1 class="text-md text-center">Ton entreprise :</h1>
-				<h1 class="text-2xl text-center">
+				<h1 class="text-md font-semibold text-center">Ton entreprise :</h1>
+				<h1 class="text-2xl text-primary font-bold text-center">
 					{{ data.companyName }}
 				</h1>
 			</div>
 			<br />
 			<!-- 1 project card -->
-			<div class="bg-white shadow-lg rounded-lg p-8">
+			<div class="bg-white shadow-lg rounded-lg p-8 w-full">
 				<div class="inline-flex gap-2">
 					<p class="font-bold">Projet :</p>
 					<p class="text-primary font-bold">
@@ -62,7 +62,7 @@
 					
 				</div>
 				<p v-if="!data.ifProject1" class="font-bold">Besoin :</p>
-				<div v-if="!data.ifProject1" class="pb-2 flex gap-2">
+				<div v-if="!data.ifProject1" class="pb-2 flex flex-col gap-2">
 					<p>
 						<span
 							class="font-bold text-white bg-primary px-2 rounded"
@@ -123,7 +123,7 @@
 			<!-- 1 project card -->
 			<br />
 			<!-- 2 project card -->
-			<div class="bg-white shadow-lg rounded-lg p-8">
+			<div class="bg-white shadow-lg rounded-lg p-8 w-full">
 				<div class="inline-flex gap-2">
 					<p class="font-bold">Projet :</p>
 					<p class="text-primary font-bold">
@@ -139,7 +139,7 @@
 				</div>
 
 				<p v-if="!data.ifProject2" class="font-bold">Besoin :</p>
-				<div v-if="!data.ifProject2" class="pb-2 flex gap-2">
+				<div v-if="!data.ifProject2" class="pb-2 flex flex-col gap-2">
 					<p>
 						<span
 							class="font-bold text-white bg-primary px-2 rounded"
