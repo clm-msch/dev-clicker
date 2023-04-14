@@ -3,7 +3,7 @@
 		<img src="../assets/icons/entreprise/Amazitruc.svg" alt="" />
 	</div>
   <div class="flex gap-4 flex-wrap">
-    <div class="bg-white p-4 w-64">
+    <div class="bg-white p-4 w-64 rounded">
       <img src="../assets/img/shop/switch.webp" class="rounded" />
       <div class="flex justify-between">
         <div class="flex flex-col">
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-white p-4 w-64">
+    <div class="bg-white p-4 w-64 rounded">
       <img src="../assets/img/shop/headphone.webp" class="w-fit rounded" />
       <div class="flex justify-between">
         <div class="flex flex-col">
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-white p-4 w-64">
+    <div class="bg-white p-4 w-64 rounded">
       <img src="../assets/img/shop/pc.webp" class="w-fit rounded" />
       <div class="flex justify-between">
         <div class="flex flex-col">
@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-white p-4 w-64">
+    <div class="bg-white p-4 w-64 rounded">
       <img src="../assets/img/shop/cars.webp" class="w-fit rounded" />
       <div class="flex justify-between">
         <div class="flex flex-col">

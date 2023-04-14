@@ -6,7 +6,7 @@ export const useDataStore = defineStore({
         // General data
         // exp: -2,
         exp: 10000000,
-        money: 100000,
+        money: 0,
         closedTuto: false,
         // Code data
         isAnimated: true,
@@ -44,6 +44,11 @@ export const useDataStore = defineStore({
         // Invest data
         totalStock: 0,
         totalValueStock: 0,
+
+        // Tutorial data
+        ifTutorial1: true,
+        ifTutorial2: true,
+        ifTutorial3: true,
 
         UTOstock: 0,
         UTOprice: 100,
@@ -147,6 +152,27 @@ export const useDataStore = defineStore({
 
     }),
     actions: {
+        // Tutorial actions
+        hideTutorial1() {
+            this.ifTutorial1 = false
+        },
+        showTutorial1() {
+            this.ifTutorial1 = true
+        },
+        hideTutorial2() {
+            this.ifTutorial2 = false
+        },
+        showTutorial2() {
+            this.ifTutorial2 = true
+        },
+        hideTutorial3() {
+            this.ifTutorial3 = false
+        },
+        showTutorial3() {
+            this.ifTutorial3 = true
+        },
+
+        // General actions
         increaseExp() {
             this.isAnimated = true
             this.exp += this.amount

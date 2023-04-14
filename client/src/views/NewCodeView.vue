@@ -4,13 +4,9 @@
 		<Popup />
 	<TutoCode />
 	<h1 class="font-bold text-3xl">CODE</h1>
-	<h1 class="text-xl" v-if="data.jsPrice >= 2000">
-		Bienvenue dans l'onglet code ici tu va pouvoir <br />
-		développer pour aquérir un maximum d'expérience :
-	</h1>
 	<br />
 	<!-- dev button -->
-	<div class="inline-flex gap-8 justify-center align-middle">
+	<div class="inline-flex gap-8 justify-center align-middle flex-wrap">
 		<!-- @click="addExp(expData.amount)" -->
 		<button
 		  @keydown.enter.prevent
@@ -647,9 +643,7 @@ onMounted(() => {
 
 <style scoped>
 .dev-button {
-	padding: 25px;
-	padding-left: 68px;
-	padding-right: 68px;
+	padding: 30px;
 	border-radius: 8px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
