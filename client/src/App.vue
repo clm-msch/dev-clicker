@@ -105,7 +105,7 @@ const data = useDataStore()
 									fill="#E9EAFF"
 								/>
 							</svg>
-							<h3 class="font-bold nav-name">Invesstisement</h3>
+							<h3 class="font-bold nav-name">Investissement</h3>
 						</a>
 					</RouterLink>
 					<RouterLink to="/company" exact-active-class="active">
@@ -227,18 +227,23 @@ const data = useDataStore()
 							<h3 class="font-bold nav-name">Réglages</h3>
 						</a>
 					</RouterLink>
-				</div>	
-				<br>		
+				</div>
+				<br />
 				<div class="bg-white p-4 m-3 rounded-md nav-name">
-				<p class="text-primary font-semibold">
-					{{ data.expFormat }} exp
-				</p>
-				<p class="text-primary font-semibold">
-					{{ data.moneyFormat }} €
-				</p>
-			</div>
-			</nav>
+					<p class="text-primary font-semibold">
+						{{ data.expFormat }} exp
+					</p>
+					<p class="text-primary font-semibold">
+						{{ data.moneyFormat }} €
+					</p>
+				</div>
+				<div class="flex justify-center">
+					<a href="https://wiki.devclicker.com/" target="_blank" class="bg-primary p-3 m-3 font-bold rounded-md nav-name hover:bg-light_grey hover:text-dark_grey w-full text-center" >
+						DevClicker Wiki
+					</a>
+				</div>
 
+			</nav>
 		</div>
 		<!-- Content -->
 		<!-- <div class="flex-1 overflow-y-auto ml-64"> -->
