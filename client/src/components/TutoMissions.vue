@@ -1,11 +1,25 @@
 <template>
-	<div class="fixed z-2 top-4 right-4 animate__animated animate__fadeInRight">
-		<div v-if="data.ifJob1 == false" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
-			<p class="font-semibold mb-2">Tutoriel étape 4/5</p>
-			<p>Oh on dirait qu'il y a une mission faite sur mesure pour toi, propose donc tes services.</p>
-
+		<!-- Tuto 4 -->
+		<div class="fixed z-10 top-4 right-4 animate__animated animate__fadeInRight">
+			<div v-if="data.ifJob1 == false && data.ifTutorial4 == true" class="bg-white rounded-lg shadow-lg flex max-w-xs">
+				<div class="p-4">
+					<p class="font-semibold mb-2">Tutoriel étape 4/5</p>
+					<p>Oh on dirait qu'il y a une mission faite sur mesure pour toi, propose donc tes services.</p>
+				</div>
+				<div @click="data.hideTutorial4" class="bg-primary p-4 rounded-r flex align-center">
+					<img src="../assets/icons/basics/arrow-right_logo.svg">
+				</div>
+			</div>
 		</div>
-	</div>
+		<!-- Hide Tuto 4 -->
+		<div v-if="data.ifJob1 == false && data.ifTutorial4 == false" class="fixed z-10 top-4 right-4 animate__animated animate__fadeInRight tutohide">
+			<div class="bg-white rounded-lg shadow-lg max-w-xs flex">
+				<div @click="data.showTutorial4" class="bg-primary p-4 rounded-l flex items-center gap-2 align-center">
+					<img class="arrow-left" src="../assets/icons/basics/arrow-left_logo.svg">
+					<img src="../assets/icons/basics/graduation-cap_logo.svg" class="w-1/3">
+				</div>
+			</div>
+		</div>
 
 	<div class="fixed z-2 top-4 right-4 animate__animated animate__fadeInRight">
 		<div v-if="data.ifJob1 == true && data.closedTuto == false" class="bg-white rounded-lg shadow-lg p-4 max-w-xs">
@@ -73,3 +87,14 @@ export default {
 	},
 }
 </script>
+
+
+<style scoped>
+.arrow-left {
+	width: 12px;
+	height: 20px;
+}
+.tutohide {
+	margin-right: -45px;
+}
+</style>

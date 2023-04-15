@@ -527,7 +527,7 @@ provide("expData", expData)
 
 const resetLocal = () => {
 	localStorage.clear()
-	window.location.reload()
+		window.location.reload()
 }
 
 const addHtml = () => {

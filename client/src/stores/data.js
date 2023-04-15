@@ -49,6 +49,7 @@ export const useDataStore = defineStore({
         ifTutorial1: true,
         ifTutorial2: true,
         ifTutorial3: true,
+        ifTutorial4: true,
 
         UTOstock: 0,
         UTOprice: 100,
@@ -170,6 +171,12 @@ export const useDataStore = defineStore({
         },
         showTutorial3() {
             this.ifTutorial3 = true
+        },
+        hideTutorial4() {
+            this.ifTutorial4 = false
+        },
+        showTutorial4() {
+            this.ifTutorial4 = true
         },
 
         // General actions

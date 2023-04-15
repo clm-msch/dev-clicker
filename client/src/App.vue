@@ -261,13 +261,13 @@ export default {
 			haveJs: false,
 		}
 	},
-	computed: {
-		haveJs() {
-			const value = localStorage.getItem("js")
-			return value ? JSON.parse(value) : null
-			window.location.reload()
-		},
-	},
+	// computed: {
+	// 	haveJs() {
+	// 		const value = localStorage.getItem("js")
+	// 		return value ? JSON.parse(value) : null
+	// 		window.location.reload()
+	// 	},
+	// },
 }
 </script>
 
