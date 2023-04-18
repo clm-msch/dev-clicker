@@ -10,7 +10,7 @@ module.exports = {
         light_grey: '#E9EAFF',
         dark_grey: '#242938',
         amazitruc: '#FF9900',
-        gradient: 'linear-gradient(101.23deg, #532EE7 17.61%, #2600BF 99.55%)',
+        // gradient: 'linear-gradient(101.23deg, #532EE7 17.61%, #2600BF 99.55%)',
       },
     },
   },
