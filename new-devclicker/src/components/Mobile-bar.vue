@@ -4,36 +4,83 @@
 		<div
 			class="z-2 h-fit fixed bottom-0 rounded-t-lg bg-dark_grey gap-2 flex p-4 w-fit"
 		>
-			<div class="bg-primary p-2 rounded-lg flex items-center gap-4 w">
-				<img src="../assets/icons/basics/code.svg" class="w-6" />
-			</div>
-			<div class="bg-primary p-2 rounded-lg flex items-center gap-4 w">
-				<img src="../assets/icons/basics/missions.svg" class="w-6" />
-			</div>
-			<div class="bg-primary p-2 rounded-lg flex items-center gap-4 w">
-				<img
-					src="../assets/icons/basics/investissement.svg"
-					class="w-6"
-				/>
-			</div>
-			<div class="bg-primary p-2 rounded-lg flex items-center gap-4 w">
-				<img src="../assets/icons/basics/entreprise.svg" class="w-6" />
-			</div>
-			<div class="bg-primary p-2 rounded-lg flex items-center gap-4 w">
-				<img
-					src="../assets/icons/basics/cybersécurité.svg"
-					class="w-6"
-				/>
-			</div>
-			<div class="bg-primary p-2 rounded-lg flex items-center gap-4 w">
-				<img src="../assets/icons/basics/trophées.svg" class="w-6" />
-			</div>
-			<div class="bg-primary p-2 rounded-lg flex items-center gap-4 w">
-				<img src="../assets/icons/basics/shopping.svg" class="w-6" />
-			</div>
-			<div class="bg-primary p-2 rounded-lg flex items-center gap-4 w">
-				<img src="../assets/icons/basics/réglages.svg" class="w-6" />
-			</div>
+			<RouterLink to="/" exact-active-class="active">
+				<div
+					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+				>
+					<img src="../assets/icons/basics/code.svg" class="w-6" />
+				</div>
+			</RouterLink>
+			<RouterLink to="/missions" exact-active-class="active">
+				<div
+					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+				>
+					<img
+						src="../assets/icons/basics/missions.svg"
+						class="w-6"
+					/>
+				</div>
+			</RouterLink>
+			<RouterLink to="/a" exact-active-class="active">
+				<div
+					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+				>
+					<img
+						src="../assets/icons/basics/investissement.svg"
+						class="w-6"
+					/>
+				</div>
+			</RouterLink>
+			<RouterLink to="/a" exact-active-class="active">
+				<div
+					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+				>
+					<img
+						src="../assets/icons/basics/entreprise.svg"
+						class="w-6"
+					/>
+				</div>
+			</RouterLink>
+			<RouterLink to="/a" exact-active-class="active">
+				<div
+					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+				>
+					<img
+						src="../assets/icons/basics/cybersécurité.svg"
+						class="w-6"
+					/>
+				</div>
+			</RouterLink>
+			<RouterLink to="/a" exact-active-class="active">
+				<div
+					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+				>
+					<img
+						src="../assets/icons/basics/trophées.svg"
+						class="w-6"
+					/>
+				</div>
+			</RouterLink>
+			<RouterLink to="/a" exact-active-class="active">
+				<div
+					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+				>
+					<img
+						src="../assets/icons/basics/shopping.svg"
+						class="w-6"
+					/>
+				</div>
+			</RouterLink>
+			<RouterLink to="/a" exact-active-class="active">
+				<div
+					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+				>
+					<img
+						src="../assets/icons/basics/réglages.svg"
+						class="w-6"
+					/>
+				</div>
+			</RouterLink>
 		</div>
 	</div>
 </template>

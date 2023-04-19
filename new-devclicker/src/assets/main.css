@@ -7,3 +7,8 @@
 * {
   font-family: "Urbanist", sans-serif;
 }
+
+/* Pour les composants bar (desktop and mobile) */
+.active div {
+	background-color: #532ee7;
+}
