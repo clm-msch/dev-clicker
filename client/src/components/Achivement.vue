@@ -25,7 +25,7 @@
 	</div>
 
   	<!-- html achivement 2 -->
-	<div v-if="data.htmlAchivement2" lass="fixed z-20 bottom-4 right-4 animate__animated animate__tada">
+	<div v-if="data.htmlAchivement2" class="fixed z-20 bottom-4 right-4 animate__animated animate__tada">
 		<div
 			class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg drop-shadow-lg"
 		>

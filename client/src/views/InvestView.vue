@@ -1,129 +1,140 @@
 <template>
 	<div class="flex flex-col gap-4 flex-wrap">
-		<div class="flex gap-4">
-				<!-- Action 1 -->
-		
+		<div class="flex flex-wrap gap-4">
+			<!-- Action 1 -->
+
+			<div
+				class="bg-white p-3 rounded-lg flex flex-col items-start drop-shadow-lg gap-2 w-fit h-fit"
+			>
+				<div class="flex flex-row gap-2 items-center">
+					<img
+						src="../assets/icons/entreprise/unito.svg"
+						class="w-auto"
+					/>
+					<!-- <p class="text-red-500">-0,50€ (0,18%) UTO</p> -->
+				</div>
+				<div class="flex flex-col">
+					<p>
+						Prix de l'action :
+						<strong>{{ data.UTOprice }} €</strong>
+					</p>
+					<p>
+						Valeur totale :
+						<strong>{{ data.fluctuatedSumUTO }} €</strong>
+					</p>
+					<p>
+						Actions possédés : <strong>{{ data.UTOstock }}</strong>
+					</p>
+				</div>
+				<button
+					@click="addUTO"
+					class="bg-primary p-2 pl-4 pr-4 rounded-lg text-white"
+				>
+					Acheter <strong>1</strong> action
+				</button>
+			</div>
+
+			<!-- Action 2 -->
+			<div
+				class="bg-white p-3 rounded-lg flex flex-col items-start drop-shadow-lg gap-2 w-fit h-fit"
+			>
+				<div class="flex flex-row gap-2 items-center">
+					<img
+						src="../assets/icons/entreprise/mars.svg"
+						class="w-auto"
+					/>
+				</div>
+				<div class="flex flex-col">
+					<p>
+						Prix de l'action :
+						<strong>{{ data.MRSprice }} €</strong>
+					</p>
+					<p>
+						Valeur totale :
+						<strong>{{ data.fluctuatedSumMRS }} €</strong>
+					</p>
+					<p>
+						Actions possédés : <strong>{{ data.MRSstock }}</strong>
+					</p>
+				</div>
+				<button
+					@click="addMRS"
+					class="bg-primary p-2 pl-4 pr-4 rounded-lg text-white"
+				>
+					Acheter <strong>1</strong> action
+				</button>
+			</div>
+
+			<!-- Action 3 -->
+			<div
+				class="bg-white p-3 rounded-lg flex flex-col items-start drop-shadow-lg gap-2 w-fit h-fit"
+			>
+				<div class="flex flex-row gap-2 items-center">
+					<img
+						src="../assets/icons/entreprise/crea.svg"
+						class="w-auto"
+					/>
+				</div>
+				<div class="flex flex-col">
+					<p>
+						Prix de l'action :
+						<strong>{{ data.CRAprice }} €</strong>
+					</p>
+					<p>
+						Valeur totale :
+						<strong>{{ data.fluctuatedSumCRA }} €</strong>
+					</p>
+					<p>
+						Actions possédés : <strong>{{ data.CRAstock }}</strong>
+					</p>
+				</div>
+				<button
+					@click="addCRA"
+					class="bg-primary p-2 pl-4 pr-4 rounded-lg text-white"
+				>
+					Acheter <strong>1</strong> action
+				</button>
+			</div>
+			<!-- Action 4 -->
+			<div
+				class="bg-white p-3 rounded-lg flex flex-col items-start drop-shadow-lg gap-2 w-fit h-fit"
+			>
+				<div class="flex flex-row gap-2 items-center">
+					<img
+						src="../assets/icons/entreprise/devwork.svg"
+						class="w-auto"
+					/>
+				</div>
+				<div class="flex flex-col">
+					<p>
+						Prix de l'action :
+						<strong>{{ data.DWRKprice }} €</strong>
+					</p>
+					<p>
+						Valeur totale :
+						<strong>{{ data.fluctuatedSumDWRK }} €</strong>
+					</p>
+					<p>
+						Actions possédés : <strong>{{ data.DWRKstock }}</strong>
+					</p>
+				</div>
+				<button
+					@click="addDWRK"
+					class="bg-primary p-2 pl-4 pr-4 rounded-lg text-white"
+				>
+					Acheter <strong>1</strong> action
+				</button>
+			</div>
+		</div>
+
 		<div
-		class="bg-white p-4 rounded-lg flex flex-col items-start drop-shadow-lg gap-2 w-fit h-fit"
-	>
-		<div class="flex flex-row gap-2 items-center">
-			<img
-				src="../assets/icons/entreprise/unito.svg"
-				class="w-auto"
-			/>
-			<p class="text-red-500">-0,50€ (0,18%) UTO</p>
-		</div>
-		<div class="flex flex-col">
-			<p>
-				Prix de l'action : <strong>{{ data.UTOprice }} €</strong>
-			</p>
-			<p>
-				Valeur totale : <strong>{{ data.fluctuatedSumUTO }} €</strong>
-			</p>
-			<p>
-				Actions possédés : <strong>{{ data.UTOstock }}</strong>
-			</p>
-		</div>
-		<button
-			@click="addUTO"
-			class="bg-primary p-2 pl-6 pr-6 rounded-lg text-white"
+			class="bg-white flex flex-col flex-wrap p-4 rounded-lg drop-shadow-lg w-fit"
 		>
-			Acheter <strong>1</strong> action
-		</button>
-	</div>
-
-	<!-- Action 2 -->
-	<div
-		class="bg-white p-4 rounded-lg flex flex-col items-start drop-shadow-lg gap-2 w-fit h-fit"
-	>
-		<div class="flex flex-row gap-2 items-center">
-			<img src="../assets/icons/entreprise/mars.svg" class="w-auto" />
-			<p class="text-green-500">+2,70€ (0,45%) MRS</p>
-		</div>
-		<div class="flex flex-col">
-			<p>
-				Prix de l'action : <strong>{{ data.MRSprice }} €</strong>
-			</p>
-			<p>
-				Valeur totale : <strong>{{ data.fluctuatedSumMRS }} €</strong>
-			</p>
-			<p>
-				Actions possédés : <strong>{{ data.MRSstock }}</strong>
-			</p>
-		</div>
-		<button
-			@click="addMRS"
-			class="bg-primary p-2 pl-6 pr-6 rounded-lg text-white"
-		>
-			Acheter <strong>1</strong> action
-		</button>
-	</div>
-
-
-
-	<!-- Action 3 -->
-	<div
-		class="bg-white p-4 rounded-lg flex flex-col items-start drop-shadow-lg gap-2 w-fit h-fit"
-	>
-		<div class="flex flex-row gap-2 items-center">
-			<img src="../assets/icons/entreprise/crea.svg" class="w-auto" />
-			<p class="text-red-500">-4,46€ (4,54%) CRA</p>
-		</div>
-		<div class="flex flex-col">
-			<p>
-				Prix de l'action : <strong>{{ data.CRAprice }} €</strong>
-			</p>
-			<p>
-				Valeur totale : <strong>{{ data.fluctuatedSumCRA }} €</strong>
-			</p>
-			<p>
-				Actions possédés : <strong>{{ data.CRAstock }}</strong>
-			</p>
-		</div>
-		<button
-			@click="addCRA"
-			class="bg-primary p-2 pl-6 pr-6 rounded-lg text-white"
-		>
-			Acheter <strong>1</strong> action
-		</button>
-	</div>
-<!-- Action 4 -->
-	<div
-		class="bg-white p-4 rounded-lg flex flex-col items-start drop-shadow-lg gap-2 w-fit h-fit"
-	>
-		<div class="flex flex-row gap-2 items-center">
-			<img
-				src="../assets/icons/entreprise/devwork.svg"
-				class="w-auto"
-			/>
-			<p class="text-green-500">+6,30€ (0,12%) DWRK</p>
-		</div>
-		<div class="flex flex-col">
-			<p>
-				Prix de l'action : <strong>{{ data.DWRKprice }} €</strong>
-			</p>
-			<p>
-				Valeur totale : <strong>{{ data.fluctuatedSumDWRK }} €</strong>
-			</p>
-			<p>
-				Actions possédés : <strong>{{ data.DWRKstock }}</strong>
-			</p>
-		</div>
-		<button
-			@click="addDWRK"
-			class="bg-primary p-2 pl-6 pr-6 rounded-lg text-white"
-		>
-			Acheter <strong>1</strong> action
-		</button>
-	</div>
-		</div>
-
-		<div class="bg-white p-4 rounded-lg drop-shadow-lg w-fit">
 			<v-chart
 				class="chart"
 				:option="option"
 				autoresize
-				style="width: 500px; height: 400px"
+				style="width: 400px; height: 400px"
 			/>
 			<div class="flex flex-col gap-2">
 				<div class="flex content-between justify-between items-center">
@@ -133,44 +144,49 @@
 					<p class="font-bold">
 						Valeur : {{ data.totalValueStock }} €
 					</p>
-					<!-- <button
-						@click="sellAllStock"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg text-white font-bold"
-					>
-						Vendre toutes tes actions
-					</button> -->
 				</div>
-				<div class="flex content-between justify-between items-center gap-2">
-
-					<button
-						@click="sellUTO"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg text-white font-bold"
-					>
-						Vendre UTO
-					</button>					
-					<button
-						@click="sellMRS"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg text-white font-bold"
-					>
-						Vendre MRS
-					</button>
-					<button
-						@click="sellCRA"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg text-white font-bold"
-					>
-						Vendre CRA
-					</button>
-					<button
-						@click="sellDWRK"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg text-white font-bold"
-					>
-						Vendre DWRK
-					</button>
+				<div
+					class="flex button-sell content-between justify-between items-center gap-2"
+				>
+					<div>
+						<button
+							@click="sellUTO"
+							class="bg-primary w-40 p-2 pl-6 pr-6 rounded-lg text-white font-bold"
+						>
+							Vendre UTO
+						</button>
+					</div>
+					<div>
+						<button
+							@click="sellMRS"
+							class="bg-primary w-40  p-2 pl-6 pr-6 rounded-lg text-white font-bold"
+						>
+							Vendre MRS
+						</button>
+					</div>
+					<div>
+						<button
+							@click="sellCRA"
+							class="bg-primary w-40  p-2 pl-6 pr-6 rounded-lg text-white font-bold"
+						>
+							Vendre CRA
+						</button>
+					</div>
+					<div>
+						<button
+							@click="sellDWRK"
+							class="bg-primary w-40  p-2 pl-6 pr-6 rounded-lg text-white font-bold"
+						>
+							Vendre DWRK
+						</button>
+					</div>
+					<br>
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
+
 <script setup>
 import { useDataStore } from "../stores/data"
 import { use } from "echarts/core"
@@ -191,7 +207,6 @@ use([
 	TooltipComponent,
 	LegendComponent,
 ])
-
 
 // UTO
 const stopFluctuationLoopUTO = () => {
@@ -363,31 +378,7 @@ const sellDWRK = () => {
 	clearInterval(data.intervalIdDWRK)
 	data.intervalIdDWRK = null
 }
-// DWRK
 
-// const sellAllStock = () => {
-// 	data.money
-// 	option.value.series[0].data[0].value = 0
-// 	option.value.series[0].data[1].value = 0
-// 	option.value.series[0].data[2].value = 0
-// 	option.value.series[0].data[3].value = 0
-// 	data.MRSstock = 0
-// 	data.UTOstock = 0
-// 	data.CRAstock = 0
-// 	data.DWRKstock = 0
-// 	data.fluctuatedSumCRA = 0
-// 	data.fluctuatedSumDWRK = 0
-// 	data.fluctuatedSumMRS = 0
-// 	data.fluctuatedSumUTO = 0
-// 	clearInterval(data.intervalIdDWRK)
-// 	data.intervalIdDWRK = null
-// 	clearInterval(data.intervalIdCRA)
-// 	data.intervalIdCRA = null
-// 	clearInterval(data.intervalIdMRS)
-// 	data.intervalIdMRS = null
-// 	clearInterval(data.intervalIdUTO)
-// 	data.intervalIdUTO = null
-// }
 provide(THEME_KEY, "light")
 
 const option = ref({
@@ -447,6 +438,17 @@ const option = ref({
 	],
 })
 </script>
+
+<style scoped>
+@media (max-width: 425px) {
+	.chart {
+		display: none;
+	}
+	.button-sell {
+		flex-direction: column;
+	}
+}
+</style>
 <!-- <script>
 
 

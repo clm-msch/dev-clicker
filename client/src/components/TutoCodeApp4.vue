@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- Hide Tuto 3 -->
 	<div v-if="data.jsPrice == 2000  && data.ifJob1 == false && data.ifTutorial3 == false" class="fixed z-10 top-4 right-4 animate__animated animate__fadeInRight tutohide">
 		<div class="bg-white rounded-lg shadow-lg max-w-xs flex">
 			<div @click="data.showTutorial3" class="bg-primary p-4 rounded-l flex items-center gap-2 align-center">

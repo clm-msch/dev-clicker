@@ -16,6 +16,8 @@
 } */
 body {
 	cursor: url("custom_cursor.svg"), auto;
+	/* possible bug */
+	/* overflow-x: hidden; */
 }
 button {
 	/* cursor: url("custom_hand.svg") 'x:0' 'y:0', pointer; */
