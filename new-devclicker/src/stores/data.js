@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
-import { collection, getDocs } from "firebase/firestore"
+import { collection, onSnapshot, doc, updateDoc, orderBy, query } from "firebase/firestore"
 import { db } from '.././js/firebase.js'
+const contentFrontQuery = query(collection(db, "contentCardsFront"), orderBy("order", "asc"))
 
 export const useDataStore = defineStore({
     id: 'data',
@@ -49,7 +50,7 @@ export const useDataStore = defineStore({
             //     image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860538/skill-icons_tailwindcss_bpyogi.svg",
             //     effect: "ajoute +100 par seconde",
             //     expEffect: 100,
-            //     description: "Langage de balisage utilisé pour créer des pages Web.",
+            //     description: "Framework CSS qui fournit une bibliothèque de classes prêtes à l'emploi pour faciliter la mise en forme des pages Web.",
             //     price: 5000,
             //     priceIncrease: 5000,
             //     quantity: 0,
@@ -61,7 +62,7 @@ export const useDataStore = defineStore({
             //     image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860538/skill-icons_vuejs_t5pp0w.svg",
             //     effect: "ajoute +1 k par clic",
             //     expEffect: 1000,
-            //     description: "Langage de balisage utilisé pour créer des pages Web.",
+            //     description: "Framework JavaScript permettant de créer des applications Web interactives et dynamiques.",
             //     price: 50000,
             //     priceIncrease: 10000,
             //     quantity: 0,
@@ -73,7 +74,7 @@ export const useDataStore = defineStore({
             //     image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860539/skill-icons_vite_xxscpc.svg",
             //     effect: "ajoute +5 k par clic",
             //     expEffect: 5000,
-            //     description: "Langage de balisage utilisé pour créer des pages Web.",
+            //     description: "Outil de construction rapide pour les applications Web modernes, basé sur JavaScript.",
             //     price: 500000,
             //     priceIncrease: 500000,
             //     quantity: 0,
@@ -87,7 +88,7 @@ export const useDataStore = defineStore({
                 image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860539/skill-icons_nodejs_vhmhcm.svg",
                 effect: "ajoute +10 k au clic",
                 expEffect: 10000,
-                description: "Langage de balisage utilisé pour créer des pages Web.",
+                description: "Environnement d'exécution JavaScript côté serveur, qui permet d'exécuter du code JavaScript en dehors du navigateur.",
                 price: 1000000,
                 priceIncrease: 500000,
                 quantity: 0,
@@ -147,13 +148,13 @@ export const useDataStore = defineStore({
                 image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860538/skill-icons_vercel_mdqqa3.svg",
                 effect: "ajoute +50 M par clic",
                 expEffect: 50000000,
-                description: "Langage de balisage utilisé pour créer des pages Web.",
+                description: "Une plateforme cloud qui permet de déployer et de gérer des applications Web statiques et dynamiques, ainsi que des fonctions serverless.",
                 price: 5000000000,
                 priceIncrease: 5000000000,
                 quantity: 0,
             },
         ],
-        exp: 10000000000,
+        exp: 1,
         expAdd: 1,
         expAddSec: 0,
 
@@ -162,23 +163,26 @@ export const useDataStore = defineStore({
         whatStack: 'Front-end',
     }),
     actions: {
-        async getContentFront(){
-            const querySnapshot = await getDocs(collection(db, "contentCardsFront"))
-            querySnapshot.forEach((doc) => {
-                console.log(doc.id, " => ", doc.data())
-                let contentFront = {
-                    id: doc.id,
-                    sec: doc.data().sec,
-                    name: doc.data().name,
-                    image: doc.data().image,
-                    effect: doc.data().effect,
-                    expEffect: doc.data().expEffect,
-                    description: doc.data().description,
-                    price: doc.data().price,
-                    priceIncrease: doc.data().priceIncrease,
-                    quantity: doc.data().quantity,
-                }
-                this.contentCardsFront.push(contentFront)
+        async getContentFront() {
+            onSnapshot(contentFrontQuery, (querySnapshot) => {
+                let contentCardsFront = []
+                querySnapshot.forEach((doc) => {
+                    let contentFront = {
+                        id: doc.id,
+                        sec: doc.data().sec,
+                        name: doc.data().name,
+                        image: doc.data().image,
+                        effect: doc.data().effect,
+                        expEffect: doc.data().expEffect,
+                        description: doc.data().description,
+                        price: doc.data().price,
+                        priceIncrease: doc.data().priceIncrease,
+                        quantity: doc.data().quantity,
+                    }
+                    contentCardsFront.push(contentFront)
+
+                })
+                this.contentCardsFront = contentCardsFront
             })
         },
         increaseExp() {
@@ -200,19 +204,27 @@ export const useDataStore = defineStore({
                 this.ifFront = true
             }
         },
-        buyCodeFront(id) {
+        async buyCodeFront(id) {
             const card = this.contentCardsFront.find(card => card.id === id)
             if (this.exp >= card.price && card.sec == false) {
                 this.exp -= card.price
                 this.expAdd += card.expEffect
                 card.quantity++
                 card.price += card.priceIncrease
+                await updateDoc(doc(db, "contentCardsFront", id), {
+                    quantity: card.quantity,
+                    price: card.price,
+                })
             }
             if (this.exp >= card.price && card.sec == true) {
                 this.exp -= card.price
                 this.expAddSec += card.expEffect
                 card.quantity++
                 card.price += card.priceIncrease
+                await updateDoc(doc(db, "contentCardsFront", id), {
+                    quantity: card.quantity,
+                    price: card.price,
+                })
             }
         },
         buyCodeBack(id) {

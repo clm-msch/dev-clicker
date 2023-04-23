@@ -5,7 +5,7 @@
 			:key="data.contentCardsFront.id"
 		>
 			<div
-				class="bg-white flex rounded-lg flex-col p-4 w-80 gap-2 shadow-md"
+				class="bg-white flex rounded-lg flex-col p-4 w-96 h-56 gap-2 justify-between shadow-md"
 			>
 				<div class="flex items-center gap-2">
 					<img :src="contentCard.image" class="w-12" />

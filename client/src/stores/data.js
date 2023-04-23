@@ -5,7 +5,7 @@ export const useDataStore = defineStore({
     state: () => ({
         // General data
         exp: -2,
-        // exp: 10000,
+        // exp: 10000000,
         money: 0,
         closedTuto: false,
         // Code data
@@ -25,10 +25,10 @@ export const useDataStore = defineStore({
         // back
         nodePrice: 1000000,
         expressPrice: 5000000,
-        prismaPrice: 10000000,
-        mongoPrice: 50000000,
+        prismaPrice: 50000000,
+        mongoPrice: 100000000,
         dockerPrice: 500000000,
-        vercelPrice: 1000000000,
+        vercelPrice: 5000000000,
         // Mission data
         progressValue1: 0,
         progressValue2: 0,

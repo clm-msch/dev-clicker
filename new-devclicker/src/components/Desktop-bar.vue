@@ -68,6 +68,21 @@
 			<p class="font-semibold text-sm text-primary">EXP : 0</p>
 			<p class="font-semibold text-sm text-primary">Argent : 0 €</p>
 		</div>
+		<!-- <div>
+			<RouterLink to="/auth" class="flex justify-center mt-4"
+				><button class="p-2 bg-primary text-white rounded-lg">
+					Connexion
+				</button></RouterLink
+			>
+			<div class="flex justify-center mt-4">
+				<button
+					@click="logout"
+					class="p-2 bg-primary text-white rounded-lg"
+				>
+					Deconnexion {{ storeAuth.user.email }}
+				</button>
+			</div>
+		</div> -->
 	</div>
 </template>
 
@@ -76,4 +91,15 @@
 	imports
 */
 import { RouterLink } from "vue-router"
+import { useAuthStore } from "../stores/auth"
+/*
+  store
+*/
+const storeAuth = useAuthStore()
+/*
+  logout
+*/
+const logout = () => {
+	storeAuth.logoutUser()
+}
 </script>
