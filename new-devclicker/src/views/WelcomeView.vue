@@ -1,63 +1,95 @@
 <template>
-	<div class="flex">
-		<div class="flex flex-col h-screen xl:w-1/2 w-full bg-dark_grey">
-			<div class="flex justify-center">
-				<img
-					src="../assets/icons/devclicker/devclicker-text.svg"
-					class="xl:w-1/4 mt-2"
-				/>
+	<div
+		v-if="!storeAuth.auth"
+		class="fixed z-10 inset-0 overflow-y-auto shadow-lg"
+	>
+		<div
+			class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+		>
+			<div class="fixed inset-0 transition-opacity" aria-hidden="true">
+				<div class="absolute inset-0 bg-gray-500 opacity-40"></div>
 			</div>
-			<div class="flex justify-center items-center h-screen -mt-6">
-				<div class="w-full max-w-md">
+			<span
+				class="hidden sm:inline-block sm:align-middle sm:h-screen"
+				aria-hidden="true"
+				>&#8203;</span
+			>
+			<div
+				class="inline-block align-bottom bg-white rounded-lg overflow-hidden transform transition-all sm:my-8 sm:align-middle sm:w-full sm:max-w-md"
+			>
+				<div class="bg-white p-6">
 					<div class="flex justify-center mb-6 gap-4">
 						<button
-							class="px-4 py-2 rounded-md text-white font-medium bg-primary hover:dark_primary"
+							class="px-4 py-2 rounded-md text-primary font-bold"
+							:class="{
+								'bg-primary': register,
+								'bg-light_grey': !register,
+								'text-white': register,
+							}"
+							@click.prevent="register = true"
 						>
 							Inscription
 						</button>
 						<button
-							class="px-4 py-2 rounded-md text-primary font-medium bg-white"
+							class="px-4 py-2 rounded-md text-primary font-bold"
+							:class="{
+								'bg-primary': !register,
+								'bg-light_grey': register,
+								'text-white': !register,
+							}"
+							@click.prevent="register = false"
 						>
 							Connexion
 						</button>
 					</div>
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h1 class="text-2xl font-bold mb-6">Connexion</h1>
-						<form>
+					<div class="bg-white rounded-lg p-6">
+						<form @submit.prevent="onSubmit">
 							<div class="space-y-4">
 								<div>
 									<label
-										class="block text-gray-700 font-medium mb-2"
+										class="block text-gray-700 text-left font-medium mb-2"
 										>Email</label
 									>
 									<input
-										class="w-full px-4 py-2 rounded-md border-gray-300"
+										v-model="credentials.email"
+										class="w-full px-4 py-2 rounded-md border-gray-300 bg-light_grey"
 										placeholder="monmail@mail.com"
 										type="email"
 									/>
 								</div>
 								<div>
 									<label
-										class="block text-gray-700 font-medium mb-2"
+										class="block text-gray-700 text-left font-medium mb-2"
 										>Mot de passe</label
 									>
 									<input
-										class="w-full px-4 py-2 rounded-md border-gray-300"
+										v-model="credentials.password"
+										class="w-full px-4 py-2 rounded-md border-gray-300 bg-light_grey"
 										placeholder="ton mot de passe"
 										type="password"
 									/>
 								</div>
 								<div>
 									<button
-										class="w-full px-4 py-2 rounded-lg text-white font-medium bg-primary"
+										class="w-full px-4 py-2 rounded-lg text-white font-bold bg-primary"
 									>
-										Se connecter
+										{{ formTitle }}
 									</button>
 								</div>
 								<div class="flex justify-center">
-									<button class="flex gap-2 items-center justify-center bg-light_grey w-full px-4 py-2 rounded-lg">
-										<img src="../assets/icons/basics/google.svg" class="w-6">
-										<p class="text-sm font-semibold">Se connecter avec Google</p>
+									<button
+										@click.prevent="
+											storeAuth.loginUserWithGoogle()
+										"
+										class="flex gap-2 items-center justify-center bg-light_grey w-full px-4 py-2 rounded-lg"
+									>
+										<img
+											src="../assets/icons/basics/google.svg"
+											class="w-6"
+										/>
+										<p class="text-sm font-semibold">
+											{{ formTitle }} avec Google
+										</p>
 									</button>
 								</div>
 							</div>
@@ -65,9 +97,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="xl:flex h-screen justify-center hidden xl:w-1/2">
-			<img src="../assets/icons/devclicker/screen-game-1.png" />
 		</div>
 	</div>
 </template>
@@ -90,14 +119,14 @@ const storeAuth = useAuthStore()
   register / login
 */
 
-const register = ref(false)
+const register = ref(true)
 
 /*
   form title
 */
 
 const formTitle = computed(() => {
-	return register.value ? "S'inscrire" : "Connexion"
+	return register.value ? "S'inscrire" : "Se connecter"
 })
 
 /*
@@ -115,10 +144,11 @@ const credentials = reactive({
 
 const onSubmit = () => {
 	if (!credentials.email || !credentials.password) {
-		alert("Please enter an email and password")
+		alert("Rentrez un email et un mot de passe")
 	} else {
 		if (register.value) {
 			storeAuth.registerUser(credentials)
+			storeAuth.init()
 		} else {
 			storeAuth.loginUser(credentials)
 		}

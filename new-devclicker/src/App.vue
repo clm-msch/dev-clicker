@@ -2,7 +2,6 @@
 	<!-- Bar -->
 	<MobileBar v-if="storeAuth.auth" />
 	<DesktopBar v-if="storeAuth.auth" />
-	<!-- Bar -->
 	<RouterView v-if="storeAuth.auth" class="sm:ml-64 ml-4" />
   <RouterView v-else />
 </template>

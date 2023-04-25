@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { auth } from '.././js/firebase.js'
 // import { useDataStore } from "../stores/data"
 
@@ -14,17 +14,16 @@ export const useAuthStore = defineStore({
   },
   actions: {
     init() {
-      // const storeNotes = useDataStore()
-
       onAuthStateChanged(auth, (user) => {
         if (user) {
           this.user.id = user.uid
           this.user.email = user.email
-          this.router.push('/')
+          this.auth = true
+          console.log('gut')
           // storeNotes.init()
         } else {
           this.user = {}
-          this.router.replace('/auth')
+          this.auth = false
           // storeNotes.clearNotes()
         }
       })
@@ -53,6 +52,15 @@ export const useAuthStore = defineStore({
       }).catch((error) => {
         console.log(error.message)
       })
-    }
+    },
+    loginUserWithGoogle() {
+      const provider = new GoogleAuthProvider()
+      signInWithPopup(auth, provider).then((result) => {
+        const user = result.user
+        console.log('user: ', user)
+      }).catch((error) => {
+        console.log(error.message)
+      })
+    },
   }
 })

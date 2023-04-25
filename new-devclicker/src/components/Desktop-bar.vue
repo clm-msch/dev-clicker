@@ -68,6 +68,15 @@
 			<p class="font-semibold text-sm text-primary">EXP : 0</p>
 			<p class="font-semibold text-sm text-primary">Argent : 0 €</p>
 		</div>
+		<div>
+			<p class="text-white">{{ storeAuth.user.email }}</p>
+			<button
+				class="p-2 bg-primary text-white font-bold rounded-lg"
+				@click.prevent="storeAuth.logoutUser"
+			>
+				Déconnexion
+			</button>
+		</div>
 		<!-- <div>
 			<RouterLink to="/auth" class="flex justify-center mt-4"
 				><button class="p-2 bg-primary text-white rounded-lg">
