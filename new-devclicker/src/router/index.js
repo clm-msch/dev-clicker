@@ -12,10 +12,14 @@ const router = createRouter({
       path: '/missions',
       name: 'missions',
       component: () => import('../views/MissionsView.vue')
+    },
+    {
+      path: '/auth',
+      name: 'auth',
+      component: () => import('../views/AuthView.vue')
     }
   ]
 })
-
 
 
 export default router

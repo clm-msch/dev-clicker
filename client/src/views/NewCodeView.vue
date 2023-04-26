@@ -354,7 +354,7 @@
 				/>
 				<div>
 					<strong class="text-xl">Prisma</strong>
-					<p class="text-sm">ajoute +50 k par seconde</p>
+					<p class="text-sm">ajoute +500 k par seconde</p>
 				</div>
 			</div>
 			<div>
@@ -391,7 +391,7 @@
 				/>
 				<div>
 					<strong class="text-xl">MongoDB</strong>
-					<p class="text-sm">ajoute +150 k par clic</p>
+					<p class="text-sm">ajoute +1 M par clic</p>
 				</div>
 			</div>
 			<div>
@@ -427,7 +427,7 @@
 				/>
 				<div>
 					<strong class="text-xl">Docker</strong>
-					<p class="text-sm">ajoute +100 k par seconde</p>
+					<p class="text-sm">ajoute +10 M par seconde</p>
 				</div>
 			</div>
 			<div>
@@ -464,7 +464,7 @@
 
 				<div>
 					<strong class="text-xl">Vercel</strong>
-					<p class="text-sm">ajoute +500 k par clic</p>
+					<p class="text-sm">ajoute +50 M par clic</p>
 				</div>
 			</div>
 			<div>
@@ -602,28 +602,28 @@ const addPrisma = () => {
 	if (data.exp >= data.prismaPrice) {
 		data.exp -= data.prismaPrice
 		data.prismaPrice += 50000000
-		data.amountSec += 50000
+		data.amountSec += 500000
 	}
 }
 const addMongo = () => {
 	if (data.exp >= data.mongoPrice) {
 		data.exp -= data.mongoPrice
-		data.mongoPrice += 500000000
-		data.amount += 150000
+		data.mongoPrice += 100000000
+		data.amount += 1000000
 	}
 }
 const addDocker = () => {
 	if (data.exp >= data.dockerPrice) {
 		data.exp -= data.dockerPrice
-		data.dockerPrice += 5000000000
-		data.amountSec += 100000
+		data.dockerPrice += 500000000
+		data.amountSec += 10000000
 	}
 }
 const addVercel = () => {
 	if (data.exp >= data.vercelPrice) {
 		data.exp -= data.vercelPrice
-		data.vercelPrice += 50000000000
-		data.amount += 500000
+		data.vercelPrice += 5000000000
+		data.amount += 50000000
 	}
 }
 // I want to watch the change of all expData to store in local storage

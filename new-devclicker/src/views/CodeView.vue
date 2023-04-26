@@ -1,5 +1,6 @@
 <template>
 	<div class="pt-8 pb-16">
+		<AuthPopup />
 		<div
 			class="mb-2 flex items-center justify-center sm:justify-start gap-4"
 		>
@@ -60,11 +61,12 @@
 		</div>
 		<!-- Toggle button -->
 		<div class="flex my-4 justify-center sm:justify-start">
-			<label
-				
-				class="relative -z-1 inline-flex items-center"
-			>
-				<input @click="data.changeStack()" type="checkbox" class="sr-only peer" />
+			<label class="relative -z-1 inline-flex items-center">
+				<input
+					@click="data.changeStack()"
+					type="checkbox"
+					class="sr-only peer"
+				/>
 				<div
 					class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"
 				></div>
@@ -80,6 +82,9 @@
 			<CodeCardFront v-if="data.ifFront" />
 			<CodeCardBack v-if="data.ifBack" />
 		</div>
+		<button @click="data.resetAll()" class="bg-red-500 text-white font-bold p-2 rounded-lg">
+			Reset
+		</button>
 	</div>
 </template>
 
@@ -88,6 +93,7 @@
   imports
 */
 import { onMounted } from "vue"
+import AuthPopup from "../components/Auth-Popup.vue"
 import CodeCardFront from "../components/Code-card-front.vue"
 import CodeCardBack from "../components/Code-card-back.vue"
 import { useDataStore } from "../stores/data"
@@ -96,7 +102,7 @@ const data = useDataStore()
   exp method
 */
 onMounted(() => {
-  data.getContentFront()
+	data.getContentFront()
 	data.increaseExpSec()
 })
 </script>
