@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia';
-import { collection, onSnapshot, doc, updateDoc, orderBy, query } from "firebase/firestore"
+import { collection, onSnapshot, doc, setDoc, addDoc, updateDoc, orderBy, query } from "firebase/firestore"
 import { db } from '.././js/firebase.js'
-const contentFrontQuery = query(collection(db, "contentCardsFront"), orderBy("order", "asc"))
-
+import { useAuthStore } from "../stores/auth"
+let collectionRef
+let querySnapshot
 export const useDataStore = defineStore({
     id: 'data',
     state: () => ({
@@ -163,8 +164,88 @@ export const useDataStore = defineStore({
         whatStack: 'Front-end',
     }),
     actions: {
+        async initData() {
+            const storeAuth = useAuthStore()
+            await setDoc(doc(db, "UserData", storeAuth.user.email, "contentCardsFront", "1"), {
+                id: 1,
+                sec: false,
+                name: "HTML",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681859649/skill-icons_html_usbxmc.svg",
+                effect: "ajoute +1 au clic",
+                expEffect: 1,
+                description: "Langage de balisage utilisé pour créer des pages Web.",
+                price: 10,
+                priceIncrease: 10,
+                quantity: 0,
+            });
+            await setDoc(doc(db, "UserData", storeAuth.user.email, "contentCardsFront", "2"), {
+                id: 2,
+                sec: true,
+                name: "CSS",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860538/skill-icons_css_jippit.svg",
+                effect: "ajoute +1 par seconde",
+                expEffect: 1,
+                description: "Langage de balisage utilisé pour créer des pages Web.",
+                price: 100,
+                priceIncrease: 15,
+                quantity: 0,
+            });
+            await setDoc(doc(db, "UserData", storeAuth.user.email, "contentCardsFront", "3"), {
+                id: 3,
+                sec: false,
+                name: "JavaScript",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860538/skill-icons_javascript_ymxsma.svg",
+                effect: "ajoute +10 au clic",
+                expEffect: 10,
+                description: "Langage de balisage utilisé pour créer des pages Web.",
+                price: 1000,
+                priceIncrease: 1000,
+                quantity: 0,
+            });
+            await setDoc(doc(db, "UserData", storeAuth.user.email, "contentCardsFront", "4"), {
+                id: 4,
+                sec: true,
+                name: "Tailwind CSS",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860538/skill-icons_tailwindcss_bpyogi.svg",
+                effect: "ajoute +100 par seconde",
+                expEffect: 100,
+                description: "Framework CSS qui fournit une bibliothèque de classes prêtes à l'emploi pour faciliter la mise en forme des pages Web.",
+                price: 5000,
+                priceIncrease: 5000,
+                quantity: 0,
+            });
+            await setDoc(doc(db, "UserData", storeAuth.user.email, "contentCardsFront", "5"), {
+                id: 5,
+                sec: false,
+                name: "Vue.js",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860538/skill-icons_vuejs_t5pp0w.svg",
+                effect: "ajoute +1 k par clic",
+                expEffect: 1000,
+                description: "Framework JavaScript permettant de créer des applications Web interactives et dynamiques.",
+                price: 50000,
+                priceIncrease: 10000,
+                quantity: 0,
+            });
+            await setDoc(doc(db, "UserData", storeAuth.user.email, "contentCardsFront", "6"), {
+                id: 6,
+                sec: false,
+                name: "Vite",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860539/skill-icons_vite_xxscpc.svg",
+                effect: "ajoute +5 k par clic",
+                expEffect: 5000,
+                description: "Outil de construction rapide pour les applications Web modernes, basé sur JavaScript.",
+                price: 500000,
+                priceIncrease: 500000,
+                quantity: 0,
+            });
+        },
+
         async getContentFront() {
-            onSnapshot(contentFrontQuery, (querySnapshot) => {
+            const storeAuth = useAuthStore()
+            collectionRef = collection(db, "UserData", storeAuth.user.email, "contentCardsFront")
+            querySnapshot = query(collectionRef, orderBy("order", "asc"))
+
+            onSnapshot(collectionRef, (querySnapshot) => {
                 let contentCardsFront = []
                 querySnapshot.forEach((doc) => {
                     let contentFront = {
@@ -180,7 +261,6 @@ export const useDataStore = defineStore({
                         quantity: doc.data().quantity,
                     }
                     contentCardsFront.push(contentFront)
-
                 })
                 this.contentCardsFront = contentCardsFront
             })
@@ -205,13 +285,15 @@ export const useDataStore = defineStore({
             }
         },
         async buyCodeFront(id) {
+            const storeAuth = useAuthStore()
+            collectionRef = collection(db, "UserData", storeAuth.user.email, "contentCardsFront")
             const card = this.contentCardsFront.find(card => card.id === id)
             if (this.exp >= card.price && card.sec == false) {
                 this.exp -= card.price
                 this.expAdd += card.expEffect
                 card.quantity++
                 card.price += card.priceIncrease
-                await updateDoc(doc(db, "contentCardsFront", id), {
+                await updateDoc(doc(db,"UserData", storeAuth.user.email, "contentCardsFront", id), {
                     quantity: card.quantity,
                     price: card.price,
                 })
@@ -221,7 +303,7 @@ export const useDataStore = defineStore({
                 this.expAddSec += card.expEffect
                 card.quantity++
                 card.price += card.priceIncrease
-                await updateDoc(doc(db, "contentCardsFront", id), {
+                await updateDoc(doc(db,"UserData", storeAuth.user.email, "contentCardsFront", id), {
                     quantity: card.quantity,
                     price: card.price,
                 })
@@ -242,6 +324,9 @@ export const useDataStore = defineStore({
                 card.price += card.priceIncrease
             }
         },
+        // resetAll() {
+        //     this.contentCardsFront = []
+        // }
     },
     getters: {
     },
