@@ -2,7 +2,7 @@
 <template>
 	<div class="flex justify-center sm:hidden">
 		<div
-			class="z-2 h-fit fixed bottom-0 rounded-t-lg bg-dark_grey gap-2 flex p-2 w-fit"
+			class=" h-fit fixed bottom-0 rounded-t-lg bg-dark_grey gap-2 flex p-2 w-fit"
 		>
 			<RouterLink to="/" exact-active-class="active">
 				<div

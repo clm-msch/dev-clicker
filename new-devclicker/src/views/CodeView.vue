@@ -12,7 +12,7 @@
 			<button
 				@keydown.enter.prevent
 				@click="data.increaseExp"
-				class="inline-flex space-x-3 items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-primary hover:border-dark_primary shadow-md"
+				class="inline-flex space-x-3 dev-button items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-primary hover:border-dark_primary shadow-md"
 			>
 				<p class="text-3xl font-bold text-gray-800">Développe</p>
 				<img
@@ -36,7 +36,7 @@
 					exp
 				</p>
 				<p class="text-sm">
-					<strong>
+					<strong class="font-bold">
 						{{
 							data.expAddSec.toLocaleString("fr-FR", {
 								minimumFractionDigits: 0,
@@ -82,9 +82,10 @@
 			<CodeCardFront v-if="data.ifFront" />
 			<CodeCardBack v-if="data.ifBack" />
 		</div>
+<!-- 
 		<button @click="data.resetAll()" class="bg-red-500 text-white font-bold p-2 rounded-lg">
 			Reset
-		</button>
+		</button> -->
 	</div>
 </template>
 
@@ -102,7 +103,7 @@ const data = useDataStore()
   exp method
 */
 onMounted(() => {
-	data.getContentFront()
+	// data.getContentFront()
 	data.increaseExpSec()
 })
 </script>
