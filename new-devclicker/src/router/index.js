@@ -14,6 +14,21 @@ const router = createRouter({
       component: () => import('../views/MissionsView.vue')
     },
     {
+      path: '/investissement',
+      name: 'investissement',
+      component: () => import('../views/InvestView.vue')
+    },
+    {
+      path: '/entreprise',
+      name: 'entreprise',
+      component: () => import('../views/EntrepriseView.vue')
+    },
+    {
+      path: '/trophees',
+      name: 'trophees',
+      component: () => import('../views/TrophiesView.vue')
+    },
+    {
       path: '/auth',
       name: 'auth',
       component: () => import('../views/AuthView.vue')

@@ -12,3 +12,33 @@
 .active div {
 	background-color: #532ee7;
 }
+body {
+  cursor: url("./icons/crusor/custom_cursor.svg"), auto;
+}
+
+button {
+  cursor: url("./icons/crusor/custom_hand_white.svg"), auto;
+}
+.dev-button {
+  cursor: url("./icons/crusor/custom_hand.svg"), auto;
+}
+.menu {
+  cursor: url("./icons/crusor/custom_hand_white.svg"), auto;
+}
+.peer {
+  cursor: url("./icons/crusor/custom_hand_white.svg"), auto;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #532ee7;
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #e2e2e2;
+	border-radius: 6px;
+}

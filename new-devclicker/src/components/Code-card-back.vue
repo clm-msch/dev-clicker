@@ -18,23 +18,27 @@
 				<div class="flex justify-between">
 					<p class="text-sm">
 						Prix :
-						{{
-							contentCard.price.toLocaleString("fr-FR", {
-								minimumFractionDigits: 0,
-								maximumFractionDigits: 4,
-								notation: "compact",
-							})
-						}}
+						<span class="font-bold">
+							{{
+								contentCard.price.toLocaleString("fr-FR", {
+									minimumFractionDigits: 0,
+									maximumFractionDigits: 4,
+									notation: "compact",
+								})
+							}}
+						</span>
 					</p>
 					<p class="text-sm">
 						Quantité :
-						{{
-							contentCard.quantity.toLocaleString("fr-FR", {
-								minimumFractionDigits: 0,
-								maximumFractionDigits: 4,
-								notation: "compact",
-							})
-						}}
+						<span class="font-bold">
+							{{
+								contentCard.quantity.toLocaleString("fr-FR", {
+									minimumFractionDigits: 0,
+									maximumFractionDigits: 4,
+									notation: "compact",
+								})
+							}}
+						</span>
 					</p>
 				</div>
 				<button

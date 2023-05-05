@@ -2,7 +2,7 @@
 <template>
 	<div class="flex justify-center sm:hidden">
 		<div
-			class="z-2 h-fit fixed bottom-0 rounded-t-lg bg-dark_grey gap-2 flex p-2 w-fit"
+			class=" h-fit fixed bottom-0 rounded-t-lg bg-dark_grey gap-2 flex p-2 w-fit"
 		>
 			<RouterLink to="/" exact-active-class="active">
 				<div
@@ -21,7 +21,7 @@
 					/>
 				</div>
 			</RouterLink>
-			<RouterLink to="/a" exact-active-class="active">
+			<RouterLink to="/investissement" exact-active-class="active">
 				<div
 					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
 				>
@@ -31,7 +31,7 @@
 					/>
 				</div>
 			</RouterLink>
-			<RouterLink to="/a" exact-active-class="active">
+			<RouterLink to="/entreprise" exact-active-class="active">
 				<div
 					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
 				>
@@ -51,7 +51,7 @@
 					/>
 				</div>
 			</RouterLink>
-			<RouterLink to="/a" exact-active-class="active">
+			<RouterLink to="/trophees" exact-active-class="active">
 				<div
 					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
 				>
