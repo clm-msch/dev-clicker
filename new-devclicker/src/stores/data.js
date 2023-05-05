@@ -100,7 +100,7 @@ export const useDataStore = defineStore({
                 sec: false,
                 name: "Express.js",
                 image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860540/skill-icons_expressjs_ndpwpu.svg",
-                effect: "ajoute +50 k par seconde",
+                effect: "ajoute +50 k par clic",
                 expEffect: 50000,
                 description: "Langage de balisage utilisé pour créer des pages Web.",
                 price: 5000000,
@@ -112,7 +112,7 @@ export const useDataStore = defineStore({
                 sec: true,
                 name: "Prisma",
                 image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860539/skill-icons_prisma_xi5xdp.svg",
-                effect: "ajoute +500 k au clic",
+                effect: "ajoute +500 k au seconde",
                 expEffect: 500000,
                 description: "Langage de balisage utilisé pour créer des pages Web.",
                 price: 50000000,
@@ -124,7 +124,7 @@ export const useDataStore = defineStore({
                 sec: false,
                 name: "MongoDB",
                 image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860539/skill-icons_mongodb_ye9ja4.svg",
-                effect: "ajoute +1 M par seconde",
+                effect: "ajoute +1 M par clic",
                 expEffect: 1000000,
                 description: "Langage de balisage utilisé pour créer des pages Web.",
                 price: 100000000,
@@ -136,7 +136,7 @@ export const useDataStore = defineStore({
                 sec: true,
                 name: "Docker",
                 image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1681860539/skill-icons_docker_jituey.svg",
-                effect: "ajoute +10 M par clic",
+                effect: "ajoute +10 M par seconde",
                 expEffect: 10000000,
                 description: "Langage de balisage utilisé pour créer des pages Web.",
                 price: 500000000,
@@ -215,7 +215,7 @@ export const useDataStore = defineStore({
         /*
             CodeView
         */
-        exp: 100000000,
+        exp: 1000000000000,
         clickTotal: 0,
         expAdd: 1,
         expAddSec: 0,
@@ -242,36 +242,69 @@ export const useDataStore = defineStore({
         /*
             InvestView
         */
-            totalStock: 0,
-            totalValueStock: 0,       
-            UTOstock: 0,
-            UTOprice: 100,
-            MRSstock: 0,
-            MRSprice: 400,
-            CRAstock: 0,
-            CRAprice: 600,
-            DWRKstock: 0,
-            DWRKprice: 2500,
-    
-            newNumberUTO: 0,
-            sumUTO: 0,
-            fluctuatedSumUTO: 0,
-            intervalIdUTO: null,
-    
-            newNumberMRS: 0,
-            sumMRS: 0,
-            fluctuatedSumMRS: 0,
-            intervalIdMRS: null,
-    
-            newNumberCRA: 0,
-            sumCRA: 0,
-            fluctuatedSumCRA: 0,
-            intervalIdCRA: null,
-    
-            newNumberDWRK: 0,
-            sumDWRK: 0,
-            fluctuatedSumDWRK: 0,
-            intervalIdDWRK: null,
+        UTOstock: 0,
+        UTOprice: 100,
+        MRSstock: 0,
+        MRSprice: 400,
+        CRAstock: 0,
+        CRAprice: 600,
+        DWRKstock: 0,
+        DWRKprice: 2500,
+
+        newNumberUTO: 0,
+        sumUTO: 0,
+        fluctuatedSumUTO: 0,
+        intervalIdUTO: null,
+
+        newNumberMRS: 0,
+        sumMRS: 0,
+        fluctuatedSumMRS: 0,
+        intervalIdMRS: null,
+
+        newNumberCRA: 0,
+        sumCRA: 0,
+        fluctuatedSumCRA: 0,
+        intervalIdCRA: null,
+
+        newNumberDWRK: 0,
+        sumDWRK: 0,
+        fluctuatedSumDWRK: 0,
+        intervalIdDWRK: null,
+        /*
+            InvestView
+        */
+        trophiesFront1: false,
+        trophiesFront2: false,
+        trophiesFront3: false,
+        trophiesFront4: false,
+        trophiesFront5: false,
+        trophiesFront6: false,
+        trophiesPopFront1: false,
+        trophiesPopFront2: false,
+        trophiesPopFront3: false,
+        trophiesPopFront4: false,
+        trophiesPopFront5: false,
+        trophiesPopFront6: false,
+
+        trophiesBack1: false,
+        trophiesBack2: false,
+        trophiesBack3: false,
+        trophiesBack4: false,
+        trophiesBack5: false,
+        trophiesBack6: false,
+        trophiesPopBack1: false,
+        trophiesPopBack2: false,
+        trophiesPopBack3: false,
+        trophiesPopBack4: false,
+        trophiesPopBack5: false,
+        trophiesPopBack6: false,
+
+        // trophiesClick1: false,
+        // trophiesClick2: false,
+        // trophiesClick3: false,
+        // trophiesClick4: false,
+        // trophiesClick5: false,
+        // trophiesClick6: false,
     }),
     actions: {
         // init() {
@@ -602,6 +635,162 @@ export const useDataStore = defineStore({
                 this.money += 5000
             } else {
                 this.progressValue6 += 0.5
+            }
+        },
+        activeTrophiesFront1() {
+            const card = this.contentCardsFront.find(card => card.id === 1)
+            if (card.quantity >= 5 && !this.trophiesFront1) {
+                this.trophiesFront1 = true
+                this.expAdd += 10
+                this.trophiesPopFront1 = true
+                if (this.trophiesPopFront1 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopFront1 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesFront2() {
+            const card = this.contentCardsFront.find(card => card.id === 2)
+            if (card.quantity >= 10 && !this.trophiesFront2) {
+                this.trophiesFront2 = true
+                this.expAddSec += 15
+                this.trophiesPopFront2 = true
+                if (this.trophiesPopFront2 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopFront2 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesFront3() {
+            const card = this.contentCardsFront.find(card => card.id === 3)
+            if (card.quantity >= 10 && !this.trophiesFront3) {
+                this.trophiesFront3 = true
+                this.expAdd += 20
+                this.trophiesPopFront3 = true
+                if (this.trophiesPopFront3 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopFront3 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesFront4() {
+            const card = this.contentCardsFront.find(card => card.id === 4)
+            if (card.quantity >= 5 && !this.trophiesFront4) {
+                this.trophiesFront4 = true
+                this.expAddSec += 500
+                this.trophiesPopFront4 = true
+                if (this.trophiesPopFront4 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopFront4 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesFront5() {
+            const card = this.contentCardsFront.find(card => card.id === 5)
+            if (card.quantity >= 10 && !this.trophiesFront5) {
+                this.trophiesFront5 = true
+                this.expAdd += 3000
+                this.trophiesPopFront5 = true
+                if (this.trophiesPopFront5 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopFront5 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesFront6() {
+            const card = this.contentCardsFront.find(card => card.id === 6)
+            if (card.quantity >= 10 && !this.trophiesFront6) {
+                this.trophiesFront6 = true
+                this.expAdd += 10000
+                this.trophiesPopFront6 = true
+                if (this.trophiesPopFront6 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopFront6 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesBack1() {
+            const card = this.contentCardsBack.find(card => card.id === 1)
+            if (card.quantity >= 5 && !this.trophiesBack1) {
+                this.trophiesBack1 = true
+                this.expAdd += 20000
+                this.trophiesPopBack1 = true
+                if (this.trophiesPopBack1 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopBack1 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesBack2() {
+            const card = this.contentCardsBack.find(card => card.id === 2)
+            if (card.quantity >= 10 && !this.trophiesBack2) {
+                this.trophiesBack2 = true
+                this.expAddSec += 100000
+                this.trophiesPopBack2 = true
+                if (this.trophiesPopBack2 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopBack2 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesBack3() {
+            const card = this.contentCardsBack.find(card => card.id === 3)
+            if (card.quantity >= 10 && !this.trophiesBack3) {
+                this.trophiesBack3 = true
+                this.expAdd += 1000000
+                this.trophiesPopBack3 = true
+                if (this.trophiesPopBack3 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopBack3 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesBack4() {
+            const card = this.contentCardsBack.find(card => card.id === 4)
+            if (card.quantity >= 5 && !this.trophiesBack4) {
+                this.trophiesBack4 = true
+                this.expAddSec += 5000000
+                this.trophiesPopBack4 = true
+                if (this.trophiesPopBack4 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopBack4 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesBack5() {
+            const card = this.contentCardsBack.find(card => card.id === 5)
+            if (card.quantity >= 10 && !this.trophiesBack5) {
+                this.trophiesBack5 = true
+                this.expAdd += 20000000
+                this.trophiesPopBack5 = true
+                if (this.trophiesPopBack5 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopBack5 = false
+                    }, 5000)
+                }
+            }
+        },
+        activeTrophiesBack6() {
+            const card = this.contentCardsBack.find(card => card.id === 6)
+            if (card.quantity >= 10 && !this.trophiesBack6) {
+                this.trophiesBack6 = true
+                this.expAdd += 100000000
+                this.trophiesPopBack6 = true
+                if (this.trophiesPopBack6 == true) {
+                    setTimeout(() => {
+                        this.trophiesPopBack6 = false
+                    }, 5000)
+                }
             }
         },
         resetAll() {

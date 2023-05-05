@@ -22,9 +22,6 @@ button {
 .dev-button {
   cursor: url("./icons/crusor/custom_hand.svg"), auto;
 }
-canvas {
-	cursor: url("custom_cursor.svg"), auto;
-}
 .menu {
   cursor: url("./icons/crusor/custom_hand_white.svg"), auto;
 }

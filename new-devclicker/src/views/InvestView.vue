@@ -5,8 +5,7 @@
 		>
 			<h1 class="text-3xl font-bold">INVESTISSEMENT</h1>
 			<p>
-				Fait travailler ton argent avec les plus grosses entreprises
-				tech
+				Investis ton argent dans dans des start-ups.
 			</p>
 		</div>
 		<div class="flex flex-wrap gap-4 mb-4 justify-center sm:justify-start">

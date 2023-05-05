@@ -35,12 +35,14 @@
 			<p class="font-bold text-white">Investissement</p>
 		</div>
 	</RouterLink>
+	<RouterLink to="/entreprise" exact-active-class="active">
 		<div
 			class="hover:bg-primary menu p-2 rounded-lg flex items-center gap-4 w-52"
 		>
 			<img src="../assets/icons/basics/entreprise.svg" class="w-6" />
 			<p class="font-bold text-white">Entreprise</p>
 		</div>
+	</RouterLink>
 		<div
 			class="hover:bg-primary menu p-2 rounded-lg flex items-center gap-4 w-52"
 		>
@@ -48,12 +50,14 @@
 			<p class="font-bold text-white">Cybersécurité</p>
 		</div>
 		<h2 class="text-white font-bold mt-2 -mb-1">Autres :</h2>
+		<RouterLink to="/trophees" exact-active-class="active">
 		<div
 			class="hover:bg-primary menu p-2 rounded-lg flex items-center gap-4 w-52"
 		>
 			<img src="../assets/icons/basics/trophées.svg" class="w-6" />
 			<p class="font-bold text-white">Trophées</p>
 		</div>
+	</RouterLink>
 		<div
 			class="hover:bg-primary menu p-2 rounded-lg flex items-center gap-4 w-52"
 		>

@@ -1,11 +1,12 @@
 <template>
 	<div class="pt-8 pb-16">
 		<AuthPopup />
+		<Trophies />
 		<div
 			class="mb-2 flex items-center justify-center sm:justify-start gap-4"
 		>
 			<h1 class="text-3xl font-bold">CODE</h1>
-			<p>Développe tes compétences et accumule de l'expérience</p>
+			<p>Développe tes compétences et accumule de l'expérience.</p>
 		</div>
 		<div class="flex flex-wrap gap-4 mb-4 justify-center sm:justify-start">
 			<!-- Bouton d'incrémentation de l'éxpérience -->
@@ -95,6 +96,7 @@
 */
 import { onMounted } from "vue"
 import AuthPopup from "../components/Auth-Popup.vue"
+import Trophies from "../components/Trophies.vue"
 import CodeCardFront from "../components/Code-card-front.vue"
 import CodeCardBack from "../components/Code-card-back.vue"
 import { useDataStore } from "../stores/data"
