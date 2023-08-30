@@ -43,12 +43,12 @@
 			<p class="font-bold text-white">Entreprise</p>
 		</div>
 	</RouterLink>
-		<div
+		<!-- <div
 			class="hover:bg-primary menu p-2 rounded-lg flex items-center gap-4 w-52"
 		>
 			<img src="../assets/icons/basics/cybersécurité.svg" class="w-6" />
 			<p class="font-bold text-white">Cybersécurité</p>
-		</div>
+		</div> -->
 		<h2 class="text-white font-bold mt-2 -mb-1">Autres :</h2>
 		<RouterLink to="/trophees" exact-active-class="active">
 		<div
@@ -58,12 +58,14 @@
 			<p class="font-bold text-white">Trophées</p>
 		</div>
 	</RouterLink>
+	<RouterLink to="/shopping" exact-active-class="active">
 		<div
 			class="hover:bg-primary menu p-2 rounded-lg flex items-center gap-4 w-52"
 		>
 			<img src="../assets/icons/basics/shopping.svg" class="w-6" />
 			<p class="font-bold text-white">Shopping</p>
 		</div>
+	</RouterLink>
 		<div
 			class="hover:bg-primary menu p-2 rounded-lg flex items-center gap-4 w-52"
 		>

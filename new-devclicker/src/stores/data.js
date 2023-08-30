@@ -212,10 +212,59 @@ export const useDataStore = defineStore({
                 requires: ["MongoDB", "Docker", "Vercel"]
             },
         ],
+        workplaces: [
+            {
+                id: 1,
+                name: "Petit bureau",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1683329169/workplace_ep64rc.svg",
+                description: "Un petit bureau dans une cave, assez délabré et petit. (5 employés)",
+                price : "100 k ",
+            },
+            {
+                id: 2,
+                name: "Moyen Bureau",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1683329169/workplace_ep64rc.svg",
+                description: "Un bureau de taille moyenne, avec un peu plus de confort. (50 employés)",
+                price : "500 k ",
+            },
+            {
+                id: 3,
+                name: "Grand Bureau",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1683329169/workplace_ep64rc.svg",
+                description: "Un grand bureau, avec une belle vue sur la ville. (100 employés)",
+                price : "2,5 M ",
+            },
+        ],
+        servers : [
+            {
+                id: 1,
+                name: "Serveurs d'occasion",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1683329169/server_hqqiqd.svg",
+                description: "A beaucoup servi à d'autres entreprises.",
+                price : "50 k ",
+            },
+            {
+                id: 2,
+                name: "Serveurs neufs",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1683329169/server_hqqiqd.svg",
+                description: "Des serveurs neufs, qui n'ont jamais servi.",
+                price : "100 k ",
+            },
+            {
+                id: 3,
+                name: "Serveurs surpuissants",
+                image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1683329169/server_hqqiqd.svg",
+                description: "Concus pour écraser la concurence.",
+                price : "1 M ",
+            },
+        ],
+
+
+
         /*
             CodeView
         */
-        exp: 1000000000000,
+        exp: 10000,
         clickTotal: 0,
         expAdd: 1,
         expAddSec: 0,
