@@ -41,7 +41,7 @@
 					/>
 				</div>
 			</RouterLink>
-			<RouterLink to="/a" exact-active-class="active">
+			<!-- <RouterLink to="/a" exact-active-class="active">
 				<div
 					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
 				>
@@ -50,7 +50,7 @@
 						class="w-6"
 					/>
 				</div>
-			</RouterLink>
+			</RouterLink> -->
 			<RouterLink to="/trophees" exact-active-class="active">
 				<div
 					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
@@ -61,7 +61,7 @@
 					/>
 				</div>
 			</RouterLink>
-			<RouterLink to="/a" exact-active-class="active">
+			<RouterLink to="/shopping" exact-active-class="active">
 				<div
 					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
 				>
