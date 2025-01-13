@@ -542,7 +542,7 @@
 /*
   imports
 */
-import { useDataStore } from "../stores/data"
+import { useDataStore } from "../stores/data" 
 import { onMounted } from "vue"
 const data = useDataStore()
 
