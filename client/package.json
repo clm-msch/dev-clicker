@@ -10,6 +10,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^1.3.4",
+    "devclicker_v1.2": "file:",
     "echarts": "^5.4.2",
     "firebase": "^9.18.0",
     "jsdom": "^21.1.1",
