@@ -1,10 +1,10 @@
 <template>
 	<div
 		v-if="!storeAuth.auth"
-		class="fixed z-10 inset-0 overflow-y-auto shadow-lg"
+		class="fixed inset-0 z-10 overflow-y-auto shadow-lg"
 	>
 		<div
-			class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+			class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0"
 		>
 			<div class="fixed inset-0 transition-opacity" aria-hidden="true">
 				<div class="absolute inset-0 bg-dark_grey"></div>
@@ -16,9 +16,9 @@
 			>
 
 			<div
-				class="inline-block align-bottom bg-white rounded-lg overflow-hidden transform transition-all sm:my-2 sm:align-middle sm:w-full sm:max-w-md"
+				class="inline-block overflow-hidden align-bottom transition-all transform bg-white rounded-lg sm:my-2 sm:align-middle sm:w-full sm:max-w-md"
 			>
-				<div class="bg-white p-6">
+				<div class="p-6 bg-white">
 					<div class="flex justify-center">
 						<img
 							src="../assets/icons/devclicker/devclicker-text-black.svg"
@@ -26,12 +26,12 @@
 						/>
 					</div>
 
-					<div class="flex justify-center mb-6 gap-4">
+					<div class="flex justify-center gap-4 mb-6">
 						<button
-							class="px-4 py-2 rounded-md text-primary font-bold"
+							class="px-4 py-2 font-bold rounded-md text-primary"
 							:class="{
 								'bg-primary': register,
-                'hover:bg-dark_primary': register,
+								'hover:bg-dark_primary': register,
 								'bg-light_grey': !register,
 								'text-white': register,
 							}"
@@ -40,10 +40,10 @@
 							Inscription
 						</button>
 						<button
-							class="px-4 py-2 rounded-md text-primary font-bold"
+							class="px-4 py-2 font-bold rounded-md text-primary"
 							:class="{
 								'bg-primary': !register,
-                'hover:bg-dark_primary': !register,
+								'hover:bg-dark_primary': !register,
 								'bg-light_grey': register,
 								'text-white': !register,
 							}"
@@ -52,36 +52,36 @@
 							Connexion
 						</button>
 					</div>
-					<div class="bg-white rounded-lg p-6">
+					<div class="p-6 bg-white rounded-lg">
 						<form @submit.prevent="onSubmit">
 							<div class="space-y-4">
 								<div>
 									<label
-										class="block text-gray-700 text-left font-medium mb-2"
+										class="block mb-2 font-medium text-left text-gray-700"
 										>Email</label
 									>
 									<input
 										v-model="credentials.email"
-										class="w-full px-4 py-2 rounded-md border-gray-300 bg-light_grey"
+										class="w-full px-4 py-2 border-gray-300 rounded-md bg-light_grey"
 										placeholder="monmail@mail.com"
 										type="email"
 									/>
 								</div>
 								<div>
 									<label
-										class="block text-gray-700 text-left font-medium mb-2"
+										class="block mb-2 font-medium text-left text-gray-700"
 										>Mot de passe</label
 									>
 									<input
 										v-model="credentials.password"
-										class="w-full px-4 py-2 rounded-md border-gray-300 bg-light_grey"
+										class="w-full px-4 py-2 border-gray-300 rounded-md bg-light_grey"
 										placeholder="ton mot de passe"
 										type="password"
 									/>
 								</div>
 								<div>
 									<button
-										class="w-full px-4 py-2 rounded-lg text-white font-bold bg-primary hover:bg-dark_primary"
+										class="w-full px-4 py-2 font-bold text-white rounded-lg bg-primary hover:bg-dark_primary"
 									>
 										{{ formTitle }}
 									</button>
@@ -91,7 +91,7 @@
 										@click.prevent="
 											storeAuth.loginUserWithGoogle()
 										"
-										class="flex gap-2 items-center justify-center bg-light_grey hover:border-primary border-2 w-full px-4 py-2 rounded-lg"
+										class="flex items-center justify-center w-full gap-2 px-4 py-2 border-2 rounded-lg bg-light_grey hover:border-primary"
 									>
 										<img
 											src="../assets/icons/basics/google.svg"
@@ -108,17 +108,41 @@
 				</div>
 			</div>
 			<div
-				class="sm:inline-block hidden ml-5 align-bottom bg-white rounded-lg overflow-hidden transform transition-all sm:my-8 sm:align-middle sm:w-full sm:max-w-md"
+				class="hidden pt-4 ml-5 align-bottom transition-all transform bg-white rounded-lg poverflow-hidden sm:inline-block sm:my-8 sm:align-middle sm:w-full sm:max-w-md"
 			>
-				<div class="bg-white p-6">
+				<!-- <div class="p-6 bg-white">
 					<div class="flex justify-left">
-						<p class="font-bold text-lg">News :</p>
+						<p class="text-lg font-bold">News :</p>
 					</div>
-					<div class="flex justify-left text-left">
+					<div class="flex text-left justify-left">
 						Enfin la V2 est disponible ! Merci a ceux qui ont
 						participé aux tests tous au long de la V1 !
 					</div>
+				</div> -->
+				<div style="padding: 100% 0 0 0; position: relative">
+					<iframe
+						src="https://player.vimeo.com/video/968146256?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+						frameborder="0"
+						allow="autoplay; encrypted-media"
+						style="
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+						"
+						title="Devclicker"
+					></iframe>
 				</div>
+				<p class="italic">
+					(Merci beaucoup
+					<a
+						class="font-bold text-primary hover:text-dark_primary "
+						href="https://www.instagram.com/bleuu.fleur/"
+						target="_blank"
+						>@bleuu.fleur</a
+					>)
+				</p>
 			</div>
 		</div>
 	</div>
