@@ -1,16 +1,16 @@
 <template>
 	<div class="pt-8 pb-16">
 		<div
-			class="mb-2 flex items-center justify-center sm:justify-start gap-4"
+			class="flex items-center justify-center gap-4 mb-2 sm:justify-start"
 		>
-			<h1 class="text-3xl font-bold">INVESTISSEMENT</h1>
+			<h1 class="text-3xl font-bold">Investissement</h1>
 			<p>
 				Investis ton argent dans dans des start-ups.
 			</p>
 		</div>
-		<div class="flex flex-wrap gap-4 mb-4 justify-center sm:justify-start">
+		<div class="flex flex-wrap justify-center gap-4 mb-4 sm:justify-start">
 			<div
-				class="flex justify-center w-96 h-fit bg-white px-3 py-9 shadow-md rounded-lg"
+				class="flex justify-center px-3 bg-white rounded-lg shadow-md w-96 h-fit py-9"
 			>
 				<p class="text-xl">Compte en banque :</p>
 				<p class="text-xl font-bold">
@@ -25,11 +25,11 @@
 				</p>
 			</div>
 		</div>
-		<div class="flex flex-wrap gap-4 mb-4 justify-center sm:justify-start">
+		<div class="flex flex-wrap justify-center gap-4 mb-4 sm:justify-start">
 			<!-- Action 1 -->
 
 			<div
-				class="bg-white p-4 rounded-lg flex flex-col items-start shadow-lg gap-2 w-64 h-fit"
+				class="flex flex-col items-start w-64 gap-2 p-4 bg-white rounded-lg shadow-lg h-fit"
 			>
 				<div class="flex flex-wrap items-center gap-2">
 					<img
@@ -37,7 +37,7 @@
 						class="w-12"
 					/>
 					<div>
-						<p class="font-bold text-xl">Unito</p>
+						<p class="text-xl font-bold">Unito</p>
 					</div>
 				</div>
 				<div class="flex flex-col">
@@ -80,14 +80,14 @@
 				</div>
 				<button
 					@click="addUTO"
-					class="bg-primary hover:bg-dark_primary p-2 pl-4 w-full pr-4 rounded-lg text-white font-bold"
+					class="w-full p-2 pl-4 pr-4 font-bold text-white rounded-lg bg-primary hover:bg-dark_primary"
 				>
 					Acheter une action
 				</button>
 			</div>
 			<!-- Action 2 -->
 			<div
-				class="bg-white p-4 rounded-lg flex flex-col items-start shadow-lg gap-2 w-64 h-fit"
+				class="flex flex-col items-start w-64 gap-2 p-4 bg-white rounded-lg shadow-lg h-fit"
 			>
 				<div class="flex items-center gap-2">
 					<img
@@ -95,7 +95,7 @@
 						class="w-12"
 					/>
 					<div>
-						<p class="font-bold text-xl">Mars</p>
+						<p class="text-xl font-bold">Mars</p>
 					</div>
 				</div>
 				<div class="flex flex-col">
@@ -138,14 +138,14 @@
 				</div>
 				<button
 					@click="addMRS"
-					class="bg-primary hover:bg-dark_primary p-2 pl-4 w-full pr-4 rounded-lg text-white font-bold"
+					class="w-full p-2 pl-4 pr-4 font-bold text-white rounded-lg bg-primary hover:bg-dark_primary"
 				>
 					Acheter une action
 				</button>
 			</div>
 			<!-- Action 3 -->
 			<div
-				class="bg-white p-4 rounded-lg flex flex-col items-start shadow-lg gap-2 w-64 h-fit"
+				class="flex flex-col items-start w-64 gap-2 p-4 bg-white rounded-lg shadow-lg h-fit"
 			>
 				<div class="flex items-center gap-2">
 					<img
@@ -153,7 +153,7 @@
 						class="w-12"
 					/>
 					<div>
-						<p class="font-bold text-xl">Crea</p>
+						<p class="text-xl font-bold">Crea</p>
 					</div>
 				</div>
 				<div class="flex flex-col">
@@ -196,14 +196,14 @@
 				</div>
 				<button
 					@click="addCRA"
-					class="bg-primary hover:bg-dark_primary p-2 pl-4 w-full pr-4 rounded-lg text-white font-bold"
+					class="w-full p-2 pl-4 pr-4 font-bold text-white rounded-lg bg-primary hover:bg-dark_primary"
 				>
 					Acheter une action
 				</button>
 			</div>
 			<!-- Action 4 -->
 			<div
-				class="bg-white p-4 rounded-lg flex flex-col items-start shadow-lg gap-2 w-64 h-fit"
+				class="flex flex-col items-start w-64 gap-2 p-4 bg-white rounded-lg shadow-lg h-fit"
 			>
 				<div class="flex items-center gap-2">
 					<img
@@ -211,7 +211,7 @@
 						class="w-12"
 					/>
 					<div>
-						<p class="font-bold text-xl">Devwork</p>
+						<p class="text-xl font-bold">Devwork</p>
 					</div>
 				</div>
 				<div class="flex flex-col">
@@ -254,14 +254,14 @@
 				</div>
 				<button
 					@click="addDWRK"
-					class="bg-primary hover:bg-dark_primary p-2 pl-4 w-full pr-4 rounded-lg text-white font-bold"
+					class="w-full p-2 pl-4 pr-4 font-bold text-white rounded-lg bg-primary hover:bg-dark_primary"
 				>
 					Acheter une action
 				</button>
 			</div>
 
 			<div
-				class="bg-white flex flex-col flex-wrap p-4 rounded-lg shadow-lg w-fit -z-20"
+				class="flex flex-col flex-wrap p-4 bg-white rounded-lg shadow-lg w-fit -z-20"
 			>
 				<v-chart
 					class="chart -z-10"
@@ -271,7 +271,7 @@
 				/>
 				<div class="flex flex-col gap-2">
 					<div
-						class="flex content-between justify-between items-center"
+						class="flex items-center content-between justify-between"
 					>
 						<p class="font-bold">
 							Nombre d'action :
@@ -298,12 +298,12 @@
 				</div>
 			</div>
 			<div
-				class="flex sm:flex-col flex-wrap justify-center bg-white h-fit w-fit p-4 rounded-lg shadow-lg gap-2"
+				class="flex flex-wrap justify-center gap-2 p-4 bg-white rounded-lg shadow-lg sm:flex-col h-fit w-fit"
 			>
 				<div>
 					<button
 						@click="sellUTO"
-						class="bg-primary hover:bg-dark_primary w-40 p-2 pl-6 pr-6 rounded-lg text-white font-bold"
+						class="w-40 p-2 pl-6 pr-6 font-bold text-white rounded-lg bg-primary hover:bg-dark_primary"
 					>
 						Vendre UTO
 					</button>
@@ -311,7 +311,7 @@
 				<div>
 					<button
 						@click="sellMRS"
-						class="bg-primary hover:bg-dark_primary w-40 p-2 pl-6 pr-6 rounded-lg text-white font-bold"
+						class="w-40 p-2 pl-6 pr-6 font-bold text-white rounded-lg bg-primary hover:bg-dark_primary"
 					>
 						Vendre MRS
 					</button>
@@ -319,7 +319,7 @@
 				<div>
 					<button
 						@click="sellCRA"
-						class="bg-primary hover:bg-dark_primary w-40 p-2 pl-6 pr-6 rounded-lg text-white font-bold"
+						class="w-40 p-2 pl-6 pr-6 font-bold text-white rounded-lg bg-primary hover:bg-dark_primary"
 					>
 						Vendre CRA
 					</button>
@@ -327,7 +327,7 @@
 				<div>
 					<button
 						@click="sellDWRK"
-						class="bg-primary hover:bg-dark_primary w-40 p-2 pl-6 pr-6 rounded-lg text-white font-bold"
+						class="w-40 p-2 pl-6 pr-6 font-bold text-white rounded-lg bg-primary hover:bg-dark_primary"
 					>
 						Vendre DWRK
 					</button>
@@ -335,7 +335,7 @@
 				<div>
 					<button
 						@click="sellAll"
-						class="bg-primary hover:bg-dark_primary sm:w-40 w-80 p-2 pl-6 pr-6 rounded-lg text-white font-bold"
+						class="p-2 pl-6 pr-6 font-bold text-white rounded-lg bg-primary hover:bg-dark_primary sm:w-40 w-80"
 					>
 						Tous Vendre
 					</button>

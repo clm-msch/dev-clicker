@@ -1,24 +1,24 @@
 <template>
 	<div class="pt-8 pb-16">
 		<div
-			class="mb-2 flex items-center justify-center sm:justify-start gap-4"
+			class="flex items-center justify-center gap-4 mb-2 sm:justify-start"
 		>
-			<h1 class="text-3xl font-bold">TROPHÉES</h1>
+			<h1 class="text-3xl font-bold">Trophées</h1>
 			<p>Galerie des tes succès de jeu, débloque les tous !</p>
 		</div>
 		<div class="flex flex-col justify-center gap-4">
-			<p class="font-bold sm:text-left text-center">
+			<p class="font-bold text-center sm:text-left">
 				Trophées de Front :
 			</p>
 		</div>
-		<div class="flex sm:justify-start justify-center flex-wrap gap-4 mb-2">
+		<div class="flex flex-wrap justify-center gap-4 mb-2 sm:justify-start">
 			<!-- Start -->
 			<!-- Desac achivement 1 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesFront1"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -34,10 +34,10 @@
 			</div>
 			<!-- html achivement 1 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesFront1"
 			>
-				<div class="flex space-x-2 items-center d w-44 h-full">
+				<div class="flex items-center h-full space-x-2 d w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -55,10 +55,10 @@
 			</div>
 			<!-- Desac achivement 2 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesFront2"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -74,10 +74,10 @@
 			</div>
 			<!-- html achivement 2 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesFront2"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -97,10 +97,10 @@
 			</div>
 			<!-- Desac achivement 3 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesFront3"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -119,10 +119,10 @@
 
 			<!-- html achivement 3 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesFront3"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -144,10 +144,10 @@
 			</div>
 			<!-- Desac achivement 4 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesFront4"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -165,10 +165,10 @@
 			</div>
 			<!-- html achivement 4 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesFront4"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -186,10 +186,10 @@
 			</div>
 			<!-- Desac achivement 5 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesFront5"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -207,10 +207,10 @@
 			</div>
 			<!-- html achivement 5 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesFront5"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -228,10 +228,10 @@
 			</div>
 			<!-- Desac achivement 6 -->
 			<div
-				class="inline-flex space-x-2 items-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesFront6"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -249,10 +249,10 @@
 			</div>
 			<!-- html achivement 6 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesFront6"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -271,16 +271,16 @@
 			<!-- End -->
 		</div>
 		<div class="flex flex-col justify-center gap-4">
-			<p class="font-bold sm:text-left text-center">Trophées de Back :</p>
+			<p class="font-bold text-center sm:text-left">Trophées de Back :</p>
 		</div>
-		<div class="flex sm:justify-start justify-center flex-wrap gap-4 mb-2">
+		<div class="flex flex-wrap justify-center gap-4 mb-2 sm:justify-start">
 			<!-- Start -->
 			<!-- Desac achivement 1 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesBack1"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -298,10 +298,10 @@
 			</div>
 			<!-- html achivement 1 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesBack1"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -319,10 +319,10 @@
 			</div>
 			<!-- Desac achivement 2 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesBack2"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -340,10 +340,10 @@
 			</div>
 			<!-- html achivement 2 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesBack2"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -363,10 +363,10 @@
 			</div>
 			<!-- Desac achivement 3 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesBack3"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -385,10 +385,10 @@
 
 			<!-- html achivement 3 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesBack3"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -406,10 +406,10 @@
 			</div>
 			<!-- Desac achivement 4 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesBack4"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -427,10 +427,10 @@
 			</div>
 			<!-- html achivement 4 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesBack4"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -448,10 +448,10 @@
 			</div>
 			<!-- Desac achivement 5 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesBack5"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -469,10 +469,10 @@
 			</div>
 			<!-- html achivement 5 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesBack5"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -492,10 +492,10 @@
 			</div>
 			<!-- Desac achivement 6 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-light_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-light_grey"
 				v-if="!data.trophiesBack6"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"
@@ -513,10 +513,10 @@
 			</div>
 			<!-- html achivement 6 -->
 			<div
-				class="inline-flex space-x-2 items-center justify-center w-80 px-4 py-5 bg-dark_grey rounded-lg shadow-lg"
+				class="inline-flex items-center justify-center px-4 py-5 space-x-2 rounded-lg shadow-lg w-80 bg-dark_grey"
 				v-if="data.trophiesBack6"
 			>
-				<div class="flex space-x-2 items-center w-44 h-full">
+				<div class="flex items-center h-full space-x-2 w-44">
 					<div class="w-12 h-full">
 						<img
 							class="flex-1 h-full rounded-lg"

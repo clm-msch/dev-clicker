@@ -1,8 +1,8 @@
 <template>
 	<MobileBar v-if="storeAuth.auth" />
 	<DesktopBar v-if="storeAuth.auth" />
-	<RouterView v-if="storeAuth.auth" class="sm:ml-64 ml-3" />
-  <RouterView v-else />
+	<RouterView v-if="storeAuth.auth" class="ml-3 sm:ml-64" />
+	<RouterView v-else />
 </template>
 
 <script setup>
@@ -28,7 +28,7 @@ const data = useDataStore()
 
 onMounted(() => {
 	storeAuth.init()
-  setInterval(() => {
+	setInterval(() => {
 		data.activeTrophiesFront1()
 		data.activeTrophiesFront2()
 		data.activeTrophiesFront3()

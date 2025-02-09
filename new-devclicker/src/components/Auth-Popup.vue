@@ -87,18 +87,21 @@
 									</button>
 								</div>
 								<div class="flex justify-center">
-									<button
+									<!-- <button
 										@click.prevent="
 											storeAuth.loginUserWithGoogle()
 										"
 										class="flex items-center justify-center w-full gap-2 px-4 py-2 border-2 rounded-lg bg-light_grey hover:border-primary"
-									>
+									> -->
+									<button
+									class="flex items-center justify-center w-full gap-2 px-4 py-2 border-2 rounded-lg bg-light_grey hover:border-primary"
+								>
 										<img
 											src="../assets/icons/basics/google.svg"
 											class="w-6"
 										/>
 										<p class="text-sm font-semibold">
-											{{ formTitle }} avec Google
+											{{ formTitle }} avec Google (ne marche pas)
 										</p>
 									</button>
 								</div>
@@ -142,13 +145,6 @@
 						target="_blank"
 						>@bleuu.fleur</a
 					>)
-				</p>
-			</div>
-			<div class="p-24 bg-black">
-				<p class="text-red-500 p-100">lol xpork"eokozkofk okoz kfozk okozkfo
-					fozo keo zk
-					z f
-					ozk fo^zkef ozk <br>
 				</p>
 			</div>
 		</div>
