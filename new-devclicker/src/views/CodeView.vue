@@ -3,17 +3,17 @@
 		<AuthPopup />
 		<Trophies />
 		<div
-			class="mb-2 flex items-center justify-center sm:justify-start gap-4"
+			class="flex items-center justify-center gap-4 mb-2 sm:justify-start"
 		>
 			<h1 class="text-3xl font-bold">CODE</h1>
 			<p>Développe tes compétences et accumule de l'expérience.</p>
 		</div>
-		<div class="flex flex-wrap gap-4 mb-4 justify-center sm:justify-start">
+		<div class="flex flex-wrap justify-center gap-4 mb-4 sm:justify-start">
 			<!-- Bouton d'incrémentation de l'éxpérience -->
 			<button
 				@keydown.enter.prevent
 				@click="data.increaseExp"
-				class="inline-flex space-x-3 dev-button items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-primary hover:border-dark_primary shadow-md"
+				class="inline-flex items-center justify-center px-12 space-x-3 bg-white border-4 rounded-lg shadow-md dev-button w-80 h-28 py-9 border-primary hover:border-dark_primary"
 			>
 				<p class="text-3xl font-bold text-gray-800">Développe</p>
 				<img
@@ -23,7 +23,7 @@
 			</button>
 			<!-- Bouton d'incrémentation de l'éxpérience -->
 			<div
-				class="flex flex-col text-center justify-center w-80 h-28 px-3 py-9 bg-white shadow-md rounded-lg"
+				class="flex flex-col justify-center px-3 text-center bg-white rounded-lg shadow-md w-80 h-28 py-9"
 			>
 				<p class="text-xl">
 					Expérience :
@@ -61,8 +61,8 @@
 			</div>
 		</div>
 		<!-- Toggle button -->
-		<div class="flex my-4 justify-center sm:justify-start">
-			<label class="relative -z-1 inline-flex items-center">
+		<div class="flex justify-center my-4 sm:justify-start">
+			<label class="relative inline-flex items-center -z-1">
 				<input
 					@click="data.changeStack()"
 					type="checkbox"
@@ -72,7 +72,7 @@
 					class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"
 				></div>
 				<span
-					class="ml-4 text-md font-medium text-gray-900 dark:text-dark_grey"
+					class="ml-4 font-medium text-gray-900 text-md dark:text-dark_grey"
 				>
 					{{ data.whatStack }}
 				</span>
@@ -84,7 +84,7 @@
 			<CodeCardBack v-if="data.ifBack" />
 		</div>
 <!-- 
-		<button @click="data.resetAll()" class="bg-red-500 text-white font-bold p-2 rounded-lg">
+		<button @click="data.resetAll()" class="p-2 font-bold text-white bg-red-500 rounded-lg">
 			Reset
 		</button> -->
 	</div>

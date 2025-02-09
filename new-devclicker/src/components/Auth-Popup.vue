@@ -137,11 +137,18 @@
 				<p class="italic">
 					(Merci beaucoup
 					<a
-						class="font-bold text-primary hover:text-dark_primary "
+						class="font-bold text-primary hover:text-dark_primary"
 						href="https://www.instagram.com/bleuu.fleur/"
 						target="_blank"
 						>@bleuu.fleur</a
 					>)
+				</p>
+			</div>
+			<div class="p-24 bg-black">
+				<p class="text-red-500 p-100">lol xpork"eokozkofk okoz kfozk okozkfo
+					fozo keo zk
+					z f
+					ozk fo^zkef ozk <br>
 				</p>
 			</div>
 		</div>
