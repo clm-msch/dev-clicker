@@ -5,7 +5,7 @@
 		<div
 			class="flex items-center justify-center gap-4 mb-2 sm:justify-start"
 		>
-			<h1 class="text-3xl font-bold">CODE</h1>
+			<h1 class="text-3xl font-bold">Code</h1>
 			<p>Développe tes compétences et accumule de l'expérience.</p>
 		</div>
 		<div class="flex flex-wrap justify-center gap-4 mb-4 sm:justify-start">
@@ -92,7 +92,7 @@
 
 <script setup>
 /*
-  imports
+	imports
 */
 import { onMounted } from "vue"
 import AuthPopup from "../components/Auth-Popup.vue"
@@ -102,7 +102,7 @@ import CodeCardBack from "../components/Code-card-back.vue"
 import { useDataStore } from "../stores/data"
 const data = useDataStore()
 /*
-  exp method
+	exp method
 */
 onMounted(() => {
 	// data.getContentFront()

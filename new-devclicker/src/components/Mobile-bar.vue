@@ -2,18 +2,18 @@
 <template>
 	<div class="flex justify-center sm:hidden">
 		<div
-			class=" h-fit fixed bottom-0 rounded-t-lg bg-dark_grey gap-2 flex p-2 w-fit"
+			class="fixed bottom-0 flex gap-2 p-2 rounded-t-lg h-fit bg-dark_grey w-fit"
 		>
 			<RouterLink to="/" exact-active-class="active">
 				<div
-					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+					class="flex items-center gap-4 p-2 rounded-lg hover:bg-primary w"
 				>
 					<img src="../assets/icons/basics/code.svg" class="w-6" />
 				</div>
 			</RouterLink>
 			<RouterLink to="/missions" exact-active-class="active">
 				<div
-					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+					class="flex items-center gap-4 p-2 rounded-lg hover:bg-primary w"
 				>
 					<img
 						src="../assets/icons/basics/missions.svg"
@@ -23,7 +23,7 @@
 			</RouterLink>
 			<RouterLink to="/investissement" exact-active-class="active">
 				<div
-					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+					class="flex items-center gap-4 p-2 rounded-lg hover:bg-primary w"
 				>
 					<img
 						src="../assets/icons/basics/investissement.svg"
@@ -33,7 +33,7 @@
 			</RouterLink>
 			<RouterLink to="/entreprise" exact-active-class="active">
 				<div
-					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+					class="flex items-center gap-4 p-2 rounded-lg hover:bg-primary w"
 				>
 					<img
 						src="../assets/icons/basics/entreprise.svg"
@@ -43,7 +43,7 @@
 			</RouterLink>
 			<!-- <RouterLink to="/a" exact-active-class="active">
 				<div
-					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+					class="flex items-center gap-4 p-2 rounded-lg hover:bg-primary w"
 				>
 					<img
 						src="../assets/icons/basics/cybersécurité.svg"
@@ -53,7 +53,7 @@
 			</RouterLink> -->
 			<RouterLink to="/trophees" exact-active-class="active">
 				<div
-					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+					class="flex items-center gap-4 p-2 rounded-lg hover:bg-primary w"
 				>
 					<img
 						src="../assets/icons/basics/trophées.svg"
@@ -63,7 +63,7 @@
 			</RouterLink>
 			<RouterLink to="/shopping" exact-active-class="active">
 				<div
-					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+					class="flex items-center gap-4 p-2 rounded-lg hover:bg-primary w"
 				>
 					<img
 						src="../assets/icons/basics/shopping.svg"
@@ -71,9 +71,9 @@
 					/>
 				</div>
 			</RouterLink>
-			<RouterLink to="/a" exact-active-class="active">
+			<RouterLink to="/reglages" exact-active-class="active">
 				<div
-					class="hover:bg-primary p-2 rounded-lg flex items-center gap-4 w"
+					class="flex items-center gap-4 p-2 rounded-lg hover:bg-primary w"
 				>
 					<img
 						src="../assets/icons/basics/réglages.svg"

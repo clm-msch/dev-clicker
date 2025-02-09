@@ -254,12 +254,10 @@ export const useDataStore = defineStore({
                 id: 3,
                 name: "Serveurs surpuissants",
                 image: "https://res.cloudinary.com/diurvm1bd/image/upload/v1683329169/server_hqqiqd.svg",
-                description: "Concus pour écraser la concurence.",
+                description: "Conçus pour écraser la concurence.",
                 price : "1 M ",
             },
         ],
-
-
 
         /*
             CodeView
@@ -275,7 +273,7 @@ export const useDataStore = defineStore({
         /*
             MissionsView
         */
-        money: 100000,
+        money: 0,
         progressValue1: 1,
         progressValue2: 1,
         progressValue3: 1,
@@ -867,6 +865,6 @@ export const useDataStore = defineStore({
             return this.DWRKstock * this.DWRKprice
         },
     },
-    // persist: true,
+    persist: true,
 });
 

@@ -34,12 +34,15 @@ const router = createRouter({
       component: () => import('../views/ShoppingView.vue')
     },
     {
+      path: '/reglages',
+      name: 'reglages',
+      component: () => import('../views/ReglagesView.vue')
+    },
+    {
       path: '/auth',
       name: 'auth',
       component: () => import('../views/AuthView.vue')
     }
   ]
 })
-
-
 export default router
