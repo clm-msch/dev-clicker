@@ -264,7 +264,7 @@ export const useDataStore = defineStore({
         /*
             CodeView
         */
-        exp: 0,
+        exp: 1,
         clickTotal: 0,
         expAdd: 1,
         expAddSec: 0,
