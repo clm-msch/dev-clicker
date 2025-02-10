@@ -3,10 +3,10 @@
 		<Achivement />
 		<Popup />
 	<TutoCode />
-	<h1 class="font-bold text-3xl">CODE</h1>
+	<h1 class="text-3xl font-bold">CODE</h1>
 	<br />
 	<!-- dev button -->
-	<div class="inline-flex gap-8 justify-center align-middle flex-wrap">
+	<div class="inline-flex flex-wrap justify-center gap-8 align-middle">
 		<!-- @click="addExp(expData.amount)" -->
 		<button
 		  @keydown.enter.prevent
@@ -15,7 +15,7 @@
 				animate__animated: data.isAnimated,
 				animate__headShake: data.isAnimated,
 			}"
-			class="inline-flex space-x-3 items-center justify-center w-80 h-28 px-12 py-9 bg-white border-4 rounded-lg border-indigo-600 button-dev"
+			class="inline-flex items-center justify-center px-12 space-x-3 bg-white border-4 border-indigo-600 rounded-lg w-80 h-28 py-9 button-dev"
 		>
 			<p class="text-3xl font-bold text-gray-800">Développe</p>
 			<img
@@ -23,7 +23,7 @@
 				src="../assets/icons/basics/brain_logo.svg"
 			/>
 		</button>
-		<div class="row-flex bg-white justify-center dev-button">
+		<div class="justify-center bg-white row-flex dev-button">
 			<p class="text-xl">
 				Expérience : <strong>{{ data.expFormat }} exp</strong>
 			</p>
@@ -52,7 +52,7 @@
 			class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"
 		></div>
 		<span
-			class="ml-3 text-md font-medium text-gray-900 dark:text-dark_grey"
+			class="ml-3 font-medium text-gray-900 text-md dark:text-dark_grey"
 		>
 			{{ data.whatStack }}</span
 		>
@@ -60,7 +60,7 @@
 	<!-- Toogle -->
 	<div
 		v-if="data.ifFront"
-		class="inline-flex gap-4 pt-4 flex-wrap justify-start animate__animated animate__backInLeft"
+		class="inline-flex flex-wrap justify-start gap-4 pt-4 animate__animated animate__backInLeft"
 	>
 		<div class="skill-card">
 			<div class="inline-flex gap-4">
@@ -71,7 +71,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Langage de balisage utilisé pour créer des pages Web.
 					<br />
 					<br />
@@ -88,7 +88,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addHtml"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -105,7 +105,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Langage de feuilles de style utilisé pour styliser et mettre
 					en forme les pages Web.
 				</p>
@@ -121,7 +121,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addCss"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -141,7 +141,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Langage de programmation utilisé pour ajouter de
 					l'interactivité aux pages Web.
 				</p>
@@ -157,7 +157,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addJs"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -177,7 +177,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Framework CSS qui fournit une bibliothèque de classes prêtes
 					à l'emploi pour faciliter la mise en forme des pages Web.
 				</p>
@@ -193,7 +193,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addTailwind"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -210,7 +210,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Framework JavaScript permettant de créer des applications
 					Web interactives et dynamiques.
 				</p>
@@ -226,7 +226,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addVue"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -244,7 +244,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Outil de construction rapide pour les applications Web
 					modernes, basé sur JavaScript.
 				</p>
@@ -260,7 +260,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addVite"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -272,7 +272,7 @@
 	<!-- Back -->
 	<div
 		v-if="data.ifBack"
-		class="inline-flex gap-4 pt-4 flex-wrap justify-start animate__animated animate__backInRight"
+		class="inline-flex flex-wrap justify-start gap-4 pt-4 animate__animated animate__backInRight"
 	>
 		<div class="skill-card">
 			<div class="inline-flex gap-4">
@@ -286,7 +286,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Environnement d'exécution JavaScript côté serveur, qui
 					permet d'exécuter du code JavaScript en dehors du
 					navigateur.
@@ -302,7 +302,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addNode"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -322,7 +322,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Framework web pour Node.js, qui facilite la création d'API
 					RESTful et de serveurs web.
 				</p>
@@ -338,7 +338,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addExpress"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -358,7 +358,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Outil de gestion de base de données, qui permet de
 					simplifier les interactions avec les bases de données en
 					utilisant un ORM
@@ -375,7 +375,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addPrisma"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -395,7 +395,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Système de gestion de base de données NoSQL, qui stocke les
 					données sous forme de documents JSON flexibles.
 				</p>
@@ -411,7 +411,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addMongo"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -431,7 +431,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Une technologie qui permet d'isoler et de transporter des
 					applications dans des conteneurs légers et portables.
 				</p>
@@ -447,7 +447,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addDocker"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -468,7 +468,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="font-extralight text-sm">
+				<p class="text-sm font-extralight">
 					Une plateforme cloud qui permet de déployer et de gérer des
 					applications Web statiques et dynamiques, ainsi que des
 					fonctions serverless.
@@ -484,7 +484,7 @@
 				<div class="inline-flex">
 					<button
 						@click="addVercel"
-						class="bg-primary p-2 pl-6 pr-6 rounded-lg font-bold text-white hover:bg-white hover:text-primary hover:border-primary border-2 border-primary"
+						class="p-2 pl-6 pr-6 font-bold text-white border-2 rounded-lg bg-primary hover:bg-white hover:text-primary hover:border-primary border-primary"
 					>
 						Aquérir
 					</button>
@@ -498,7 +498,7 @@
 
 	<button
 		@click="resetLocal"
-		class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+		class="px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-700 focus:outline-none focus:shadow-outline"
 	>
 		🗑️ Resart
 	</button>
